@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<Contents xmlns:xlink="http://www.w3.org/1999./xlink">
+
+<Content>
+	<Text>
+		&lt;table class="borderless"&gt;
+			&lt;tr&gt;
+				&lt;td class=FAQTD &gt;
+					&lt;b&gt;Q.&lt;/b&gt; 
+					&lt;strong&gt;What is the purpose of the Survey Administration tool?&lt;/strong&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;
+					&lt;b&gt;A.&lt;/b&gt; The Survey Administration Tool is here...
+					&lt;ul&gt;
+						&lt;li&gt;
+							To provide an electronic means of delivering surveys 
+						and collecting results from surveys.
+						&lt;/li&gt;
+						&lt;li&gt;
+							To provide fast and easy reporting of survey results.
+						&lt;/li&gt;
+						&lt;li&gt;
+							To help the users stay within 
+							&lt;a title="Go to SBMS compliance." href="http://hdi.pnl.gov/standard/69/6903d010.htm" 
+							target="_blank"&gt;SBMS compliance&lt;/a&gt; regarding surveys.
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/table&gt;
+        &lt;table width=80% cellpadding=5 class="borderless"&gt;
+			&lt;tr&gt;
+       			&lt;td colspan=2&gt;
+       				&lt;hr width="95%" align="left"&gt;
+       			&lt;/td&gt;
+       		&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;
+				&lt;ul class=outside"&gt;
+										&lt;li&gt;
+						&lt;A class="content" title="Survey Administration Tool FAQ introduction."
+						 href="Help.aspx?XMLFile=./FAQ/Introduction.xml"&gt;
+						Survey Administration Tool FAQ introduction.&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="What is the purpose of the Survey Administration tool?"
+						 href="Help.aspx?XMLFile=./FAQ/Purpose.xml"&gt;
+						What is the purpose of the Survey Administration tool?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="What is the difference between delegates, owners, and users of my surveys and templates?" 
+						 href="Help.aspx?XMLFile=./FAQ/PermissionDifferences.xml"&gt;
+						What is the difference between delegates, owners, and users of my surveys 
+						and templates?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="What happens when I give users user permissions for my template?"
+						 href="Help.aspx?XMLFile=./FAQ/UserPermission.xml"&gt;
+						What happens when I give users user permissions for my template?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="Can I see other surveys created by other users from my template?"
+						 href="Help.aspx?XMLFile=./FAQ/TemplateSurveys.xml"&gt;
+						Can I see other surveys created by other users from my template?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="When I preview the survey, I see mark-up text where page breaks would normally be and little clickable “Look” icons.  Is this what the survey recipients will see?" 
+						 href="Help.aspx?XMLFile=./FAQ/SurveyPreview.xml"&gt;
+						When I preview the survey, I see mark-up text where page breaks would 
+						normally be and little clickable “Look” icons.  Is this what the survey 
+						recipients will see?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="What are survey groups?" 
+						 href="Help.aspx?XMLFile=./FAQ/SurveyGroups.xml"&gt;
+						What are survey groups?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="Why do I have to request publication?" 
+						 href="Help.aspx?XMLFile=./FAQ/RequestPublication.xml"&gt;
+						Why do I have to “request publication?”&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="I am getting a message that says that the template is approved but the Request Publication button for my template has disappeared and I can’t send it to anyone yet.  Why not?" 
+						 href="Help.aspx?XMLFile=./FAQ/Publication.xml"&gt;
+						I am getting a message that says that the template is approved but the 
+						Request Publication button for my template has disappeared and I can’t 
+						send it to anyone yet.  Why not?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="Why can’t I change the template/survey I’ve used before?"
+						 href="Help.aspx?XMLFile=./FAQ/ChangeTemplateSurvey.xml"&gt;
+						Why can’t I change the template/survey I’ve used before?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="Why can’t I delete a template or survey I no longer need?"
+						 href="Help.aspx?XMLFile=./FAQ/DeleteTemplateSurvey.xml"&gt;
+						Why can’t I delete a template or survey I no longer need?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="What does the Reporting feature do?"
+						 href="Help.aspx?XMLFile=./FAQ/Reporting.xml"&gt;
+						What does the Reporting feature do?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="Why do the pages expire sometimes when I use the back button?"
+						 href="Help.aspx?XMLFile=./FAQ/PageExpiration.xml"&gt;
+						Why do the pages expire sometimes when I use the back button?&lt;/A&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;A class="content" title="Some of the menu items are not clickable.  Why not?"
+						 href="Help.aspx?XMLFile=./FAQ/MenuItems.xml"&gt;
+						Some of the menu items are not clickable.  Why not?&lt;/A&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+       			&lt;td colspan=2&gt;
+       				&lt;hr width="95%" align="left"&gt;
+       			&lt;/td&gt;
+       		&lt;/tr&gt;
+		&lt;/table&gt;
+	</Text>
+</Content>
+
+</Contents>

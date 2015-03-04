@@ -1,0 +1,75 @@
+			<table>
+				<tr vAlign="top" height="443" runat="server">
+					<td vAlign="top" runat="server"><ignav:ultrawebmenu id="UltraWebMenu2" runat="server" ScrollImageBottom="ig_menu_scrolldown.gif" ScrollImageTopDisabled="ig_menu_scrollup_disabled.gif"
+							ScrollImageBottomDisabled="ig_menu_scrolldown_disabled.gif" Cursor="Default" ScrollImageTop="ig_menu_scrollup.gif" SubMenuImage=""
+							CompactRendering="False" WebMenuStyle="XPClient" XPSpacerWidth="0px" BackColor="Transparent" Font-Size="X-Small" Font-Names="Arial"
+							BorderStyle="None" BorderColor="Transparent" BorderWidth="0px" ItemSpacingSubMenus="5" ItemSpacingTop="5" RenderAnchors="True"
+							WebMenuTarget="VerticalMenu" BackImageUrl="./Graphics/Menu.png">
+							<ItemStyle Cursor="Auto" BorderWidth="0px" Font-Size="X-Small" Font-Names="Arial" Font-Bold="True"
+								BorderStyle="None" ForeColor="Black" BackColor="Transparent"></ItemStyle>
+							<DisabledStyle ForeColor="LightGray"></DisabledStyle>
+							<HoverItemStyle Cursor="Default" Font-Size="X-Small" Font-Names="Arial" Font-Bold="True" ForeColor="White"
+								BackColor="Transparent"></HoverItemStyle>
+							<Padding Bottom="0px" Top="0px"></Padding>
+							<IslandStyle Cursor="Default" BorderWidth="0px" Font-Size="8pt" Font-Names="MS Sans Serif" BorderStyle="None"
+								ForeColor="Black" BackColor="Transparent"></IslandStyle>
+							<MenuClientSideEvents ItemClick="UltraWebMenu1_ItemClick" ItemHover="UltraWebMenu1_ItemHover"></MenuClientSideEvents>
+							<ExpandEffects ShadowColor="LightGray"></ExpandEffects>
+							<SeparatorStyle BackgroundImage="ig_menuSep.gif" CssClass="SeparatorClass" CustomRules="background-repeat:repeat-x; "></SeparatorStyle>
+							<Levels>
+								<ignav:Level Index="0"></ignav:Level>
+							</Levels>
+						</ignav:ultrawebmenu></td>
+					<td vAlign="top" runat="server"><asp:label id="Label1" runat="server">The Laboratory-wide Chemical Management System provides an effective way to 
+						track chemicals, ensure that safety and health information for each individual 
+						chemical in a given inventory is readily available and up-to-date, and to 
+						furnish an overall chemical management system. The procedures, users guide, and 
+						software are available electronically through a centralized system. The <A href="usersguide_dec01.pdf">
+								Users Guide</A> describes the practical applications 
+						of CMS.
+					</asp:label>
+						<p></p>
+						<asp:label id="Label2" runat="server">
+						Staff who order and inventory chemicals must use the CMS software. The <FONT color="#ffffff">
+								<A href="procedures.html">CMS User Procedures </A></FONT>describes the 
+							required procedure for accessing and using the system. Additional information 
+							about accessing the software is described in <A href="cms-faq.html">Frequently 
+								Asked Questions</A>. For more information about acquisition, use, handling, 
+							and storage of chemicals, see the <A href="http://sbms.pnl.gov/private/standard/03/0300t010.htm">
+								Working With Chemicals</A> subject area.
+					</asp:label>
+						<p></p>
+						<table id="Table2" style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double"
+							cellSpacing="0" cols="1" cellPadding="2" width="700" align="left" bgColor="white" runat="server">
+							<tr vAlign="top" runat="server" ID="Tr1" NAME="Tr1">
+								<td vAlign="top" runat="server" ID="Td1" NAME="Td1"><asp:image id="Image1" BackColor="Transparent" Runat="server" ImageAlign="Left" ImageUrl="./Images/Announce.gif"></asp:image><asp:imagebutton id="ImageButton1" Width="20" Height="25" Runat="server" ImageAlign="Left" ImageUrl="./Images/AnnounceEdit.png"></asp:imagebutton></td>
+							</tr>
+							<tr vAlign="top" runat="server" ID="Tr2" NAME="Tr2">
+								<td vAlign="top" runat="server" ID="Td2" NAME="Td2">
+									<ul runat="server" ID="Ul1" NAME="Ul1">
+										<li>
+											<asp:Label Runat="server" id="Label3">
+												Guidance for Authorized CMS Users is now in the <A href="procedures.html">CMS User 
+													Procedures </A>.
+											</asp:Label>
+											<asp:Image AlternateText="Update!" ImageUrl="./Images/update.gif" ImageAlign="Middle" Runat="server"
+												id="Image2"></asp:Image>
+										<li>
+											Information to all staff about using CMS is in the <A href="http://sbms.pnl.gov/private/standard/03/0300t010.htm">
+												Working with Chemicals</A>
+										subject area.
+										<li>
+											The CMS Inventory Report now has an option to provide the Material Safety Data 
+											Sheet (MSDS) number for each container where they exist in Imagewave. See <A href="reports.html">
+												Inventory Reports</A> for this report.
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<asp:panel id="Panel1" style="Z-INDEX: 10000000; LEFT: -450px; POSITION: absolute; TOP: -1000px"
+				runat="server" Width="300px" BackColor="IndianRed" BorderStyle="Double" Enabled="True"
+				Visible="True" BorderColor="#404040" HorizontalAlign="Left" Height="100px"></asp:panel

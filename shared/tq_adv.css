@@ -1,0 +1,279 @@
+/*ESH&Q website CSS
+Created by Shan Osborn*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(/shared/design-images/background.jpg) #ffffff repeat-y;
+    font: small Verdana, Arial, sans-serif;
+}
+
+#bannerBack {
+    margin: 0;
+    height:195px;
+    width: 100%;
+    padding: 0;
+    background: url(/shared/design-images/banner_background.jpg) repeat-x;
+}
+
+
+#banner {
+    margin:0;
+    width: 730px;
+    z-index: 1;
+}
+
+#logoBanner {
+    margin: 0;
+	width:178px;
+	height:195px;
+    float: left;
+
+
+} 
+#logoBanner img {
+		 border: 0;
+}
+
+#mainBanner {
+position: absolute;
+top: 0;
+left: 178px;
+padding: 0;
+	width:552px;
+	height:136px;
+
+}
+
+#newsBits {
+clear: right;
+    float: right;
+    margin: 0 5px;
+}
+
+#buttonBackground {
+float: left;
+margin: 0;
+	width:178px;
+min-height:357px;
+    background: url(/shared/design-images/button_background.jpg) no-repeat;
+}
+
+
+#buttonBackground  #mainNav {
+    color: white;
+    font: bold 10pt Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#buttonBackground #mainNav .navItem{
+    margin-left: 17px;
+    padding: 3px; 
+    margin-bottom: 5px;
+    border-bottom: 2px solid #333;
+}
+
+/* #buttonBackground ul#mainNav li.top {
+    border-top: 2px solid #333;}*/
+.navItem ul#mgmtSysSub {
+display: none;
+}
+
+.navItem ul li {
+	list-style-type: none;
+	margin-left: -3em;
+	text-align: left;
+	font-size:75%;
+	border-bottom: 1px dashed #fff;
+}
+
+body#ManagementSys .navItem ul#mgmtSysSub {
+	display: block;
+}
+    
+#buttonBackground #mainNav .navItem a:link, #buttonBackground #mainNav .navItem a:visited {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 2px 4px 3px;
+    margin: 2px;
+
+}
+
+#buttonBackground #mainNav .navItem a:hover {
+    background: #EFFFFB;
+    color: #103F33;
+/*    border-color: #aeccce;*/
+} 
+.navItem ul.subMenu li{
+	color: #001B1F;
+}
+
+#buttonBackground #mainNav .navItem ul.subMenu a:link {
+		color: #001B1F;
+}
+
+#navBars {
+        text-align: center;
+}
+
+#navBarTop {
+    position: absolute;
+    top: 88px;
+    left: 178px;
+    width: 600px;
+    text-align: center;
+      z-index: 2;
+}
+
+#navBarBottom {
+    position: absolute;
+    top: 108px;
+    left: 178px;
+        width: 600px;
+    text-align: center;
+    z-index: 2;
+}
+
+#navBarTop div, #navBarBottom div  {
+    display: inline;
+
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+        padding: 0 10px;
+
+
+}
+
+#navBarTop div a:link, #navBarTop div a:visited {
+    color: white;
+    text-decoration: none;
+    font: bold 10pt Verdana, Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin:0; 
+}
+
+#navBarBottom div a:link, #navBarBottom div a:visited {
+    color: #103F33;
+    text-decoration: none;
+    font: bold 10pt Verdana, Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin:0; 
+}
+
+#navBarTop div a:hover, #navBarBottom div a:hover {
+    background: #EFFFFB;
+    color: #103F33;
+}
+
+#content {    
+    width: auto;
+ /*   margin-left: 195px;
+    margin-right: 10px;
+	  margin-top: 0px;*/
+      position: absolute;
+      left: 200px;
+      top: 150px;
+    z-index: 3;
+}
+
+.fsb {
+  margin-top: -100px;
+}
+
+.docType {
+	font-size: small;
+}
+
+.splitLeft {
+	max-width: 271px;
+}
+
+.splitRight {
+	float: right;
+	max-width: 271px;
+}
+
+.splitLeft p, .splitRight p {
+    margin: 2px;
+}
+
+#content h1 {
+    margin-top: 0px;
+    font-size: x-large;
+}
+
+#content h2 { font-size: large; }
+
+#content h3 { font-size: medium; }
+
+#content h4 { font-size: small; }
+
+#content .highlightBox .innerBox h2 {
+	font-size: small;
+	color: #103F33;
+}
+
+.atTop {
+   position: absolute;
+   right: 20px;
+   top: 140px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: #008080;
+	font-size: 12px;
+}
+
+.goldenrod {
+  color: #FFCC66;
+}
+		
+
+ul li {
+    padding-bottom: 5px;
+}
+
+#content a:link , #content a:visited {
+	text-decoration: none;
+    color: #006A77;
+}
+
+#content a:link:hover , #content a:visited:hover {
+	text-decoration: none;
+    color: #ffffff;
+    background: #006A77;
+}
+
+#content2 a:link , #content a:visited {
+	text-decoration: none;
+    color: #006A77;
+}
+
+#content2 a:link:hover , #content a:visited:hover {
+	text-decoration: none;
+    color: #ffffff;
+    background: #006A77;
+}
+
+.centered {
+    text-align: center;
+}
+
+#section a:link , #section a:visited {
+	text-decoration: none;
+	font-size: 12px;
+    color: #006A77;
+	background-color: #FFFFFF;
+}
+
+#section a:link:hover , #section a:visited:hover {
+	text-decoration: none;
+	font-size: 12px;
+    color: #ffffff;
+    background: #006A77;
+}

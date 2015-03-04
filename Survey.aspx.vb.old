@@ -1,0 +1,1868 @@
+Imports System.Text
+Imports System.Collections.Specialized
+Public Class Survey
+    Inherits System.Web.UI.Page
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Me.sqlSurvey = New System.Data.SqlClient.SqlDataAdapter
+        Me.SqlDeleteCommand1 = New System.Data.SqlClient.SqlCommand
+        Me.commonConn = New System.Data.SqlClient.SqlConnection
+        Me.SqlInsertCommand1 = New System.Data.SqlClient.SqlCommand
+        Me.SqlSelectCommand1 = New System.Data.SqlClient.SqlCommand
+        Me.SqlUpdateCommand1 = New System.Data.SqlClient.SqlCommand
+        Me.dsCommon = New System.Data.DataSet
+        CType(Me.dsCommon, System.ComponentModel.ISupportInitialize).BeginInit()
+        '
+        'sqlSurvey
+        '
+        Me.sqlSurvey.DeleteCommand = Me.SqlDeleteCommand1
+        Me.sqlSurvey.InsertCommand = Me.SqlInsertCommand1
+        Me.sqlSurvey.SelectCommand = Me.SqlSelectCommand1
+        Me.sqlSurvey.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "fempSurvey", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("seqSurvey", "seqSurvey"), New System.Data.Common.DataColumnMapping("intCreatorID", "intCreatorID"), New System.Data.Common.DataColumnMapping("seqTemplate", "seqTemplate"), New System.Data.Common.DataColumnMapping("datClosing", "datClosing"), New System.Data.Common.DataColumnMapping("strComments", "strComments"), New System.Data.Common.DataColumnMapping("strSymbol", "strSymbol"), New System.Data.Common.DataColumnMapping("blnOptional", "blnOptional"), New System.Data.Common.DataColumnMapping("blnActive", "blnActive"), New System.Data.Common.DataColumnMapping("strColor", "strColor"), New System.Data.Common.DataColumnMapping("intSubmitted", "intSubmitted"), New System.Data.Common.DataColumnMapping("datCreatedDate", "datCreatedDate")})})
+        Me.sqlSurvey.UpdateCommand = Me.SqlUpdateCommand1
+        '
+        'SqlDeleteCommand1
+        '
+        Me.SqlDeleteCommand1.CommandText = "DELETE FROM VARCONN.fempSurvey WHERE (seqSurvey = @Original_seqSurvey) AND (blnActive" & _
+        " = @Original_blnActive) AND (blnOptional = @Original_blnOptional) AND (datClosin" & _
+        "g = @Original_datClosing) AND (datCreatedDate = @Original_datCreatedDate) AND (i" & _
+        "ntCreatorID = @Original_intCreatorID) AND (intSubmitted = @Original_intSubmitted" & _
+        ") AND (seqTemplate = @Original_seqTemplate) AND (strColor = @Original_strColor) " & _
+        "AND (strComments = @Original_strComments) AND (strSymbol = @Original_strSymbol)"
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_seqSurvey", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "seqSurvey", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_blnActive", System.Data.SqlDbType.Bit, 1, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "blnActive", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_blnOptional", System.Data.SqlDbType.Bit, 1, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "blnOptional", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_datClosing", System.Data.SqlDbType.DateTime, 8, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "datClosing", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_datCreatedDate", System.Data.SqlDbType.DateTime, 8, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "datCreatedDate", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_intCreatorID", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "intCreatorID", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_intSubmitted", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "intSubmitted", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_seqTemplate", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "seqTemplate", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_strColor", System.Data.SqlDbType.VarChar, 8, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "strColor", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_strComments", System.Data.SqlDbType.VarChar, 1800, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "strComments", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlDeleteCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_strSymbol", System.Data.SqlDbType.VarChar, 16, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "strSymbol", System.Data.DataRowVersion.Original, Nothing))
+        '
+        'SqlInsertCommand1
+        '
+        Me.SqlInsertCommand1.CommandText = "INSERT INTO VARCONN.fempSurvey(intCreatorID, seqTemplate, datClosing, strComments, st" & _
+        "rSymbol, blnOptional, blnActive, strColor, intSubmitted, datCreatedDate) VALUES " & _
+        "(@intCreatorID, @seqTemplate, @datClosing, @strComments, @strSymbol, @blnOptiona" & _
+        "l, @blnActive, @strColor, @intSubmitted, @datCreatedDate); SELECT seqSurvey, int" & _
+        "CreatorID, seqTemplate, datClosing, strComments, strSymbol, blnOptional, blnActi" & _
+        "ve, strColor, intSubmitted, datCreatedDate FROM VARCONN.fempSurvey WHERE (seqSurvey " & _
+        "= @@IDENTITY)"
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@intCreatorID", System.Data.SqlDbType.Int, 4, "intCreatorID"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@seqTemplate", System.Data.SqlDbType.Int, 4, "seqTemplate"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@datClosing", System.Data.SqlDbType.DateTime, 8, "datClosing"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@strComments", System.Data.SqlDbType.VarChar, 1800, "strComments"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@strSymbol", System.Data.SqlDbType.VarChar, 16, "strSymbol"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@blnOptional", System.Data.SqlDbType.Bit, 1, "blnOptional"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@blnActive", System.Data.SqlDbType.Bit, 1, "blnActive"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@strColor", System.Data.SqlDbType.VarChar, 8, "strColor"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@intSubmitted", System.Data.SqlDbType.Int, 4, "intSubmitted"))
+        Me.SqlInsertCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@datCreatedDate", System.Data.SqlDbType.DateTime, 8, "datCreatedDate"))
+        '
+        'SqlSelectCommand1
+        '
+        Me.SqlSelectCommand1.CommandText = "SELECT seqSurvey, intCreatorID, seqTemplate, datClosing, strComments, strSymbol, " & _
+        "blnOptional, blnActive, strColor, intSubmitted, datCreatedDate FROM VARCONN.fempSurv" & _
+        "ey"
+        '
+        'SqlUpdateCommand1
+        '
+        Me.SqlUpdateCommand1.CommandText = "UPDATE VARCONN.fempSurvey SET intCreatorID = @intCreatorID, seqTemplate = @seqTemplat" & _
+        "e, datClosing = @datClosing, strComments = @strComments, strSymbol = @strSymbol," & _
+        " blnOptional = @blnOptional, blnActive = @blnActive, strColor = @strColor, intSu" & _
+        "bmitted = @intSubmitted, datCreatedDate = @datCreatedDate WHERE (seqSurvey = @Or" & _
+        "iginal_seqSurvey) AND (blnActive = @Original_blnActive) AND (blnOptional = @Orig" & _
+        "inal_blnOptional) AND (datClosing = @Original_datClosing) AND (datCreatedDate = " & _
+        "@Original_datCreatedDate) AND (intCreatorID = @Original_intCreatorID) AND (intSu" & _
+        "bmitted = @Original_intSubmitted) AND (seqTemplate = @Original_seqTemplate) AND " & _
+        "(strColor = @Original_strColor) AND (strComments = @Original_strComments) AND (s" & _
+        "trSymbol = @Original_strSymbol); SELECT seqSurvey, intCreatorID, seqTemplate, da" & _
+        "tClosing, strComments, strSymbol, blnOptional, blnActive, strColor, intSubmitted" & _
+        ", datCreatedDate FROM VARCONN.fempSurvey WHERE (seqSurvey = @seqSurvey)"
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@intCreatorID", System.Data.SqlDbType.Int, 4, "intCreatorID"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@seqTemplate", System.Data.SqlDbType.Int, 4, "seqTemplate"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@datClosing", System.Data.SqlDbType.DateTime, 8, "datClosing"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@strComments", System.Data.SqlDbType.VarChar, 1800, "strComments"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@strSymbol", System.Data.SqlDbType.VarChar, 16, "strSymbol"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@blnOptional", System.Data.SqlDbType.Bit, 1, "blnOptional"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@blnActive", System.Data.SqlDbType.Bit, 1, "blnActive"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@strColor", System.Data.SqlDbType.VarChar, 8, "strColor"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@intSubmitted", System.Data.SqlDbType.Int, 4, "intSubmitted"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@datCreatedDate", System.Data.SqlDbType.DateTime, 8, "datCreatedDate"))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_seqSurvey", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "seqSurvey", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_blnActive", System.Data.SqlDbType.Bit, 1, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "blnActive", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_blnOptional", System.Data.SqlDbType.Bit, 1, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "blnOptional", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_datClosing", System.Data.SqlDbType.DateTime, 8, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "datClosing", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_datCreatedDate", System.Data.SqlDbType.DateTime, 8, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "datCreatedDate", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_intCreatorID", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "intCreatorID", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_intSubmitted", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "intSubmitted", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_seqTemplate", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "seqTemplate", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_strColor", System.Data.SqlDbType.VarChar, 8, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "strColor", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_strComments", System.Data.SqlDbType.VarChar, 1800, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "strComments", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Original_strSymbol", System.Data.SqlDbType.VarChar, 16, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "strSymbol", System.Data.DataRowVersion.Original, Nothing))
+        Me.SqlUpdateCommand1.Parameters.Add(New System.Data.SqlClient.SqlParameter("@seqSurvey", System.Data.SqlDbType.Int, 4, "seqSurvey"))
+        '
+        'dsCommon
+        '
+        Me.dsCommon.DataSetName = "NewDataSet"
+        Me.dsCommon.Locale = New System.Globalization.CultureInfo("en-US")
+        CType(Me.dsCommon, System.ComponentModel.ISupportInitialize).EndInit()
+
+    End Sub
+    Protected WithEvents sqlSurvey As System.Data.SqlClient.SqlDataAdapter
+    Protected WithEvents SqlSelectCommand1 As System.Data.SqlClient.SqlCommand
+    Protected WithEvents SqlInsertCommand1 As System.Data.SqlClient.SqlCommand
+    Protected WithEvents SqlUpdateCommand1 As System.Data.SqlClient.SqlCommand
+    Protected WithEvents SqlDeleteCommand1 As System.Data.SqlClient.SqlCommand
+    Protected WithEvents dsCommon As System.Data.DataSet
+    Protected myNavBar As Navigation = New Navigation
+    Protected myUtility As Utility = New Utility
+    Protected WithEvents hlpTagItems As System.Web.UI.WebControls.Image
+    Protected WithEvents rptrTags As System.Web.UI.WebControls.Repeater
+    Protected WithEvents rptrSurveyGroups As System.Web.UI.WebControls.Repeater
+    Protected WithEvents imgSurveyTitle As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpServerSwitch As System.Web.UI.WebControls.Image
+    Protected WithEvents chkServerSwitch As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents hlpCopy As System.Web.UI.WebControls.Image
+    Protected WithEvents btnCopy As System.Web.UI.WebControls.Button
+    Protected WithEvents lblTemplate As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpTemplatePreview As System.Web.UI.WebControls.Image
+    Protected WithEvents btnTemplatePreview As System.Web.UI.WebControls.Button
+    Protected WithEvents lblNavBar As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpSurveyName As System.Web.UI.WebControls.Image
+    Protected WithEvents lblSurveyName As System.Web.UI.WebControls.Label
+    Protected WithEvents txtSurveyName As System.Web.UI.WebControls.TextBox
+    Protected WithEvents hlpClosingDate As System.Web.UI.WebControls.Image
+    Protected WithEvents lblClosingDate As System.Web.UI.WebControls.Label
+    Protected WithEvents wdcClosingDate As Infragistics.WebUI.WebSchedule.WebDateChooser
+    Protected WithEvents hlpCourseNumber As System.Web.UI.WebControls.Image
+    Protected WithEvents lblCourseNumber As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpOptional As System.Web.UI.WebControls.Image
+    Protected WithEvents chkOptional As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents lblOptional As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpActive As System.Web.UI.WebControls.Image
+    Protected WithEvents chkActive As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents lblActive As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpSurveys As System.Web.UI.WebControls.Image
+    Protected WithEvents lblTagItems As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpDelegates As System.Web.UI.WebControls.Image
+    Protected WithEvents lblDelegates As System.Web.UI.WebControls.Label
+    Protected WithEvents rptrDelegates As System.Web.UI.WebControls.Repeater
+    Protected WithEvents hlpSurveyGroups As System.Web.UI.WebControls.Image
+    Protected WithEvents lblSurveyGroups As System.Web.UI.WebControls.Label
+    Protected WithEvents ddlPageOptions As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lblSecPriv As System.Web.UI.WebControls.Label
+    Protected WithEvents lblWebmaster As System.Web.UI.WebControls.Label
+    Protected requestItems As Array
+    Protected WithEvents Label1 As System.Web.UI.WebControls.Label
+    Protected WithEvents btnStart As System.Web.UI.WebControls.ImageButton
+    Protected WithEvents btnPrev As System.Web.UI.WebControls.ImageButton
+    Protected WithEvents btnReload As System.Web.UI.WebControls.ImageButton
+    Protected WithEvents btnNext As System.Web.UI.WebControls.ImageButton
+    Protected WithEvents btnLast As System.Web.UI.WebControls.ImageButton
+    Protected WithEvents btnNew As System.Web.UI.WebControls.ImageButton
+    Protected navButtons As Collection
+    Protected WithEvents btnSubmit As System.Web.UI.WebControls.Button
+    Protected WithEvents hlpColorPicker As System.Web.UI.WebControls.Image
+    Protected WithEvents lblColorPicker As System.Web.UI.WebControls.Label
+    Protected WithEvents ddlColorPicker As System.Web.UI.HtmlControls.HtmlSelect
+    Protected sqlCommonAdapter As New System.Data.SqlClient.SqlDataAdapter
+    Protected sqlCommonAction As New System.Data.SqlClient.SqlCommand
+    Protected WithEvents wneCourseNumber As Infragistics.WebUI.WebDataInput.WebNumericEdit
+    Protected WithEvents btnTop As System.Web.UI.WebControls.Button
+    Protected WithEvents commonConn As System.Data.SqlClient.SqlConnection
+
+    'NOTE: The following placeholder declaration is required by the Web Form Designer.
+    'Do not delete or move it.
+    Private designerPlaceholderDeclaration As System.Object
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+
+#Region "Basic"
+    'loads the page
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Trace.Warn("Loading Page")
+
+        'catch incoming alert messages
+        alert(Session("Alert"))
+
+        'clear session
+        myUtility.clearSession()
+
+        If (Session.IsNewSession) Then
+            Session("Alert") = "Your session has timed out for security purposes.  Please log in again."
+        End If
+
+        'get the from page
+        If Not (IsPostBack) Then
+            Session("FromPage") = getFromPage()
+            myUtility.getRequest(Page.Request.Url.Query())
+        End If
+
+        'Set the connection based on the machine
+        Me.commonConn = myUtility.getConnection(Me.commonConn)
+
+        'determine survey ownership if not defined
+        isOwner()
+
+        'Put user code to initialize the page here
+        If (Session("isAuthenticated") <> "True") Then
+            Session("CurrentPage") = "./Login.aspx"
+            Response.Redirect(Session("CurrentPage"))
+        ElseIf (myUtility.checkUserType(2, CType(Session("isSurveyOwner"), Boolean), CType(Session("isSurveyDelegate"), Boolean), True)) Then
+            redirect(Session("CurrentPage"))
+        Else
+            Session("CurrentPage") = "./Survey.aspx"
+        End If
+
+        'if the user's password has expired send them to the password reset page
+        If (Session("isExpired") = "True") Then
+            Session("CurrentPage") = "./Password.aspx"
+            redirect(Session("CurrentPage"))
+        End If
+
+        'generate collection of navigational buttons
+        myUtility.makeNavCollection(Me.navButtons, Me.btnStart, Me.btnPrev, Me.btnReload, Me.btnNext, Me.btnLast, Me.btnNew)
+
+        'Check for user selection from the comments list if we're sure it's not a simple post-back
+        If Not (IsPostBack) Then
+            'load all Comments
+            If Not (loadData()) Then
+                alert("Failed to load the surveys for this template.")
+            Else
+                'get the survey results
+                surveyResults()
+
+                'to determine what of the nav bar buttons should be available
+                setNavBar()
+
+                'get the template name - mr sneaky user has access and used a link
+                If (Session("TemplateName") Is Nothing Or Session("TemplateName") = "") Then
+                    If Not (setTemplateName()) Then
+                        alert("Unable to locate template name.")
+                    End If
+                End If
+
+                'Populate the controls on the page
+                setControls()
+
+                'set the page options
+                myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+
+                Me.btnSubmit.Attributes.Add("onClick", "return confirm('Are you sure you want to perform this action.');")
+            End If
+        End If
+    End Sub
+
+    'Set location and re-direct
+    Private Sub redirect(Optional ByVal currentPage As String = "")
+        If (currentPage = "") Then
+            Session("CurrentPage") = Session("FromPage")
+            Response.Redirect(Session("CurrentPage"))
+        Else
+            Session("CurrentPage") = currentPage
+            Response.Redirect(Session("CurrentPage"))
+        End If
+    End Sub
+
+    'gets the referring or from page and returns it
+    Public Function getFromPage() As String
+        Dim coll As NameValueCollection
+        ' Load ServerVariable collection into NameValueCollection object.
+        coll = Request.ServerVariables
+        ' Get referring page.
+        Return (coll.Item("HTTP_REFERER"))
+    End Function
+
+    'handles error messages
+    Public Sub alert(ByVal message As String)
+        If (message <> "") Then
+            Response.Write("<script type='text/javascript'>window.alert('" & message & "');</script>")
+            Session("Alert") = ""
+        End If
+    End Sub
+
+    'set the template name
+    Private Function setTemplateName() As Boolean
+        sqlCommonAdapter.SelectCommand = sqlCommonAction
+        sqlCommonAction.Connection = Me.commonConn
+
+        Try
+            sqlCommonAction.CommandText = "Select strTemplateName from " & myUtility.getExtension() & "fempTemplates where " & _
+            "seqTemplate = " & Session("seqTemplate")
+            sqlCommonAdapter.Fill(Me.dsCommon, "TemplateName")
+            Session("TemplateName") = Me.dsCommon.Tables("TemplateName").Rows(0).Item("strTemplateName")
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+
+    'set the server switch text
+    Private Sub setServerText()
+        If (Session("Machine") = "Production") Then
+            Me.chkServerSwitch.Text = "To Development Server. Current Server: " & Session("Machine")
+        Else
+            Me.chkServerSwitch.Text = "To Production Server. Current Server: " & Session("Machine")
+        End If
+    End Sub
+#End Region
+
+#Region "Data Load"
+    'Loads data into the form
+    Private Function loadData(Optional ByVal override As Boolean = False) As Boolean
+        Trace.Warn("Loading Data")
+        Try
+            'Set up the common data adapter and select command
+            sqlCommonAction.Connection = Me.commonConn
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+
+            'load the colors
+            If (loadColors(override)) Then
+                'load the surveys
+                If (loadSurveys(override)) Then
+                    If (Session("seqSurvey") <> -1) Then
+                        'Fill the Tags list
+                        If (loadTags()) Then
+                            'Fill the Delegates list
+                            If (loadDelegates()) Then
+                                'Fill the Survey Groups list
+                                If (loadSurveyGroups()) Then
+                                    Return True
+                                Else
+                                    Return False
+                                End If
+                            Else
+                                Return False
+                            End If
+                        Else
+                            Return False
+                        End If
+                    Else
+                        Return True
+                    End If
+                Else
+                    Return False
+                End If
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    'Loads data into the form
+    Private Function loadDataLite(Optional ByVal override As Boolean = False) As Boolean
+        Trace.Warn("Loading Data")
+        Try
+            'Set up the common data adapter and select command
+            sqlCommonAction.Connection = Me.commonConn
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+
+            'load the colors
+            If (loadColors(override)) Then
+                'load the surveys
+                If (Session("seqSurvey") <> -1) Then
+                    'Fill the Tags list
+                    If (loadTags()) Then
+                        'Fill the Delegates list
+                        If (loadDelegates()) Then
+                            'Fill the Survey Groups list
+                            If (loadSurveyGroups()) Then
+                                Return True
+                            Else
+                                Return False
+                            End If
+                        Else
+                            Return False
+                        End If
+                    Else
+                        Return False
+                    End If
+                Else
+                    Return True
+                End If
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    'loads the surveys
+    Private Function loadSurveys(Optional ByVal override As Boolean = False) As Boolean
+        Trace.Warn("Loading Surveys")
+        Try
+            'try to erase anything if it exists in hte table so we don't end up with duplicate data
+            If (Me.dsCommon.Tables.Contains("Surveys")) Then
+                Me.dsCommon.Tables("Surveys").Rows.Clear()
+            End If
+
+            'select the surveys for the current template
+            Dim oldCommand As String
+            If (Session("UserType") = 4) Then
+                oldCommand = Me.SqlSelectCommand1.CommandText
+                Me.SqlSelectCommand1.CommandText &= " WHERE seqTemplate = " & Session("seqTemplate")
+            Else
+                oldCommand = Me.SqlSelectCommand1.CommandText
+                Me.SqlSelectCommand1.CommandText = "SELECT fs.seqSurvey, fs.intCreatorID, fs.seqTemplate, fs.datClosing, " & _
+                "fs.strComments, fs.strSymbol, fs.blnOptional, fs.blnActive, fs.strColor, fs.intSubmitted, fs.datCreatedDate " & _
+                "FROM " & myUtility.getExtension() & "fempSurvey fs inner join " & myUtility.getProdExtension() & "fempPermission fp on fs.seqSurvey = fp.seqSurvey " & _
+                "Where (fs.seqTemplate = " & Session("seqTemplate") & " And fp.seqUserID = " & Session("UserID") & " And " & _
+                "(fp.blnOwner = 1 Or fp.blnDelegate = 1))"
+            End If
+            Me.sqlSurvey.SelectCommand.Connection = Me.commonConn
+            Me.sqlSurvey.SelectCommand.CommandText = Me.sqlSurvey.SelectCommand.CommandText.Replace("VARCONN.", myUtility.getExtension())
+            Me.sqlSurvey.Fill(Me.dsCommon, "Surveys")
+            Me.SqlSelectCommand1.CommandText = oldCommand
+            Session("SurveyMax") = Me.dsCommon.Tables("Surveys").Rows.Count()
+
+            'determine if there is any data and if the survey id has been set
+            If (Session("SurveyMax") = 0) Then
+                Session("seqSurvey") = -1
+            ElseIf (Session("seqSurvey") Is Nothing) Then
+                Session("seqSurvey") = 1
+            End If
+
+            'make sure the survey row never exceeds the maximum surveys
+            If (Session("SurveyRow") > Session("SurveyMax")) Then
+                Session("SurveyRow") = Session("SurveyMax") - 1
+            End If
+
+            'if the survey id indicates a new record then move the survey row to the maximum
+            'else set it to just below the survey id's number
+            If (Session("seqSurvey") = -1) Then
+                Session("SurveyRow") = Session("SurveyMax")
+            Else
+                Session("SurveyRow") = findRow("Surveys", Session("seqSurvey"))
+            End If
+
+            'set the survey name
+            If (Session("seqSurvey") <> -1) Then
+                Session("SurveyName") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("strComments")
+            End If
+
+            'set the question type drop-down list
+            If Not (override) And Session("seqSurvey") <> "-1" Then
+                setColor()
+            End If
+
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+
+    'loads the tag items for the current survey
+    Private Function loadTags() As Boolean
+        Trace.Warn("Loading Tag Items")
+        Try
+            If (Me.dsCommon.Tables.Contains("Tags")) Then
+                Me.dsCommon.Tables("Tags").Rows.Clear()
+            End If
+            sqlCommonAction.CommandText = "SELECT * from " & myUtility.getExtension() & "fempTags WHERE seqTemplate=" & Session("seqTemplate") & _
+            " and seqSurvey = " & Session("seqSurvey") & " ORDER BY intTagID"
+            sqlCommonAdapter.Fill(Me.dsCommon, "Tags")
+            Me.rptrTags.DataSource = Me.dsCommon.Tables("Tags")
+            Me.rptrTags.DataBind()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Unable to load the tag items for this survey.")
+            Return False
+        End Try
+    End Function
+
+    'loads the delegates for the current survey
+    Private Function loadDelegates() As Boolean
+        Trace.Warn("Loading Delegates")
+        Try
+            If (Me.dsCommon.Tables.Contains("Delegates")) Then
+                Me.dsCommon.Tables("Delegates").Rows.Clear()
+            End If
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempPermission fp, " & myUtility.getProdExtension() & "fempUsers fu where seqSurvey = " & Session("seqSurvey") & _
+            " and fp.seqUserID = fu.seqUserID and (fp.blnOwner = 1 or fp.blnDelegate = 1) order by fu.strLastName, fu.strFirstName"
+            sqlCommonAdapter.Fill(Me.dsCommon, "Delegates")
+            Me.rptrDelegates.DataSource = Me.dsCommon.Tables("Delegates")
+            Me.rptrDelegates.DataBind()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Unable to load the delegates for this survey.")
+            Return False
+        End Try
+    End Function
+
+    'loads the survey groups for the current survey
+    Private Function loadSurveyGroups() As Boolean
+        Trace.Warn("Loading Survey Groups")
+        Try
+            If (Me.dsCommon.Tables.Contains("SurveyGroups")) Then
+                Me.dsCommon.Tables("SurveyGroups").Rows.Clear()
+            End If
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempGroups where seqSurvey = " & Session("seqSurvey") & _
+            " order by strGroupName"
+            sqlCommonAdapter.Fill(Me.dsCommon, "SurveyGroups")
+            Me.rptrSurveyGroups.DataSource = Me.dsCommon.Tables("SurveyGroups")
+            Me.rptrSurveyGroups.DataBind()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Unable to load the survey groups for this survey.")
+            Return False
+        End Try
+    End Function
+
+    'loads the colors for the color picker
+    Private Function loadColors(ByVal override As Boolean) As Boolean
+        Trace.Warn("Loading Colors")
+        Try
+            If Not (override) Then
+                'clear out existing data
+                If (Me.dsCommon.Tables.Contains("Colors")) Then
+                    Me.dsCommon.Tables("Colors").Rows.Clear()
+                End If
+                Me.ddlColorPicker.Items.Clear()
+
+                'get the user levels available
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "webSafeColors order by red, green, blue"
+                sqlCommonAdapter.Fill(Me.dsCommon, "Colors")
+                
+                'initialize the color drop-down
+                Dim li As System.Web.UI.WebControls.ListItem = New System.Web.UI.WebControls.ListItem
+                li.Text = "--Select a Color--"
+                li.Value = -1
+                Me.ddlColorPicker.Items.Insert(0, li)
+
+                'load the colors into the drop down
+                Dim dr As DataRow
+                For Each dr In Me.dsCommon.Tables("Colors").Rows
+                    li = New System.Web.UI.WebControls.ListItem
+                    'build opposition color
+                    Dim strbldrColor As New StringBuilder
+                    strbldrColor.Append(Hex(255 - CType(dr.Item("Red"), Integer)).PadLeft(2, "0"))
+                    strbldrColor.Append(Hex(255 - CType(dr.Item("Green"), Integer)).PadLeft(2, "0"))
+                    strbldrColor.Append(Hex(255 - CType(dr.Item("Blue"), Integer)).PadLeft(2, "0"))
+
+                    'set list item styles and save list item to drop-down list
+                    li.Attributes.Add("style", "background-color:" & dr.Item("Hexadecimal") & ";color:#" & strbldrColor.ToString & ";text-align:center")
+                    li.Text = dr.Item("Hexadecimal")
+                    li.Value = dr.Item("Hexadecimal")
+                    Me.ddlColorPicker.Items.Add(li)
+                Next
+                Me.ddlColorPicker.DataBind()
+                Return True
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Unable to load the colors")
+            Return False
+        End Try
+    End Function
+
+    'get the owner's information
+    Private Function getOwnerInfo(ByRef strOwnerEmail As String, ByRef strOwnerName As String, ByRef intOwnerType As Integer, Optional ByVal isOwner As Boolean = False) As Boolean
+        Try
+            Dim ds As DataSet = New DataSet
+
+            'get the owner's information
+            If (isOwner) Then
+                'get the user's information
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempUsers where seqUserID = " & Session("UserID")
+                sqlCommonAdapter.Fill(ds, "UserInfo")
+            Else
+                'find the real owner of this template and his/her information
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempPermission fp where fp.seqTemplate = " & _
+                    Session("seqTemplate") & " and fp.blnOwner = 1"
+                sqlCommonAdapter.Fill(ds, "Owner")
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempUsers fu where fu.seqUserID = " & _
+                    ds.Tables("Owner").Rows(0).Item("seqUserID")
+                sqlCommonAdapter.Fill(ds, "UserInfo")
+            End If
+
+            'store the e-mail, user name, and user type
+            intOwnerType = ds.Tables("UserInfo").Rows(0).Item("intUserType")
+            strOwnerEmail = ds.Tables("UserInfo").Rows(0).Item("strEmail")
+            'If the user has a name in the DB use it.  Otherwise use the HID if it exists. Otherwise use the stored email
+            If ((Trim("" & ds.Tables("UserInfo").Rows(0).Item("strFirstName")) = "") _
+                    And (Trim("" & ds.Tables("UserInfo").Rows(0).Item("strLastName")) = "") _
+                    And (Trim("" & ds.Tables("UserInfo").Rows(0).Item("strMiddleName")) = "") _
+                    And (Trim("" & ds.Tables("UserInfo").Rows(0).Item("strNameSuffix")) = "")) Then
+                If (Trim("" & ds.Tables("UserInfo").Rows(0).Item("strHID")) = "") Then
+                    strOwnerName = strOwnerEmail
+                Else
+                    strOwnerName = ds.Tables("UserInfo").Rows(0).Item("strHID")
+                End If
+            Else
+                strOwnerName = ds.Tables("UserInfo").Rows(0).Item("strLastName") & ", " & _
+                        ds.Tables("UserInfo").Rows(0).Item("strFirstName") & " " & _
+                        ds.Tables("UserInfo").Rows(0).Item("strMiddleName") & " " & _
+                        ds.Tables("UserInfo").Rows(0).Item("strNameSuffix")
+            End If
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+#End Region
+
+#Region "Control Settings"
+    'populates the controls with the selected comment item
+    Private Sub setControls()
+        Trace.Warn("Setting Controls")
+        'set the basic page controls based on whether or not we are working with a new survey
+        If (Session("seqSurvey") > 0) Then
+            Try
+                Me.txtSurveyName.Text = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("strComments")
+                Me.wdcClosingDate.Value = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("datClosing")
+                Me.wneCourseNumber.Text = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("strSymbol")
+                Me.chkActive.Checked = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("blnActive")
+                Me.chkOptional.Checked = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("blnOptional")
+                Me.lblNavBar.Text = "Survey " & Session("SurveyRow") + 1 & " of " & Session("SurveyMax")
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+            End Try
+        Else
+            Me.txtSurveyName.Text = ""
+            Me.wdcClosingDate.Value = Now
+            Me.wneCourseNumber.Text = ""
+            Me.chkActive.Checked = 1
+            Me.chkOptional.Checked = 0
+            Me.lblNavBar.Text = "Survey " & Session("SurveyRow") + 1 & " of " & Session("SurveyMax") + 1
+        End If
+
+        'determine what text should be placed in the copy control.
+        If (Session("UserType") <> 4) Then
+            'set visibility and text of the controls based on the results
+            If (CType(Session("isSurveyOwner"), Boolean) Or CType(Session("isSurveyDelegate"), Boolean)) Then
+                If (Session("Machine") = "Production") Then
+                    Me.hlpCopy.ToolTip = "Clicking this button will copy the Survey to Development."
+                    Me.btnCopy.Text = "Copy to Development"
+                    Me.btnCopy.ToolTip = "Copy to Development"
+                Else
+                    Me.hlpCopy.ToolTip = "Clicking this button will notify the Survey Administrator(s) that you wish to publish this survey."
+                    Me.btnCopy.Text = "Publication Request"
+                    Me.btnCopy.ToolTip = "Publication Request"
+                End If
+            End If
+        Else
+            If (Not Session("isDirty")) Then
+                If (Session("Machine") = "Development") Then
+                    Me.hlpCopy.ToolTip = "Clicking this button will copy this Survey to Production."
+                    Me.btnCopy.Text = "Copy to Production"
+                    Me.btnCopy.ToolTip = "Copy to Production"
+                Else
+                    Me.hlpCopy.ToolTip = "Clicking this button will copy the Survey to Development."
+                    Me.btnCopy.Text = "Copy to Development"
+                    Me.btnCopy.ToolTip = "Copy to Development"
+                End If
+            End If
+        End If
+
+        'disable inputs on production
+        If (Session("Machine") = "Development" And (Session("Results") <= 0 Or Session("UserType") = 4)) Then
+            Me.txtSurveyName.Enabled = True
+            Me.wdcClosingDate.Enabled = True
+            Me.wneCourseNumber.Enabled = True
+            Me.chkActive.Enabled = True
+            Me.chkOptional.Enabled = True
+            Me.ddlColorPicker.Disabled = False
+        Else
+            Me.txtSurveyName.Enabled = False
+            Me.wdcClosingDate.Enabled = False
+            Me.wneCourseNumber.Enabled = False
+            Me.chkActive.Enabled = True
+            Me.chkOptional.Enabled = False
+            Me.ddlColorPicker.Disabled = True
+        End If
+
+        setServerText()
+        myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+    End Sub
+#End Region
+
+#Region "Checks"
+    'Switch the server
+    Private Sub chkServerSwitch_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkServerSwitch.CheckedChanged
+        Trace.Warn("Server Switch")
+
+        'If the user has a survey selected make sure it exists on the other server before transitioning
+        Dim boolSurveyExists As Boolean
+        If (Session("seqSurvey") <> -1) Then
+            boolSurveyExists = checkExistence()
+        Else
+            boolSurveyExists = False
+        End If
+
+        'if it exists do the switch otherwise abort and alert the user
+        If (boolSurveyExists) Then
+            'Switch the server in name and connection
+            myUtility.swapMachine()
+            setServerText()
+            Me.chkServerSwitch.Checked = False
+
+            'load the survey data
+            If Not (loadData()) Then
+                alert("Failed to load the questions.")
+            Else
+                'get the survey results
+                surveyResults()
+
+                'to determine what of the nav bar buttons should be available
+                setNavBar()
+
+                'populates the controls with the selected survey
+                setControls()
+
+                'set the page options based on question availability and the whether or not the page is dirty
+                myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+            End If
+        Else
+            alert("Server switch aborted.  This survey does not exist on the other server.  If you have changed the name of an existing survey without first publishing to production this may be why this has failed.")
+            Me.chkServerSwitch.Checked = False
+        End If
+    End Sub
+
+    'Checks for the existence of the selected comment tag on the other server
+    Private Function checkExistence() As Boolean
+        Trace.Warn("Checking comment tag Existence")
+        Try
+            'Get the surveys based on the current template
+           Dim oldCommand As String
+            If (Session("UserType") = 4) Then
+                oldCommand = Me.SqlSelectCommand1.CommandText
+                Me.SqlSelectCommand1.CommandText &= " WHERE seqTemplate = " & Session("seqTemplate")
+            Else
+                oldCommand = Me.SqlSelectCommand1.CommandText
+                Me.SqlSelectCommand1.CommandText = "SELECT fs.seqSurvey, fs.intCreatorID, fs.seqTemplate, fs.datClosing, " & _
+                "fs.strComments, fs.strSymbol, fs.blnOptional, fs.blnActive, fs.strColor, fs.intSubmitted, fs.datCreatedDate " & _
+                "FROM " & myUtility.getProdExtension() & "fempSurvey fs inner join " & myUtility.getProdExtension() & "fempPermission fp on fs.seqSurvey = fp.seqSurvey " & _
+                "Where (fs.seqTemplate = " & Session("seqTemplate") & " And fp.seqUserID = " & Session("UserID") & ")"
+            End If
+
+            'dump any data in questions before loading
+            If (Me.dsCommon.Tables.Contains("Surveys")) Then
+                Me.dsCommon.Tables("Surveys").Rows.Clear()
+            End If
+
+            'get the survey data
+            Me.sqlSurvey.SelectCommand.Connection = Me.commonConn
+            Me.sqlSurvey.SelectCommand.CommandText = Me.sqlSurvey.SelectCommand.CommandText.Replace("VARCONN.", myUtility.getExtension(True))
+            Me.sqlSurvey.Fill(dsCommon, "Surveys")
+            Me.SqlSelectCommand1.CommandText = oldCommand
+
+            'determine if the survey exists in the result set and return true if it is
+            Dim dr As DataRow
+            For Each dr In Me.dsCommon.Tables("Surveys").Rows()
+                If (dr.Item("strComments") = Me.txtSurveyName.Text) Then
+                    Return True
+                End If
+            Next
+            Return False
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+
+    'determines if the user has owner/delegate access
+    Private Sub isOwner()
+        sqlCommonAdapter.SelectCommand = sqlCommonAction
+        sqlCommonAction.Connection = Me.commonConn
+        myUtility.determineUserOwnership(sqlCommonAction, sqlCommonAdapter)
+    End Sub
+
+    'get the results for the current survey
+    Private Sub surveyResults()
+        'Get count of survey results from production
+        sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempSurvey fs, " & myUtility.getProdExtension() & "fempResults fr where seqTemplate = " & _
+            Session("seqTemplate") & " and fs.seqSurvey = fr.seqSurvey and fs.seqSurvey = " & Session("seqSurvey")
+        Trace.Warn(sqlCommonAction.CommandText)
+        sqlCommonAdapter.Fill(Me.dsCommon, "SurveyResults")
+        Session("Results") = Me.dsCommon.Tables("SurveyResults").Rows.Count()
+    End Sub
+#End Region
+
+#Region "Find"
+    'finds the row of the survey we're looking for
+    Private Function findRow(ByVal strTable As String, ByVal userID As Integer) As Integer
+        Dim intRow As Integer = 0
+        Dim dr As DataRow
+        For Each dr In Me.dsCommon.Tables(strTable).Rows()
+            If (dr.Item("seqSurvey") = userID) Then
+                Return intRow
+            Else
+                intRow += 1
+            End If
+        Next
+        Return -1
+    End Function
+#End Region
+
+#Region "Page Switch"
+    'Takes the user back to the template they were working on
+    Private Sub btnTop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTop.Click
+        Session("CurrentPage") = "./Template.aspx"
+        Response.Redirect(Session("CurrentPage"))
+    End Sub
+
+    'brings up a pop-up window with the template preview in it
+    Private Sub btnTemplatePreview_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTemplatePreview.Click
+        Session("BackgroundColor") = Me.ddlColorPicker.Value
+        Response.Write("<script>newWin = window.open('./Preview.aspx', 'PreviewWindow', 'width=600,height=400,scrollbars=yes,toolbar=no,titlebar=no,status=no,resizable=yes,menubar=no');newWin.focus();</script>")
+        If (loadData()) Then
+            'get the survey results
+            surveyResults()
+
+            'to determine what of the nav bar buttons should be available
+            setNavBar()
+
+            'reset the page controls
+            setControls()
+            Session("TransExists") = False
+            myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+        Else
+            alert("Error loading the surveys for this template.")
+        End If
+    End Sub
+#End Region
+
+#Region "Settings"
+    'sets the selected color on the drop-down list
+    Private Function setColor() As Boolean
+        Trace.Warn("Setting Color")
+
+        'locate and select the current color
+        Dim item As ListItem
+        Dim index As Integer = 0
+        For Each item In Me.ddlColorPicker.Items
+            If (Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("strColor") = item.Value) Then
+                Me.ddlColorPicker.SelectedIndex = index
+                Return True
+            Else
+                index += 1
+            End If
+        Next
+        Me.ddlColorPicker.SelectedIndex = 0
+        Return True
+    End Function
+
+    'to determine what of the nav bar buttons should be available
+    Private Sub setNavBar()
+        'to determine what of the nav bar buttons should be available
+        If (Session("Machine") = "Production") Then
+            myNavBar.wnb_MoveTo(Me.navButtons, Session("SurveyMax"), Session("SurveyRow"), Switch, True)
+        Else
+            myNavBar.wnb_MoveTo(Me.navButtons, Session("SurveyMax"), Session("SurveyRow"), Switch)
+        End If
+    End Sub
+#End Region
+
+#Region "Nav Bar Events"
+    'Moves the user to the first record
+    Private Sub wnbSurveys_MoveToStart(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles btnStart.Click
+        If Not (loadSurveys()) Then
+            alert("Failed to load the delegates/owners for this survey.")
+        Else
+            Try
+                Session("SurveyRow") = 0
+                Session("seqSurvey") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("seqSurvey")
+                If Not (loadDataLite()) Then
+                    alert("Failed to load the delegates/owners for this survey.")
+                Else
+                    surveyResults()
+                    isOwner()
+                    Session("SurveyName") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("strComments")
+                    setColor()
+                    setNavBar()
+                    setControls()
+                    myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+                End If
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Error moving to the first survey.")
+            End Try
+        End If
+    End Sub
+
+    'Moves the user to the previous record
+    Private Sub wnbSurveys_MovePrev(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles btnPrev.Click
+        If Not (loadSurveys()) Then
+            alert("Failed to load the delegates/owners for this survey.")
+        Else
+            Try
+                Session("SurveyRow") -= 1
+                Session("seqSurvey") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("seqSurvey")
+                If Not (loadDataLite()) Then
+                    alert("Failed to load the delegates/owners for this survey.")
+                Else
+                    surveyResults()
+                    isOwner()
+                    Session("SurveyName") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("strComments")
+                    setColor()
+                    setNavBar()
+                    setControls()
+                    myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+                End If
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Error moving to the previous survey.")
+            End Try
+        End If
+    End Sub
+
+    'reloads the page and the data from the database while attempting to locate the user's location
+    Private Sub wnbSurveys_MoveReload(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles btnReload.Click
+        If Not (loadData()) Then
+            alert("Failed to load the delegates/owners for this survey.")
+        Else
+            Try
+                isOwner()
+                If (Session("seqSurvey") <> -1) Then
+                    setColor()
+                End If
+                surveyResults()
+                setNavBar()
+                setControls()
+                myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Error resetting the current survey.")
+            End Try
+        End If
+    End Sub
+
+    'Moves the user to the next record
+    Private Sub wnbSurveys_MoveNext(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles btnNext.Click
+        If Not (loadSurveys()) Then
+            alert("Failed to load the delegates/owners for this survey.")
+        Else
+            Try
+                Session("SurveyRow") += 1
+                Session("seqSurvey") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("seqSurvey")
+                If Not (loadDataLite()) Then
+                    alert("Failed to load the delegates/owners for this survey.")
+                Else
+                    surveyResults()
+                    isOwner()
+                    Session("SurveyName") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("strComments")
+                    setColor()
+                    setNavBar()
+                    setControls()
+                    myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+                End If
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Error moving to the next survey.")
+            End Try
+        End If
+    End Sub
+
+    'Moves the user to the last record
+    Private Sub wnbSurveys_MoveToEnd(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles btnLast.Click
+        If Not (loadSurveys()) Then
+            alert("Failed to load the delegates/owners for this survey.")
+        Else
+            Try
+                Session("SurveyRow") = Session("SurveyMax") - 1
+                Session("seqSurvey") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("seqSurvey")
+                If Not (loadDataLite()) Then
+                    alert("Failed to load the delegates/owners for this survey.")
+                Else
+                    surveyResults()
+                    isOwner()
+                    Session("SurveyName") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("strComments")
+                    setColor()
+                    setNavBar()
+                    setControls()
+                    myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+                End If
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Error moving to the last survey.")
+            End Try
+        End If
+    End Sub
+
+    'Inserts a record into the table
+    Private Sub wnbSurveys_InsertRow(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles btnNew.Click
+        If Not (loadSurveys()) Then
+            alert("Failed to load the delegates/owners for this survey.")
+        Else
+            Try
+                Session("seqSurvey") = -1
+                If Not (loadDataLite()) Then
+                    alert("Failed to load the delegates/owners for this survey.")
+                Else
+                    surveyResults()
+                    Session("SurveyRow") = Session("SurveyMax")
+                    Me.dsCommon.Tables("Surveys").Rows.Add(Me.dsCommon.Tables("Surveys").NewRow())
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("seqSurvey") = Session("seqSurvey")
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("intCreatorID") = Session("UserID")
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("seqTemplate") = Session("seqTemplate")
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("strComments") = ""
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("strSymbol") = ""
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("blnOptional") = 0
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("blnActive") = 1
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("intSubmitted") = 0
+                    myNavBar.wnb_MoveTo(Me.navButtons, Session("SurveyMax"), Session("SurveyRow"))
+                    Me.ddlColorPicker.SelectedIndex = 0
+                    setNavBar()
+                    setControls()
+                    myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+                End If
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Error creating new survey.")
+            End Try
+        End If
+    End Sub
+#End Region
+
+#Region "Page Action"
+    'Reacts to the user performing some kind of selection
+    Private Sub btnSubmit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSubmit.Click
+        Trace.Warn("Entering Page Action")
+        Dim strValue As String
+        Dim failure As Boolean
+        Dim blnContinue As Boolean = True
+        strValue = Me.ddlPageOptions.SelectedValue
+
+        If (strValue <> "Reset") Then
+            'refresh all of the page data
+            If Not (loadData(True)) Then
+                blnContinue = False
+                alert("Failed to load the surveys for the current template. " & strValue & " aborted.")
+            End If
+        End If
+
+        'check for possible malicious code entries
+        If Not (myUtility.goodInput(Me.txtSurveyName, True)) Then
+            blnContinue = False
+            alert("Possible malicious code entry in the survey name.  " & strValue & " aborted.")
+        End If
+
+        If (blnContinue) Then
+            'do an insert/update/delete/reset based on the page option selected
+            If (strValue = "Insert") Then
+                failure = doInsert()
+            ElseIf (strValue = "Update") Then
+                failure = doUpdate()
+            ElseIf (strValue = "Delete") Then
+                failure = doDelete()
+            ElseIf (strValue = "Reset") Then
+                failure = doReset()
+            End If
+
+            'determine if we need to reload the data
+            If (strValue <> "Reset") Then
+                If Not (loadData()) Then
+                    blnContinue = False
+                    alert("Failed to load the surveys for the current template.")
+                End If
+            End If
+
+            If (blnContinue) Then
+                'get the survey results
+                surveyResults()
+
+                'to determine what of the nav bar buttons should be available
+                setNavBar()
+
+                'reset the page controls
+                If Not (failure) Then
+                    setControls()
+                End If
+                Session("TransExists") = False
+                myUtility.optionPreSetTemplate(Session("seqSurvey"), Session("SurveyMax"), Me.ddlPageOptions, False)
+            End If
+        End If
+    End Sub
+#End Region
+
+#Region "Insert Code"
+    'drives the commit and roll-back operations of the insert
+    Private Function doInsert() As Boolean
+        Try
+            'start transaction
+            If (myUtility.setupTransaction(sqlCommonAction, Me.commonConn)) Then
+                Dim failure As Boolean = False
+                'Check for actual information to insert
+                If (Me.txtSurveyName.Text <> "") Then
+                    If (Session("seqSurvey") = -1) Then
+                        'If we're inserting a new record then add it onto the end of the recordset and add it to the existing surveys
+                        If (insertSurvey(sqlCommonAction, sqlCommonAdapter)) Then
+                            If (insertTags(sqlCommonAction, sqlCommonAdapter)) Then
+                                If (insertPermissions(sqlCommonAction, sqlCommonAdapter)) Then
+                                    Session("SurveyMax") += 1
+                                    Session("seqSurvey") = Session("newSeqSurvey")
+                                    sqlCommonAction.Transaction.Commit()
+                                Else
+                                    sqlCommonAction.Transaction.Rollback()
+                                    alert("Error adding survey to the template.")
+                                    failure = True
+                                End If
+                            Else
+                                sqlCommonAction.Transaction.Rollback()
+                                alert("Error adding survey to the template.")
+                                failure = True
+                            End If
+                        Else
+                            sqlCommonAction.Transaction.Rollback()
+                            alert("Error adding survey to the template.")
+                            failure = True
+                        End If
+                    Else
+                        'If we're inserting an existing record then insert a copy of it into the database and add it to the existing surveys
+                        If (insertSurvey(sqlCommonAction, sqlCommonAdapter)) Then
+                            If (insertTags(sqlCommonAction, sqlCommonAdapter)) Then
+                                If (insertPermissions(sqlCommonAction, sqlCommonAdapter)) Then
+                                    Session("SurveyMax") += 1
+                                    Session("seqSurvey") = Session("newSeqSurvey")
+                                    sqlCommonAction.Transaction.Commit()
+                                Else
+                                    sqlCommonAction.Transaction.Rollback()
+                                    alert("Error adding survey to the template.")
+                                    failure = True
+                                End If
+                            Else
+                                sqlCommonAction.Transaction.Rollback()
+                                alert("Error adding survey to the template.")
+                                failure = True
+                            End If
+                        Else
+                            sqlCommonAction.Transaction.Rollback()
+                            alert("Error adding survey to the template.")
+                            failure = True
+                        End If
+                    End If
+                Else
+                    alert("You must have some text in the Survey Name field to add this Survey to the Template.")
+                    failure = True
+                    sqlCommonAction.Transaction.Rollback()
+                End If
+                Return failure
+            Else
+                If (Session("transExists") = True) Then
+                    sqlCommonAction.Transaction.Rollback()
+                End If
+                alert("Error adding survey to the template.")
+                Return True
+            End If
+        Catch ex As Exception
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            alert("Error adding survey to the template.")
+            Return True
+        End Try
+    End Function
+
+    'attempts to insert a survey, returns false if it cannot
+    Private Function insertSurvey(ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter) As Boolean
+        Try
+            'parameterized the text input to allow for things like quotes to get through
+            Dim param0 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strComments", System.Data.SqlDbType.VarChar, 1800, "strComments")
+            param0.Value = Me.txtSurveyName.Text
+            sqlCommonAction.Parameters.Add(param0)
+            Dim param1 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strSymbol", System.Data.SqlDbType.VarChar, 16, "strSymbol")
+            param1.Value = Me.wneCourseNumber.Text
+            sqlCommonAction.Parameters.Add(param1)
+
+            'attempt to add the new record to the database
+            If (Me.ddlColorPicker.Value <> "-1") Then
+                sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempSurvey (intCreatorID, seqTemplate, datClosing, strComments, " & _
+                "strSymbol, blnOptional, blnActive, intSubmitted, datCreatedDate, strColor) VALUES (" & Session("UserID") & ", " & _
+                Session("seqTemplate") & ", '" & Me.wdcClosingDate.Value & "', @strComments, @strSymbol, " & _
+                IIf(Me.chkOptional.Checked, 1, 0) & ", " & IIf(Me.chkActive.Checked, 1, 0) & ", 0, '" & Now & "', '" & _
+                Me.ddlColorPicker.Value & "')"
+            Else
+                sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempSurvey (intCreatorID, seqTemplate, datClosing, strComments, " & _
+                "strSymbol, blnOptional, blnActive, intSubmitted, datCreatedDate) VALUES (" & Session("UserID") & ", " & _
+                Session("seqTemplate") & ", '" & Me.wdcClosingDate.Value & "', @strComments, @strSymbol, " & _
+                IIf(Me.chkOptional.Checked, 1, 0) & ", " & IIf(Me.chkActive.Checked, 1, 0) & ", 0, '" & Now & "')"
+            End If
+            sqlCommonAction.ExecuteNonQuery()
+
+            'get the survey's sequence number
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempSurvey where seqTemplate = " & Session("seqTemplate") & _
+            " and strComments = @strComments order by datCreatedDate desc"
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+            sqlCommonAdapter.Fill(Me.dsCommon, "NewSurvey")
+            Session("newSeqSurvey") = Me.dsCommon.Tables("NewSurvey").Rows(0).Item("seqSurvey")
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+
+    'attempts to insert the comments into the survey tags tables, returns false if it cannot
+    Private Function insertTags(ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter) As Boolean
+        Try
+            'parameterized the text input to allow for things like quotes to get through
+            sqlCommonAction.Parameters.Clear()
+            Dim param2 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strTagTitle", System.Data.SqlDbType.VarChar, 150, "strTagTitle")
+            sqlCommonAction.Parameters.Add(param2)
+
+            'add the template comments to the new survey
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempComments where seqTemplate = " & Session("seqTemplate") & _
+            " Order by intTagID"
+            param2.Value = ""
+            sqlCommonAdapter.Fill(Me.dsCommon, "Comments")
+
+            'go through each comment and add each for the new survey to the tags table
+            Dim dr As DataRow
+            For Each dr In Me.dsCommon.Tables("Comments").Rows()
+                sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempTags (seqSurvey, seqTemplate, intTagID, strTagTitle, " & _
+                "strTagValue) VALUES (" & Session("newSeqSurvey") & ", " & Session("seqTemplate") & ", " & dr.Item("intTagID") & _
+                ", @strTagTitle, '')"
+                param2.Value = dr.Item("strTemplateTagName")
+                sqlCommonAction.ExecuteNonQuery()
+            Next
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+
+    'attempts to insert permissions for the creator into the permissions table, returns false if it cannot
+    Private Function insertPermissions(ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter) As Boolean
+        Try
+            'parameterized the text input to allow for things like quotes to get through
+            sqlCommonAction.Parameters.Clear()
+
+            'Add permissions for the survey
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getProdExtension() & "fempPermission (seqUserID, seqTemplate, seqSurvey, intCreatorID, " & _
+                "datCreatedDate, blnOwner, blnDelegate, blnUser) VALUES (" & Session("UserID") & ", -1" & _
+                ", " & Session("newSeqSurvey") & ", " & Session("UserID") & ", '" & Now & "', 1, 1, 1)"
+            sqlCommonAction.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+#End Region
+
+#Region "Update Code"
+    'drives the commit and roll-back operations of the update
+    Private Function doUpdate() As Boolean
+        Try
+            'start transaction
+            If (myUtility.setupTransaction(sqlCommonAction, Me.commonConn)) Then
+                Dim failure As Boolean = False
+                'Check for actual information to update
+                If (Me.txtSurveyName.Text <> "") Then
+                    If (updateSurvey(sqlCommonAction, sqlCommonAdapter)) Then
+                        sqlCommonAction.Transaction.Commit()
+                    Else
+                        sqlCommonAction.Transaction.Rollback()
+                        alert("Error updating survey for this template.")
+                        failure = True
+                    End If
+                Else
+                    alert("You must have some text in the Survey Name field to update this Survey.")
+                    failure = True
+                    sqlCommonAction.Transaction.Rollback()
+                End If
+                Return failure
+            Else
+                If (Session("transExists") = True) Then
+                    sqlCommonAction.Transaction.Rollback()
+                End If
+                alert("Error updating survey in the template.")
+                Return True
+            End If
+        Catch ex As Exception
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            alert("Error updating survey in the template.")
+            Return True
+        End Try
+    End Function
+
+    'attempts to update a survey, returns false if it cannot
+    Private Function updateSurvey(ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter) As Boolean
+        'attempt to update the record in the database
+        Try
+            'parameterized the text input to allow for things like quotes to get through
+            Dim param0 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strComments", System.Data.SqlDbType.VarChar, 50, "strComments")
+            param0.Value = Me.txtSurveyName.Text
+            sqlCommonAction.Parameters.Add(param0)
+
+            If (Me.ddlColorPicker.Value <> "-1") Then
+                sqlCommonAction.CommandText = "Update " & myUtility.getExtension() & "fempSurvey SET strComments = @strComments, strSymbol = " & Me.wneCourseNumber.Value & _
+                ", datClosing = '" & Me.wdcClosingDate.Value & "', blnOptional = " & IIf(Me.chkOptional.Checked, 1, 0) & _
+                ", blnActive = " & IIf(Me.chkActive.Checked, 1, 0) & ", strColor = '" & Me.ddlColorPicker.Value & _
+                "' WHERE seqTemplate = " & Session("seqTemplate") & " and seqSurvey = " & Session("seqSurvey")
+            Else
+                sqlCommonAction.CommandText = "Update " & myUtility.getExtension() & "fempSurvey SET strComments = @strComments, strSymbol = " & Me.wneCourseNumber.Value & _
+                ", datClosing = '" & Me.wdcClosingDate.Value & "', blnOptional = " & IIf(Me.chkOptional.Checked, 1, 0) & _
+                ", blnActive = " & IIf(Me.chkActive.Checked, 1, 0) & ", strColor = '#0000FF'" & _
+                " WHERE seqTemplate = " & Session("seqTemplate") & " and seqSurvey = " & Session("seqSurvey")
+            End If
+            Trace.Warn(sqlCommonAction.CommandText)
+            sqlCommonAction.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+#End Region
+
+#Region "Delete Code"
+    'deletes the current survey from the survey, tags, delegates, and survey groups tables
+    Private Function doDelete() As Boolean
+        Try
+            'set up the transaction
+            If (myUtility.setupTransaction(sqlCommonAction, Me.commonConn)) Then
+                Dim failure As Boolean = False
+
+                'do the deletion
+                If (deleteTags(sqlCommonAction, sqlCommonAdapter)) Then
+                    If (deleteDelegates(sqlCommonAction, sqlCommonAdapter)) Then
+                        If (deleteSurveyGroups(sqlCommonAction, sqlCommonAdapter)) Then
+                            If (deleteSurvey(sqlCommonAction, sqlCommonAdapter)) Then
+                                sqlCommonAction.Transaction.Commit()
+                                'determine if we need to take a step back 
+                                If (Session("SurveyMax") = 1) Then
+                                    Session("SurveyRow") = 0
+                                    Session("seqSurvey") = -1
+                                    Session("SurveyMax") = 0
+                                    Me.dsCommon.Tables("Surveys").Rows.Add(Me.dsCommon.Tables("Surveys").NewRow())
+                                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("seqSurvey") = Session("seqSurvey")
+                                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("intCreatorID") = Session("UserID")
+                                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("seqTemplate") = Session("seqTemplate")
+                                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("strComments") = ""
+                                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("strSymbol") = ""
+                                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("blnOptional") = 0
+                                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("blnActive") = 1
+                                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("intSubmitted") = 0
+                                    Me.ddlColorPicker.SelectedIndex = 0
+                                ElseIf ((Session("SurveyRow") + 1) = Session("SurveyMax")) Then
+                                    Session("SurveyMax") -= 1
+                                    Session("SurveyRow") -= 1
+                                    Session("seqSurvey") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow")).Item("seqSurvey")
+                                Else
+                                    Session("SurveyMax") -= 1
+                                    Session("seqSurvey") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow") + 1).Item("seqSurvey")
+                                    Session("SurveyName") = Me.dsCommon.Tables("Surveys").Rows(Session("SurveyRow") + 1).Item("strComments")
+                                End If
+
+                                'notify the survey owners of the loss of their survey
+                                If (Me.dsCommon.Tables.Contains("SurveyNotifyList")) Then
+                                    If (Me.dsCommon.Tables("SurveyNotifyList").Rows.Count > 0) Then
+                                        Dim row As DataRow
+                                        For Each row In Me.dsCommon.Tables("SurveyNotifyList").Rows()
+                                            If Not (sendDeleteMail(row.Item("strEmail"), row.Item("strComments"))) Then
+                                                alert("Failed to notify " & _
+                                                row.Item("strFirstName") & " " & row.Item("strLastName") & _
+                                                " about the deletion of the survey called " & _
+                                                row.Item("strComments") & ".")
+                                            End If
+                                        Next
+                                    End If
+                                End If
+                            Else
+                                sqlCommonAction.Transaction.Rollback()
+                                alert("Error deleting survey from this template.")
+                                failure = True
+                            End If
+                        Else
+                            sqlCommonAction.Transaction.Rollback()
+                            alert("Error deleting survey from this template.")
+                            failure = True
+                        End If
+                    Else
+                        sqlCommonAction.Transaction.Rollback()
+                        alert("Error deleting survey from this template.")
+                        failure = True
+                    End If
+                Else
+                    sqlCommonAction.Transaction.Rollback()
+                    alert("Error deleting survey from this template.")
+                    failure = True
+                End If
+                Return failure
+            Else
+                If (Session("transExists") = True) Then
+                    sqlCommonAction.Transaction.Rollback()
+                End If
+                alert("Error deleting survey from template.")
+                Return True
+            End If
+        Catch ex As Exception
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            alert("Error deleting survey from template.")
+            Return True
+        End Try
+    End Function
+
+    'attempts to delete a survey, returns false if it cannot
+    Private Function deleteSurvey(ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, Optional ByVal isCopy As Boolean = False) As Boolean
+        'attempt to delete the record from the database
+        If (isCopy) Then
+            'Remove all Tags for the surveys if there are surveys otherwise return true
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempSurvey where seqTemplate = " & Session("seqTemplate") & _
+            " and seqSurvey = " & Session("seqSurvey")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the survey for the template.")
+                Return False
+            End Try
+        Else
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempSurvey where seqTemplate = " & Session("seqTemplate") & _
+            " and seqSurvey = " & Session("seqSurvey")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the survey for the template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'attempts to delete the comments in the survey tags tables, returns false if it cannot
+    Private Function deleteTags(ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, Optional ByVal isCopy As Boolean = False) As Boolean
+        'attempt to delete the record from the database
+        If (isCopy) Then
+            'Remove all Tags for the surveys if there are surveys otherwise return true
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempTags where seqTemplate = " & Session("seqTemplate") & _
+                " and seqsurvey = " & Session("seqSurvey")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the survey for the template.")
+                Return False
+            End Try
+        Else
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempTags where seqTemplate = " & Session("seqTemplate") & _
+                " and seqsurvey = " & Session("seqSurvey")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the survey for the template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'attempts to delete the delegates, owners, and users of the survey from the permissions table
+    Private Function deleteDelegates(ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter) As Boolean
+        'attempt to delete the record from the database
+        Try
+            'determine if the survey still exists on the other side
+
+            sqlCommonAction.CommandText = "SELECT * from " & myUtility.getExtension(True) & "fempSurvey where seqSurvey = " & _
+                Session("seqSurvey")
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+            sqlCommonAdapter.Fill(Me.dsCommon, "SurveyExistence")
+
+            If (Me.dsCommon.Tables("SurveyExistence").Rows.Count() = 0) Then
+                'make a list of all individuals that will need to be notified of the loss of their surveys
+                sqlCommonAction.CommandText = "SELECT fp.seqUserID, fs.strComments, fu.strEmail, " & _
+                "fu.strLastName, fu.strFirstName, fu.strMiddleName from " & _
+                "" & myUtility.getProdExtension() & "fempPermission fp, " & myUtility.getExtension() & "fempSurvey fs, " & myUtility.getProdExtension() & "fempUsers fu where fp.seqUserID = " & _
+                "fu.seqUserID And fs.seqSurvey = fp.seqSurvey and fs.seqSurvey = " & Session("seqSurvey") & _
+                " and (fp.blnOwner = 1 or fp.blnDelegate = 1) order by fp.seqSurvey"
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(Me.dsCommon, "SurveyNotifyList")
+
+                sqlCommonAction.CommandText = "Delete from " & myUtility.getProdExtension() & "fempPermission where seqTemplate = -1 and seqsurvey = " & Session("seqSurvey")
+                sqlCommonAction.ExecuteNonQuery()
+            End If
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+
+    'attempts to delete the survey groups set up for sending out this survey
+    Private Function deleteSurveyGroups(ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter) As Boolean
+        'attempt to delete the record from the database
+        Try
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getProdExtension() & "fempGroups where seqSurvey = " & Session("seqSurvey")
+            sqlCommonAction.ExecuteNonQuery()
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+        Return True
+    End Function
+#End Region
+
+#Region "Reset Code"
+    'resets the page, will remove any new item being worked on at the end of the list
+    Private Function doReset() As Boolean
+        If Not (loadData()) Then
+            alert("Failed to load the delegates/owners for this survey.")
+        Else
+            Try
+                If (Session("seqSurvey") = -1) Then
+                    Me.dsCommon.Tables("Surveys").Rows.Add(Me.dsCommon.Tables("Surveys").NewRow())
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("seqSurvey") = Session("seqSurvey")
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("intCreatorID") = Session("UserID")
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("seqTemplate") = Session("seqTemplate")
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("strComments") = ""
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("strSymbol") = ""
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("blnOptional") = 0
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("blnActive") = 1
+                    Me.dsCommon.Tables("Surveys").Rows(Session("SurveyMax")).Item("intSubmitted") = 0
+                    Me.ddlColorPicker.SelectedIndex = 0
+                End If
+                Return False
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Error resetting the survey.")
+                Return True
+            End Try
+        End If
+    End Function
+#End Region
+
+#Region "Survey Copy Action"
+    'Handles a request to copy or the actual copy Production <--> Development.
+    Private Sub btnCopy_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCopy.Click
+        'if it's a publication request then send an e-mail to those that need it.
+        If (Me.btnCopy.Text = "Publication Request") Then
+            Dim strUserName As String
+            Dim strOwnerName As String
+            Dim strUserEmail As String
+            Dim strOwnerEmail As String
+            Dim intUserType As Integer
+            Dim intOwnerType As Integer
+
+            'Set up the common data adapter and select command
+            sqlCommonAction.Connection = Me.commonConn
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+
+            'get the user's and owner's information
+            Dim blnContinue As Boolean = True
+            If (CType(Session("isSurveyOwner"), Boolean)) Then
+                If Not (getOwnerInfo(strUserEmail, strUserName, intUserType, True)) Then
+                    blnContinue = False
+                End If
+            Else
+                If (getOwnerInfo(strUserEmail, strUserName, intUserType, True)) Then
+                    If Not (getOwnerInfo(strOwnerEmail, strOwnerName, intOwnerType)) Then
+                        blnContinue = False
+                    End If
+                Else
+                    blnContinue = False
+                End If
+            End If
+
+            'Send the email to the appropriate people
+            If (blnContinue) Then
+                If Not (sendMail(strOwnerName, strUserName, strOwnerEmail, strUserEmail, intUserType, intOwnerType, CType(Session("isSurveyOwner"), Boolean))) Then
+                    alert("Failed to send your request to the Survey Administrator.")
+                Else
+                    alert("Your publication request has been sent to the Survey Administrator.")
+                End If
+            End If
+        ElseIf (Me.btnCopy.Text = "Copy to Production") Then
+            'if there are no results go ahead and overwrite the production version if it exists
+            If (Session("Results") = 0 Or Session("UserType") = 4) Then
+                If (executeCopyDelete(True)) Then
+                    alert("The survey has been copied to production.")
+                Else
+                    alert("Failed to copy the survey to production.")
+                End If
+            End If
+        ElseIf (Me.btnCopy.Text = "Copy to Development") Then
+            'if there are no results go ahead and overwrite the development version if it exists
+            If (Session("Results") = 0 Or Session("UserType") = 4) Then
+                If (executeCopyDelete()) Then
+                    alert("The survey has been copied to development.")
+                Else
+                    alert("Failed to copy the survey to development.")
+                End If
+            End If
+        End If
+    End Sub
+
+    'Executes the deletion and copy of the survey
+    Private Function executeCopyDelete(Optional ByVal Production As Boolean = False) As Boolean
+        Trace.Warn("Executing Delete")
+        Try
+            'Load fresh from the DB
+            If (loadData()) Then
+                'set up the transaction
+
+                If (myUtility.setupTransaction(sqlCommonAction, Me.commonConn)) Then
+                    'do db data manipulation and commit if all manipulations are complete
+                    Dim blnContinue As Boolean = True
+                    'remove everything related to the survey
+                    If (blnContinue) Then
+                        If Not (deleteTags(sqlCommonAction, sqlCommonAdapter, True)) Then
+                            blnContinue = False
+                        End If
+                    End If
+                    If (blnContinue) Then
+                        If Not (deleteSurvey(sqlCommonAction, sqlCommonAdapter, True)) Then
+                            blnContinue = False
+                        End If
+                    End If
+                    If (blnContinue) Then
+                        'no errors?  Then we made it far enough to do the copy before comitting this transaction.
+                        If (doCopy(sqlCommonAdapter, sqlCommonAction, Production)) Then
+                            Trace.Warn("Committing transaction")
+                            sqlCommonAction.Transaction.Commit()
+                            sqlCommonAction.Connection.Close()
+                            setControls()
+                            Return True
+                        Else
+                            'roll back the transaction
+                            sqlCommonAction.Transaction.Rollback()
+                            sqlCommonAction.Connection.Close()
+                            setControls()
+                            Return False
+                        End If
+                    Else
+                        'roll back the transaction
+                        sqlCommonAction.Transaction.Rollback()
+                        sqlCommonAction.Connection.Close()
+                        setControls()
+                        Return False
+                    End If
+                Else
+                    If (Session("transExists") = True) Then
+                        sqlCommonAction.Transaction.Rollback()
+                    End If
+                    Return False
+                End If
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            Return False
+        End Try
+    End Function
+
+    'do the copy to the other DB
+    Private Function doCopy(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonInsert As System.Data.SqlClient.SqlCommand, Optional ByVal isProductionCopy As Boolean = False) As Boolean
+        Dim continue As Boolean = True
+
+        Try
+            'Insert new survey
+            If (continue) Then
+                If Not (CopySurvey(sqlCommonAdapter, sqlCommonInsert, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                If Not (CopyTags(sqlCommonAdapter, sqlCommonInsert, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                'no errors?  Then we made it far enough to commit the data and we're nearly done.
+                Return True
+            Else
+                'roll back the transaction
+                Return False
+            End If
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+#End Region
+
+#Region "Survey Copy"
+    'Copy the template
+    Private Function CopySurvey(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonInsert As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying the Survey")
+
+        Try
+            If (isProductionCopy) Then
+                'Set up the insert query
+                sqlCommonInsert.CommandText = "Insert INTO " & myUtility.getProdExtension() & "fempSurvey Select * FROM " & myUtility.getExtension() & "fempSurvey fs " & _
+                    " where fs.seqTemplate = " & Session("seqTemplate") & " and fs.seqSurvey = " & Session("seqSurvey")
+                Trace.Warn(sqlCommonInsert.CommandText)
+                sqlCommonInsert.ExecuteNonQuery()
+            Else
+                'Set up the update query
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempSurvey " & _
+                    " where seqSurvey = " & Session("seqSurvey")
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(Me.dsCommon, "ProdTemplates")
+                Dim row As DataRow = Me.dsCommon.Tables("ProdTemplates").Rows(0)
+
+                Dim param0 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strComments", System.Data.SqlDbType.VarChar, 1800, "strComments")
+                param0.Value = row.Item("strComments")
+                sqlCommonAction.Parameters.Add(param0)
+                Dim param1 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strSymbol", System.Data.SqlDbType.VarChar, 16, "strSymbol")
+                param1.Value = row.Item("strSymbol")
+                sqlCommonAction.Parameters.Add(param1)
+
+                sqlCommonAction.CommandText = "SET IDENTITY_INSERT " & myUtility.getExtension(True) & "fempSurvey ON " & _
+                "Insert INTO " & myUtility.getExtension(True) & "fempSurvey (seqSurvey, intCreatorID, seqTemplate, " & _
+                "datClosing, strComments, strSymbol, blnOptional, blnActive, strColor, intSubmitted, datCreatedDate) " & _
+                "Values (" & _
+                row.Item("seqSurvey") & ", " & row.Item("intCreatorID") & ", '" & Session("seqTemplate") & _
+                "', '" & row.Item("datClosing") & "', " & "@strComments, @strSymbol, " & _
+                IIf(row.Item("blnOptional"), 1, 0) & ", " & _
+                IIf(row.Item("blnActive"), 1, 0) & ", '" & row.Item("strColor") & "', " & _
+                row.Item("intSubmitted") & ", '" & row.Item("datCreatedDate") & "')"
+                sqlCommonAction.ExecuteNonQuery()
+                Trace.Warn(sqlCommonAction.CommandText)
+                sqlCommonAction.Parameters.Clear()
+            End If
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the survey.")
+            Return False
+        End Try
+    End Function
+
+    'Copy the Survey Tags
+    Private Function CopyTags(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonInsert As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying Survey Tags")
+
+        Try
+            'Set up the insert query
+            sqlCommonInsert.CommandText = "INSERT INTO " & myUtility.getExtension(True) & "fempTags Select * From "
+
+            'determine where we're going to get the data from and execute the query
+            sqlCommonInsert.CommandText &= "" & myUtility.getExtension() & "fempTags ft where ft.seqTemplate = " & Session("seqTemplate") & _
+                " and ft.seqSurvey = " & Session("seqSurvey")
+
+            sqlCommonInsert.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the survey tags.")
+            Return False
+        End Try
+    End Function
+#End Region
+
+#Region "Send Mail"
+    'Sends an e-mail to users with changed passwords, except level 0 users.
+    Private Function sendDeleteMail(ByVal Email As String, ByVal strItemName As String) As Boolean
+        Trace.Warn("Sending user an email")
+        'Set up the mail messsage
+        Dim strFrom As String = "survey.administrator@pnl.gov"
+        Dim strTo As String = Email
+
+        Dim strbldrSubject As New StringBuilder("Survey Admin Tool Template Deletion.")
+
+        'get the current user's name and e-mail
+        Try
+            Dim sqlCommonAction As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+            Dim sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+            sqlCommonAction.Connection = Me.commonConn
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempUsers where seqUserID = " & Session("UserID")
+            sqlCommonAdapter.Fill(Me.dsCommon, "ModifyID")
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+
+        If (Me.dsCommon.Tables("ModifyID").Rows.Count < 1) Then
+            alert("Critical error getting sender's information.  Unable to locate your information.  You may have been removed from the database in the last few minutes.  Contact the Survey Administrator immediately.")
+            Return False
+        End If
+
+        Dim strbldrMessage As New StringBuilder
+        'notify the user of their status change
+        strbldrMessage.Append("Survey " & strItemName & " has been deleted, by")
+        strbldrMessage.Append(" " & Me.dsCommon.Tables("ModifyID").Rows(0).Item("strFirstName") & " ")
+        strbldrMessage.Append(Me.dsCommon.Tables("ModifyID").Rows(0).Item("strLastName") & ".")
+        strbldrMessage.Append("  You may contact this person at this e-mail address: <b>")
+        strbldrMessage.Append(Me.dsCommon.Tables("ModifyID").Rows(0).Item("strEmail") & "</b>")
+
+        If Not (myUtility.genericSendMail(strFrom, strTo, strbldrSubject.ToString, strbldrMessage.ToString)) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    'Sends an e-mail to the survey administrator requesting a copy to production
+    Private Function sendMail(ByVal strOwnerName As String, ByVal strUserName As String, ByVal strOwnerEmail As String, ByVal strUserEmail As String, ByVal intOwnerType As Integer, ByVal intUserType As Integer, ByVal isUserOwner As Boolean) As Boolean
+        Trace.Warn("Sending user an email")
+
+        Dim strFrom As String = ""
+        Dim strTo As String = ""
+        Dim strCC As String = ""
+        Dim strbldrSubject As StringBuilder = New StringBuilder
+        Dim strbldrMessage As StringBuilder = New StringBuilder
+
+        'Set up the mail messsage To, From, & CC
+        If (isUserOwner) Then
+            strFrom = strUserEmail
+            strTo = "survey.administrator@pnl.gov"
+        Else
+            If (intOwnerType = 4) Then
+                strFrom = strUserEmail
+                strTo = strOwnerEmail
+            Else
+                strFrom = strUserEmail
+                strCC = strOwnerEmail
+                strTo = "survey.administrator@pnl.gov"
+            End If
+        End If
+
+        strbldrSubject.Append("Survey Tool Template Copy Request")
+        strbldrMessage.Append(strUserName)
+        strbldrMessage.Append(" has requested that the Survey ")
+        strbldrMessage.Append("'" & Me.txtSurveyName.Text & "'")
+        If (Session("Machine") = "Production") Then
+            strbldrMessage.Append(" of Template '" & Session("TemplateName") & "' be copied to Development.")
+        Else
+            strbldrMessage.Append(" of Template '" & Session("TemplateName") & "' be copied to Production.")
+        End If
+
+        If Not (myUtility.genericSendMail(strFrom, strTo, strbldrSubject.ToString, strbldrMessage.ToString, strCC)) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+#End Region
+End Class

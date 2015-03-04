@@ -1,0 +1,31 @@
+body.default #leftNav a#default, 
+body.video1 #leftNav a#video1, 
+body.inst #leftNav a#inst, 
+body.sched #leftNav a#sched, 
+body.catalog #leftNav a#catalog, 
+body.online #leftNav a#online, 
+body.vid1802 #leftNav a#vid1802, 
+body.vid14001 #leftNav a#vid14001, 
+body.badges #leftNav a#badges, 
+body.video2 #leftNav a#video2
+,body.elhome #leftNav a#elhome
+, body.elstafflist #leftNav a#elstafflist
+, body.staff #leftNav a#staff
+{
+		/*background-image: url(http://www.pnl.gov/images/bullet.gif);
+		background-repeat: no-repeat;
+		background-position: center left;*/
+		 color: #d57500;
+		 font-weight: bold;
+		 background-color: white;
+		 border-radius: 4px 0 0 4px;
+		 -moz-border-radius: 4px 0 0 4px;
+		 -webkit-border-radius: 4px 0 0 4px;
+}
+
+a.email {
+  padding: 0 0 0 20px; 
+  background-image: url(/images/email_icon.gif); 
+  background-position: left; 
+  background-repeat: no-repeat;
+}

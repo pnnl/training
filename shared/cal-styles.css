@@ -1,0 +1,19 @@
+body.calHome #leftNav a#calHome
+, body.calClass #leftNav a#calClass
+, body.calTutorial #leftNav a#calTutorial
+, body.calInstruct #leftNav a#calInstruct
+, body.calManage #leftNav a#calManage
+, body.calBag #leftNav a#calBag
+, body.calEL #leftNav a#calEL
+{
+		/*background-image: url(http://www.pnl.gov/images/bullet.gif);
+		background-repeat: no-repeat;
+		background-position: center left;*/
+		 color: #d57500;
+		 font-weight: bold;
+		 background-color: white;
+		 border-radius: 4px 0 0 4px;
+		 -moz-border-radius: 4px 0 0 4px;
+		 -webkit-border-radius: 4px 0 0 4px;
+
+}

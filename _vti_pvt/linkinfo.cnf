@@ -1,0 +1,4 @@
+vti_encoding:SR|utf8-nl
+javascript\:submitform():signature.asp
+http\://infosource.pnl.gov/network/services/digitalid/default.htm:signature.asp
+http\://<%=request.servervariables("server_name")%>/signature/default.asp:signature.asp

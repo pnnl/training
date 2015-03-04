@@ -1,0 +1,103 @@
+/*ESH&Q website CSS
+Created by Shan Osborn*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.floatRight {
+    clear: right;
+    float: right;
+    margin: 5px;
+}
+
+.floatLeft {
+    clear: left;
+    float: right;
+    margin: 5px;
+}
+
+#footer {
+    clear: both;
+    border-top: 2px solid black;
+    font: x-small Verdana, Arial, sans-serif;
+}
+
+.highlightBox {
+    border: solid #CCC 1px;
+    border-color: #C0C0C0 #8D8D8D #8D8D8D #C0C0C0;
+}
+
+.highlightBox .innerBox {
+    border: none;
+    background-color: #E8E6E6;
+    padding: 6px 10px;
+    margin: 8px;
+}
+
+#content {    
+    width: auto;
+ /*   margin-left: 195px;
+    margin-right: 10px;
+	  margin-top: 0px;*/
+      position: absolute;
+      left: 200px;
+      top: 150px;
+    z-index: 3;
+}
+
+/* IE6/Win displays a window width line at the top of the box unless these declarations are hidden */
+.body .highlightBox .innerBox {
+    border: 1px solid #CCC;
+    border-color: #8D8D8D #C0C0C0 #C0C0C0 #8D8D8D;
+}
+
+.highlightBox .innerBox p {
+    margin: 0px;
+    margin-top: .5em;
+    margin-bottom: 1em;
+}
+
+.innerBox h2, .innerBox h3, .innerBox h4 {
+    margin-top: 5px;
+    padding-bottom: .2em
+}
+
+a    { text-decoration: none; font-family: Tahoma }
+
+.fsb {
+  margin-top: -150px;
+}
+
+
+.indent {
+    margin-left: 10px;
+}
+
+.whiteText {
+ color: white;
+}    
+
+#red {
+  color: red;
+}
+		
+#goldenrod {
+  color: #FFCC66;
+}
+		
+.yellow {
+	background: #ffffcc;
+}
+		
+.grey {
+	background: #cccccc;
+}
+		
+h1, h2, h3, h4, h5, h6 {color:#008C9B}
+		
+#title {
+    display: none;
+}

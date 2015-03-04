@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/Authentication/Service1" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/Authentication/Service1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/Authentication/Service1">
+      <s:element name="SHA256">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTempPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SHA256Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SHA256Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createPasswordString">
+        <s:complexType />
+      </s:element>
+      <s:element name="createPasswordStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createPasswordStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fetchSBMSContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fetchSBMSContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fetchSBMSContentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SHA256SoapIn">
+    <wsdl:part name="parameters" element="tns:SHA256" />
+  </wsdl:message>
+  <wsdl:message name="SHA256SoapOut">
+    <wsdl:part name="parameters" element="tns:SHA256Response" />
+  </wsdl:message>
+  <wsdl:message name="createPasswordStringSoapIn">
+    <wsdl:part name="parameters" element="tns:createPasswordString" />
+  </wsdl:message>
+  <wsdl:message name="createPasswordStringSoapOut">
+    <wsdl:part name="parameters" element="tns:createPasswordStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="fetchSBMSContentSoapIn">
+    <wsdl:part name="parameters" element="tns:fetchSBMSContent" />
+  </wsdl:message>
+  <wsdl:message name="fetchSBMSContentSoapOut">
+    <wsdl:part name="parameters" element="tns:fetchSBMSContentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="SHA256">
+      <wsdl:input message="tns:SHA256SoapIn" />
+      <wsdl:output message="tns:SHA256SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createPasswordString">
+      <wsdl:input message="tns:createPasswordStringSoapIn" />
+      <wsdl:output message="tns:createPasswordStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchSBMSContent">
+      <wsdl:input message="tns:fetchSBMSContentSoapIn" />
+      <wsdl:output message="tns:fetchSBMSContentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SHA256">
+      <soap:operation soapAction="http://tempuri.org/Authentication/Service1/SHA256" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPasswordString">
+      <soap:operation soapAction="http://tempuri.org/Authentication/Service1/createPasswordString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fetchSBMSContent">
+      <soap:operation soapAction="http://tempuri.org/Authentication/Service1/fetchSBMSContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://training.pnl.gov/services/authentication/authentication.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

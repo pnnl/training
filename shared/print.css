@@ -1,0 +1,55 @@
+/*-- Print Style Sheet for Beryllium Website
+/*-- Created by: Cameron Bates, April 9, 2003
+
+@media print { /* IE5.x and Opera 6 for some reason apply the rules to screen media without this */
+
+
+body {
+    background-image: none;
+    background-color: white;
+	font: 11pt Arial, Verdana, Helvetica;
+}
+ #logoBanner{
+	display: none;
+}
+
+
+ #mainBanner{
+   position: absolute;
+       height: 136px;
+       	top: 25px;
+	left: 0px;
+}
+
+#buttonBackground{
+	display: none;
+}
+
+#mainNav, #navBarTop, #navBarBottom {
+    display: none;
+}
+
+
+#content  {
+	position: absolute;
+	top: 160px;
+	left: 0px;
+	width: 100%;
+    	font: 11pt Arial, Verdana, Helvetica;
+}
+
+body div#title {
+    display: block;
+	position: static;
+	top: 0px;
+	left: 0px;
+   	font: 12pt Arial, Verdana, Helvetica;
+    font-style: italic;
+	text-align: left;
+	color: #103F33;
+}
+
+.highlightBox, .innerBox {
+margin-right: 0;
+}
+

@@ -1,0 +1,216 @@
+/*Infosource.pnl.gov website Basic CSS
+Created By: Cameron Bates - July 2004
+Last Modified: 7/29/2004*/
+
+html {
+
+}
+
+body {
+	background-color: #004242;
+	margin: 0px;
+	padding: 0px;
+	border: 14px solid #004242;
+}
+
+#wrapper {
+	background-image: url(/images/bg.gif);
+	background-repeat: repeat-y;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #004242;
+	float:left; /*modified 11/16/05 WJ*/
+	width:100%; /*modified 11/16/05 WJ*/
+}
+
+#leftNav {
+	float: left;
+	width: 138px;
+	margin: 10px 5px 10px 3px;
+}
+
+#azIndex a {
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#links a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #000;
+}
+
+#checklist ul, #checklist li {
+	list-style-type: circle;
+	}
+	
+
+#content {
+	margin: 10px 14px 10px 160px;
+	float: none;
+
+}
+
+#content p,#content  a,#content  li {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+}
+
+#content a {
+	color: #000;
+}
+
+#content h1, #content h2 {
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+#content h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #366;
+	font-size: 18px;
+}
+
+#content hr {
+	clear: right;
+	color: #004242;
+	background-color: #004242;
+}
+
+#breadCrumbs {
+	height: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	vertical-align: middle;
+	position: relative; left: 116px; top: 20px;
+	margin-right:115px;
+	line-height: 17px;
+}
+
+#breadCrumbs img {
+	vertical-align: middle;
+	display: block;
+	position: absolute; left: -117px; top: -21px;
+
+}
+
+#breadCrumbs a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+#inlineBox {
+	background color:#CCCCCC;
+	border:thin solid #006666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 5pt;
+	padding: 5pt;
+	font-size: 12px;
+	float: right;	
+}
+
+#inlineBox ul, #inlineBox li, #inlineBox p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	}
+	
+#emphasisBox {
+	background color:#CCCCCC;
+	border:thin solid #006666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 5pt;
+	padding: 5pt;
+	font-size: 12px;
+	float: inherit;	
+}
+
+#emphasisBox ul, #emphasisBox li, #emphasisBox p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	}
+	
+#imageHolder {
+	padding: 5px;
+	}
+
+
+#mainHeader {
+	height: 50px;
+	border-bottom: 2px solid #004242;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#mainHeader h1 {
+	margin: 0;
+	padding: 0;
+}
+
+#relatedLinks {
+	display: inline;
+	float: right;
+	width: 25%;
+	background-color: #004242;
+	padding: 5px;
+	background-image: none;
+}
+
+#relatedLinks h2 {
+	color: #fff;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+}
+
+#relatedLinks h3 {
+	color: #CCCCCC;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+}
+
+#relatedLinks a, #relatedLinks p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #fff;
+}
+
+#footer p, #footer a {
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#text {
+	height:100%
+}
+
+.borderless {
+	border: none;
+	background-image: none;
+}
+
+.centered {
+	margin: auto;
+	text-align: center;
+}
+
+.button {
+	font-weight: bold;
+}
+
+.menuNode {
+	margin-left:40px;
+}
+
+#container {
+	background-image: url(/images/ITSlogo.jpg);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}

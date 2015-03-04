@@ -1,0 +1,2144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BBA1A531-710B-45B1-97F7-491170347F0A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SurveyAdmin</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>SurveyAdmin</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SurveyAdmin.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SurveyAdmin.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Name>System.EnterpriseServices</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="Infragistics2.WebUI.Shared.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\asp.net\bin\Infragistics2.WebUI.Shared.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.WebUI.UltraWebChart.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\asp.net\bin\Infragistics2.WebUI.UltraWebChart.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.WebUI.WebDataInput.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\asp.net\bin\Infragistics2.WebUI.WebDataInput.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.WebUI.WebDateChooser.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\asp.net\bin\Infragistics2.WebUI.WebDateChooser.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.WebUI.WebSchedule.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\asp.net\bin\Infragistics2.WebUI.WebSchedule.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Web.UI.WebControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Groups.aspx.vb">
+      <DependentUpon>Groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help.aspx.vb">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="List.aspx.vb">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.aspx.vb">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUsers.aspx.vb">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.master.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Message.aspx.vb">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Navigation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Password.aspx.vb">
+      <DependentUpon>Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Permission.aspx.vb">
+      <DependentUpon>Permission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonInput.aspx.vb">
+      <DependentUpon>PersonInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonSelect.aspx.vb">
+      <DependentUpon>PersonSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Picture.aspx.vb">
+      <DependentUpon>Picture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preview.aspx.vb">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PubRequest.aspx.vb">
+      <DependentUpon>PubRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Question.aspx.vb">
+      <DependentUpon>Question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuestionGroups.aspx.vb">
+      <DependentUpon>QuestionGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.vb">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportOutput.aspx.vb">
+      <DependentUpon>ReportOutput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendSurvey.aspx.vb">
+      <DependentUpon>SendSurvey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Survey.aspx.vb">
+      <DependentUpon>Survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SurveyDelegates.aspx.vb">
+      <DependentUpon>SurveyDelegates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SurveyResponse.aspx.vb">
+      <DependentUpon>SurveyResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SurveyTag.aspx.vb">
+      <DependentUpon>SurveyTag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tag.aspx.vb">
+      <DependentUpon>Tag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template.aspx.vb">
+      <DependentUpon>Template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplateDelegates.aspx.vb">
+      <DependentUpon>TemplateDelegates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web References\Authentication\Reference.vb">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Content Include="ChartImages\Chart_0.jpg" />
+    <Content Include="ChartImages\Chart_1.jpg" />
+    <Content Include="ChartImages\Chart_10.jpg" />
+    <Content Include="ChartImages\Chart_11.jpg" />
+    <Content Include="ChartImages\Chart_12.jpg" />
+    <Content Include="ChartImages\Chart_13.jpg" />
+    <Content Include="ChartImages\Chart_14.jpg" />
+    <Content Include="ChartImages\Chart_15.jpg" />
+    <Content Include="ChartImages\Chart_16.jpg" />
+    <Content Include="ChartImages\Chart_17.jpg" />
+    <Content Include="ChartImages\Chart_18.jpg" />
+    <Content Include="ChartImages\Chart_19.jpg" />
+    <Content Include="ChartImages\Chart_2.jpg" />
+    <Content Include="ChartImages\Chart_20.jpg" />
+    <Content Include="ChartImages\Chart_21.jpg" />
+    <Content Include="ChartImages\Chart_22.jpg" />
+    <Content Include="ChartImages\Chart_23.jpg" />
+    <Content Include="ChartImages\Chart_24.jpg" />
+    <Content Include="ChartImages\Chart_25.jpg" />
+    <Content Include="ChartImages\Chart_26.jpg" />
+    <Content Include="ChartImages\Chart_27.jpg" />
+    <Content Include="ChartImages\Chart_28.jpg" />
+    <Content Include="ChartImages\Chart_29.jpg" />
+    <Content Include="ChartImages\Chart_3.jpg" />
+    <Content Include="ChartImages\Chart_30.jpg" />
+    <Content Include="ChartImages\Chart_31.jpg" />
+    <Content Include="ChartImages\Chart_32.jpg" />
+    <Content Include="ChartImages\Chart_33.jpg" />
+    <Content Include="ChartImages\Chart_34.jpg" />
+    <Content Include="ChartImages\Chart_35.jpg" />
+    <Content Include="ChartImages\Chart_36.jpg" />
+    <Content Include="ChartImages\Chart_37.jpg" />
+    <Content Include="ChartImages\Chart_38.jpg" />
+    <Content Include="ChartImages\Chart_39.jpg" />
+    <Content Include="ChartImages\Chart_4.jpg" />
+    <Content Include="ChartImages\Chart_40.jpg" />
+    <Content Include="ChartImages\Chart_41.jpg" />
+    <Content Include="ChartImages\Chart_42.jpg" />
+    <Content Include="ChartImages\Chart_43.jpg" />
+    <Content Include="ChartImages\Chart_44.jpg" />
+    <Content Include="ChartImages\Chart_45.jpg" />
+    <Content Include="ChartImages\Chart_46.jpg" />
+    <Content Include="ChartImages\Chart_47.jpg" />
+    <Content Include="ChartImages\Chart_48.jpg" />
+    <Content Include="ChartImages\Chart_49.jpg" />
+    <Content Include="ChartImages\Chart_5.jpg" />
+    <Content Include="ChartImages\Chart_50.jpg" />
+    <Content Include="ChartImages\Chart_51.jpg" />
+    <Content Include="ChartImages\Chart_52.jpg" />
+    <Content Include="ChartImages\Chart_53.jpg" />
+    <Content Include="ChartImages\Chart_54.jpg" />
+    <Content Include="ChartImages\Chart_55.jpg" />
+    <Content Include="ChartImages\Chart_56.jpg" />
+    <Content Include="ChartImages\Chart_57.jpg" />
+    <Content Include="ChartImages\Chart_58.jpg" />
+    <Content Include="ChartImages\Chart_59.jpg" />
+    <Content Include="ChartImages\Chart_6.jpg" />
+    <Content Include="ChartImages\Chart_60.jpg" />
+    <Content Include="ChartImages\Chart_61.jpg" />
+    <Content Include="ChartImages\Chart_62.jpg" />
+    <Content Include="ChartImages\Chart_63.jpg" />
+    <Content Include="ChartImages\Chart_64.jpg" />
+    <Content Include="ChartImages\Chart_65.jpg" />
+    <Content Include="ChartImages\Chart_66.jpg" />
+    <Content Include="ChartImages\Chart_67.jpg" />
+    <Content Include="ChartImages\Chart_68.jpg" />
+    <Content Include="ChartImages\Chart_69.jpg" />
+    <Content Include="ChartImages\Chart_7.jpg" />
+    <Content Include="ChartImages\Chart_70.jpg" />
+    <Content Include="ChartImages\Chart_71.jpg" />
+    <Content Include="ChartImages\Chart_72.jpg" />
+    <Content Include="ChartImages\Chart_73.jpg" />
+    <Content Include="ChartImages\Chart_74.jpg" />
+    <Content Include="ChartImages\Chart_75.jpg" />
+    <Content Include="ChartImages\Chart_76.jpg" />
+    <Content Include="ChartImages\Chart_77.jpg" />
+    <Content Include="ChartImages\Chart_78.jpg" />
+    <Content Include="ChartImages\Chart_79.jpg" />
+    <Content Include="ChartImages\Chart_8.jpg" />
+    <Content Include="ChartImages\Chart_80.jpg" />
+    <Content Include="ChartImages\Chart_81.jpg" />
+    <Content Include="ChartImages\Chart_82.jpg" />
+    <Content Include="ChartImages\Chart_83.jpg" />
+    <Content Include="ChartImages\Chart_84.jpg" />
+    <Content Include="ChartImages\Chart_85.jpg" />
+    <Content Include="ChartImages\Chart_86.jpg" />
+    <Content Include="ChartImages\Chart_87.jpg" />
+    <Content Include="ChartImages\Chart_88.jpg" />
+    <Content Include="ChartImages\Chart_89.jpg" />
+    <Content Include="ChartImages\Chart_9.jpg" />
+    <Content Include="ChartImages\Chart_90.jpg" />
+    <Content Include="ChartImages\Chart_91.jpg" />
+    <Content Include="ChartImages\Chart_92.jpg" />
+    <Content Include="ChartImages\Chart_93.jpg" />
+    <Content Include="ChartImages\Chart_94.jpg" />
+    <Content Include="ChartImages\Chart_95.jpg" />
+    <Content Include="ChartImages\Chart_96.jpg" />
+    <Content Include="ChartImages\Chart_97.jpg" />
+    <Content Include="ChartImages\Chart_98.jpg" />
+    <Content Include="ChartImages\Chart_99.jpg" />
+    <Content Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="FAQ\ChangeTemplateSurvey.xml" />
+    <Content Include="FAQ\DeleteTemplateSurvey.xml" />
+    <Content Include="FAQ\Introduction.xml" />
+    <Content Include="FAQ\MenuItems.xml" />
+    <Content Include="FAQ\PageExpiration.xml" />
+    <Content Include="FAQ\PermissionDifferences.xml" />
+    <Content Include="FAQ\Publication.xml" />
+    <Content Include="FAQ\Purpose.xml" />
+    <Content Include="FAQ\Reporting.xml" />
+    <Content Include="FAQ\RequestPublication.xml" />
+    <Content Include="FAQ\SurveyGroups.xml" />
+    <Content Include="FAQ\SurveyPreview.xml" />
+    <Content Include="FAQ\TemplateSurveys.xml" />
+    <Content Include="FAQ\UserPermission.xml" />
+    <Content Include="FAQ\WhatWhyTemplates.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="Graphics\backup.txt" />
+    <Content Include="Graphics\Banner.png" />
+    <Content Include="Graphics\BannerBottom.png" />
+    <Content Include="Graphics\BannerBottom1.png" />
+    <Content Include="Graphics\BannerBottom2.png" />
+    <Content Include="Graphics\BannerTile.png" />
+    <Content Include="Graphics\BannerTop.png" />
+    <Content Include="Graphics\BTile.png" />
+    <Content Include="Graphics\Corner.png" />
+    <Content Include="Graphics\Corner2-Final.png" />
+    <Content Include="Graphics\Corner2.png" />
+    <Content Include="Graphics\Menu.png" />
+    <Content Include="Graphics\MenuBottom.png" />
+    <Content Include="Graphics\MenuScroll.png" />
+    <Content Include="Graphics\MenuTop.png" />
+    <Content Include="Graphics\page.html" />
+    <Content Include="Graphics\Tile.png" />
+    <Content Include="Groups.aspx" />
+    <Content Include="Help.aspx" />
+    <Content Include="images\GroupManageTitle.png" />
+    <Content Include="images\help.png" />
+    <Content Include="images\HelpTitle.png" />
+    <Content Include="images\ListTitle.png" />
+    <Content Include="images\LoginTitle.png" />
+    <Content Include="images\MainTitle.png" />
+    <Content Include="images\ManageUsersTitle.png" />
+    <Content Include="images\MassPasswordTitle.png" />
+    <Content Include="images\MessageTitle.png" />
+    <Content Include="images\Owner.png" />
+    <Content Include="images\PasswordTitle.png" />
+    <Content Include="images\PermissionTitle.png" />
+    <Content Include="images\PersonInputTitle.png" />
+    <Content Include="images\PersonSelectTitle.png" />
+    <Content Include="images\PreviewSideBar.png" />
+    <Content Include="images\PreviewTitle.png" />
+    <Content Include="images\PubRequestTitle.png" />
+    <Content Include="images\QuestionGroupTitle.png" />
+    <Content Include="images\QuestionLookup.png" />
+    <Content Include="images\QuestionTitle.png" />
+    <Content Include="images\ReportTitle.png" />
+    <Content Include="images\SendSurveyTitle.png" />
+    <Content Include="images\Shared\background.jpg" />
+    <Content Include="images\Shared\banner.jpg" />
+    <Content Include="images\Shared\banner.png" />
+    <Content Include="images\Shared\banner2.png" />
+    <Content Include="images\Shared\banner_background.jpg" />
+    <Content Include="images\Shared\banner_bottom1.png" />
+    <Content Include="images\Shared\banner_bottom2.png" />
+    <Content Include="images\Shared\BTile.png" />
+    <Content Include="images\Shared\button_background.jpg" />
+    <Content Include="images\Shared\button_background.png" />
+    <Content Include="images\Shared\button_background2.png" />
+    <Content Include="images\Shared\menu_top.png" />
+    <Content Include="images\Shared\tile.png" />
+    <Content Include="images\Shared\tqlogo.jpg" />
+    <Content Include="images\Shared\tqlogo.png" />
+    <Content Include="images\SurveyDelegatesTitle.png" />
+    <Content Include="images\SurveyInputTitle.png" />
+    <Content Include="images\SurveyTagTitle.png" />
+    <Content Include="images\SurveyTitle.png" />
+    <Content Include="images\TagTitle.png" />
+    <Content Include="images\TemplateDelegatesTitle.png" />
+    <Content Include="images\TemplateTitle.png" />
+    <Content Include="List.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Main.aspx" />
+    <Content Include="ManageUsers.aspx" />
+    <Content Include="Message.aspx" />
+    <Content Include="MyInfragisticsImages\16_excel.gif" />
+    <Content Include="MyInfragisticsImages\16_print.gif" />
+    <Content Include="MyInfragisticsImages\a.gif" />
+    <Content Include="MyInfragisticsImages\Alphabet\A.gif" />
+    <Content Include="MyInfragisticsImages\Alphabet\A.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\B.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\Base.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\C.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\D.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\E.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\F.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\G.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\H.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\I.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\J.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\K.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\L.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\M.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\N.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\O.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\P.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\Q.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\R.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\S.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\T.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\U.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\V.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\W.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\X.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\Y.png" />
+    <Content Include="MyInfragisticsImages\Alphabet\Z.png" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_black.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_black_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_blue1.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_blue1_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_blue2.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_blue2_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_blue3_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_blue4.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_blue4_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_brown2_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_brown_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_burgundy.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_burgundy_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_cream_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_gray2_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_gray_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_green.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_green2_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_green_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_maroon2.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_maroon2_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_maroon_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_orange_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_purple.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_purple_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_sand_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_white.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_white_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrows\arrow_yellow_beveled.gif" />
+    <Content Include="MyInfragisticsImages\arrow_black.gif" />
+    <Content Include="MyInfragisticsImages\bankingbtn.gif" />
+    <Content Include="MyInfragisticsImages\billpay.gif" />
+    <Content Include="MyInfragisticsImages\BlackFadeSep.bmp" />
+    <Content Include="MyInfragisticsImages\BlueExplorer.gif" />
+    <Content Include="MyInfragisticsImages\BookWithStar.bmp" />
+    <Content Include="MyInfragisticsImages\cal.gif" />
+    <Content Include="MyInfragisticsImages\clearpixel.gif" />
+    <Content Include="MyInfragisticsImages\ClosedBook.bmp" />
+    <Content Include="MyInfragisticsImages\CorporateGold\add_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\add_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\add_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\add_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\del_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\del_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\del_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\del_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\end_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\end_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\end_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\end_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\ff_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\ff_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\ff_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\ff_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\next_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\next_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\next_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\next_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\plain_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\plain_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\plain_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\plain_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\prev_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\prev_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\prev_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\prev_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\rew_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\rew_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\rew_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\rew_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\start_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\start_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\start_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\start_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\submit_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\submit_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\submit_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateGold\submit_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\add_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\add_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\add_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\add_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\cursor_drag.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\del_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\del_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\del_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\del_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\dropdown_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\end_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\end_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\end_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\end_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\ff_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\ff_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\ff_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\ff_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\next_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\next_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\next_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\next_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\plain_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\plain_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\plain_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\plain_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\prev_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\prev_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\prev_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\prev_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\rew_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\rew_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\rew_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\rew_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\start_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\start_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\start_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\start_up.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\submit_disabled.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\submit_down.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\submit_hover.gif" />
+    <Content Include="MyInfragisticsImages\CorporateSilver\submit_up.gif" />
+    <Content Include="MyInfragisticsImages\Design\dataSource_OLEDB.png" />
+    <Content Include="MyInfragisticsImages\Design\dataSource_SQL.png" />
+    <Content Include="MyInfragisticsImages\Design\formElementBG.png" />
+    <Content Include="MyInfragisticsImages\Design\formElementBGRight.png" />
+    <Content Include="MyInfragisticsImages\Design\wsInfo.png" />
+    <Content Include="MyInfragisticsImages\Design\WSP_designerLeft.jpg" />
+    <Content Include="MyInfragisticsImages\Design\WSP_designerRight.jpg" />
+    <Content Include="MyInfragisticsImages\Design\WSP_designer_bg.jpg" />
+    <Content Include="MyInfragisticsImages\downarrows_trans.gif" />
+    <Content Include="MyInfragisticsImages\downarrows_white.gif" />
+    <Content Include="MyInfragisticsImages\explorerbar.gif" />
+    <Content Include="MyInfragisticsImages\finance-smallbtn.gif" />
+    <Content Include="MyInfragisticsImages\finance.gif" />
+    <Content Include="MyInfragisticsImages\finduser.gif" />
+    <Content Include="MyInfragisticsImages\folder.gif" />
+    <Content Include="MyInfragisticsImages\folderopen.gif" />
+    <Content Include="MyInfragisticsImages\go.bmp" />
+    <Content Include="MyInfragisticsImages\go.gif" />
+    <Content Include="MyInfragisticsImages\go2.bmp" />
+    <Content Include="MyInfragisticsImages\GrayExplorer.gif" />
+    <Content Include="MyInfragisticsImages\groupBackground.bmp" />
+    <Content Include="MyInfragisticsImages\helpSystem\file.gif" />
+    <Content Include="MyInfragisticsImages\helpSystem\folder.gif" />
+    <Content Include="MyInfragisticsImages\helpSystem\folder_open.gif" />
+    <Content Include="MyInfragisticsImages\helpSystem\root.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\arrow.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\arrow_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\arrow_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\backimagerow.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\backimagetoolbar.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\bold.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\bold_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\bold_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\bringforward.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\bringforward_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\bringforward_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cdup.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cdup_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cdup_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cellproperties.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cellproperties_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cellproperties_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cellproperties_icon_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cleanword.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cleanword_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cleanword_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\copy.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\copy_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\copy_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\copy_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\custom.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\custom_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\custom_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cut.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cut_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cut_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cut_icon_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\cut_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\decreasecolspan.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\decreasecolspan_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\decreasecolspan_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\decreaserowspan.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\decreaserowspan_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\decreaserowspan_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\defaultSettings.jpg" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\deletecolumn.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\deletecolumn_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\deletecolumn_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\deleterow.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\deleterow_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\deleterow_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\design.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\design_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\design_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\doubleseparator.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\doubleseparator_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\dropdown.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\dropdown_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\dropdown_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\file.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\file_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\file_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\findreplace.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\findreplace_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\findreplace_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\findreplace_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\folder.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\folder_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\folder_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\fontcolor.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\fontcolor_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\fontcolor_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\fonthighlight.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\fonthighlight_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\fonthighlight_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\help.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\help_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\help_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\help_icon_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\help_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\html.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\html_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\html_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\increasecolspan.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\increasecolspan_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\increasecolspan_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\increaserowspan.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\increaserowspan_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\increaserowspan_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\indent.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\indent_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\indent_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertbookmark.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertbookmark_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertbookmark_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertbookmark_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertcolumnleft.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertcolumnleft_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertcolumnleft_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertcolumnright.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertcolumnright_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertcolumnright_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertfile.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertfile_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertfile_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertflash.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertflash_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertflash_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertimage.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertimage_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertimage_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertlink.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertlink_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertlink_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrowabove.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrowabove_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrowabove_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrowbelow.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrowbelow_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrowbelow_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrule.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrule_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrule_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertrule_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\Inserttable.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\Inserttable_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\Inserttable_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertwindowsmedia.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertwindowsmedia_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\insertwindowsmedia_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\italic.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\italic_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\italic_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifycenter.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifycenter_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifycenter_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyfull.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyfull_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyfull_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyleft.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyleft_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyleft_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyright.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyright_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\justifyright_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\line.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\nonGraphic.jpg" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\notepad_background.jpg" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\notepad_preview.jpg" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\open.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\open_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\open_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\orderedlist.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\orderedlist_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\orderedlist_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\outdent.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\outdent_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\outdent_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\paste.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\pastehtml.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\pastehtml_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\pastehtml_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\pastehtml_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\paste_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\paste_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\paste_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\preview.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\preview_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\preview_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\print.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\print_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\print_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\redo.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\redo_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\redo_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\removelink.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\removelink_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\removelink_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\rowseparator.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\save.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\save_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\save_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\sendbackward.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\sendbackward_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\sendbackward_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\separator.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\specialcharacter.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\specialcharacter_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\specialcharacter_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\spellcheck.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\spellcheck_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\spellcheck_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\strikethrough.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\strikethrough_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\strikethrough_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\subscript.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\subscript_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\subscript_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\superscript.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\superscript_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\superscript_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\tableproperties.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\tableproperties_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\tableproperties_icon.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\tableproperties_icon_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\tableproperties_icon_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\tableproperties_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\toggleborder.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\toggleborders.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\toggleborders_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\toggleborders_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\toggleborder_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\toggleborder_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\togglepositioning.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\togglepositioning_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\togglepositioning_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\underline.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\underline_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\underline_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\undo.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\undo_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\undo_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\unorderedlist.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\unorderedlist_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\unorderedlist_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\upload.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\upload_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\upload_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\wordcount.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\wordcount_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\wordcount_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\x.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\x_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\x_over.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\zoom.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\zoom_down.gif" />
+    <Content Include="MyInfragisticsImages\HtmlEditor\zoom_over.gif" />
+    <Content Include="MyInfragisticsImages\ie.bmp" />
+    <Content Include="MyInfragisticsImages\igcmbo_mscrmdown.GIF" />
+    <Content Include="MyInfragisticsImages\igcmbo_mscrmup.GIF" />
+    <Content Include="MyInfragisticsImages\Igdtc_arrowdown.gif" />
+    <Content Include="MyInfragisticsImages\igdtc_arrowup.gif" />
+    <Content Include="MyInfragisticsImages\igdtc_elipses.gif" />
+    <Content Include="MyInfragisticsImages\igmenu_scrolldown.gif" />
+    <Content Include="MyInfragisticsImages\igmenu_scrolldown_disabled.gif" />
+    <Content Include="MyInfragisticsImages\igmenu_scrollup.gif" />
+    <Content Include="MyInfragisticsImages\igmenu_scrollup_disabled.gif" />
+    <Content Include="MyInfragisticsImages\igpnl_dwn.gif" />
+    <Content Include="MyInfragisticsImages\igpnl_office2k3.png" />
+    <Content Include="MyInfragisticsImages\igpnl_office2k3_drk.png" />
+    <Content Include="MyInfragisticsImages\igpnl_up.gif" />
+    <Content Include="MyInfragisticsImages\igpnl_vs2k5.png" />
+    <Content Include="MyInfragisticsImages\igsch_dropdown_down_o2003olive.gif" />
+    <Content Include="MyInfragisticsImages\igsch_dropdown_down_o2003silver.gif" />
+    <Content Include="MyInfragisticsImages\igsch_dropdown_hover_o2003olive.gif" />
+    <Content Include="MyInfragisticsImages\igsch_dropdown_hover_o2003silver.gif" />
+    <Content Include="MyInfragisticsImages\igsch_dropdown_up_o2003olive.gif" />
+    <Content Include="MyInfragisticsImages\igsch_dropdown_up_o2003silver.gif" />
+    <Content Include="MyInfragisticsImages\igsch_left_arrow.gif" />
+    <Content Include="MyInfragisticsImages\igsch_mscrmdown.GIF" />
+    <Content Include="MyInfragisticsImages\igsch_mscrmup.GIF" />
+    <Content Include="MyInfragisticsImages\igsch_o2003hover.gif" />
+    <Content Include="MyInfragisticsImages\igsch_right_arrow.gif" />
+    <Content Include="MyInfragisticsImages\igsch_xpbluedn.gif" />
+    <Content Include="MyInfragisticsImages\igsch_xpblueup.gif" />
+    <Content Include="MyInfragisticsImages\ig_butCRM1.gif" />
+    <Content Include="MyInfragisticsImages\ig_butCRM2.gif" />
+    <Content Include="MyInfragisticsImages\ig_butCRM3.gif" />
+    <Content Include="MyInfragisticsImages\ig_butMac1.gif" />
+    <Content Include="MyInfragisticsImages\ig_butMac2.gif" />
+    <Content Include="MyInfragisticsImages\ig_butMac4.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP1.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP1h.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP1o.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP1s.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP1w.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP1wh.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP2.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP2h.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP2o.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP2s.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP2w.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP2wh.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP3.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP3h.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP3o.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP3s.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP3w.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP3wh.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP4.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP4h.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP4o.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP4s.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP4w.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP4wh.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP5.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP5h.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP5o.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP5s.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP5w.gif" />
+    <Content Include="MyInfragisticsImages\ig_butXP5wh.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blue1.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blue2.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blue3.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blueDN.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blueDP.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blueN.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blueN0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blueP.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_blueP0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_grayN.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_grayN0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_grayP.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_grayP0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_light1.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_light2.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_light3.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_metal1.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_metal2.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_metalN.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_metalN0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_metalP.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_metalP0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_next1.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_prev1.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_rose1.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_rose2.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_roseN.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_roseN0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_roseP.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_roseP0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_silver1.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_silver2.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_silverN.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_silverN0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_silverP.gif" />
+    <Content Include="MyInfragisticsImages\ig_cal_silverP0.gif" />
+    <Content Include="MyInfragisticsImages\ig_cmboCorpGold_down.gif" />
+    <Content Include="MyInfragisticsImages\ig_cmboCorpGold_up.gif" />
+    <Content Include="MyInfragisticsImages\ig_cmboCorpSil1.gif" />
+    <Content Include="MyInfragisticsImages\ig_cmboCorpSil2.gif" />
+    <Content Include="MyInfragisticsImages\ig_cmboDown1.bmp" />
+    <Content Include="MyInfragisticsImages\ig_cmboDown2.bmp" />
+    <Content Include="MyInfragisticsImages\ig_cmboDownXP1.bmp" />
+    <Content Include="MyInfragisticsImages\ig_cmboDownXP2.bmp" />
+    <Content Include="MyInfragisticsImages\ig_cmbodownxp_olive.gif" />
+    <Content Include="MyInfragisticsImages\ig_cmbodownxp_olive2.gif" />
+    <Content Include="MyInfragisticsImages\ig_down_d.gif" />
+    <Content Include="MyInfragisticsImages\ig_down_s.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_0.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_01.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_01b.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_0b.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_1.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_11.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_11b.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_1b.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_2.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_21.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_21b.gif" />
+    <Content Include="MyInfragisticsImages\ig_edit_2b.gif" />
+    <Content Include="MyInfragisticsImages\ig_home_d.gif" />
+    <Content Include="MyInfragisticsImages\ig_home_s.gif" />
+    <Content Include="MyInfragisticsImages\ig_logo1.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu2003Orange.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu2003Spacer1.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu2003SpacerBlue.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu2003SpacerOlive.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu2003SpacerOrange.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu2003SpacerSilver.bmp" />
+    <Content Include="MyInfragisticsImages\ig_menu2003SpacerSilver.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuBlueDown.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuBlueDown_disabled.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuBlueUp.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuBlueUp_disabled.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuCheck.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuCRMspacer1.GIF" />
+    <Content Include="MyInfragisticsImages\ig_menuCRM_arrow_down.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuGreenDown.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuGreenDown_disabled.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuGreenUp.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuGreenUp_disabled.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuSep.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuSilverDown.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuSilverDown_disabled.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuSilverUp.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuSilverUp_disabled.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuStandardSep.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuTri.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuUncheck.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuXPspacer1.gif" />
+    <Content Include="MyInfragisticsImages\ig_menuXPspacer2.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu_2003Spacer1.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu_scrolldown.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu_scrolldownWhite.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu_scrolldown_disabled.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu_scrollup.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu_scrollupWhite.gif" />
+    <Content Include="MyInfragisticsImages\ig_menu_scrollup_disabled.gif" />
+    <Content Include="MyInfragisticsImages\ig_prod_d.gif" />
+    <Content Include="MyInfragisticsImages\ig_prod_s.gif" />
+    <Content Include="MyInfragisticsImages\ig_sched_next.gif" />
+    <Content Include="MyInfragisticsImages\ig_sched_prev.gif" />
+    <Content Include="MyInfragisticsImages\ig_sched_reminder.gif" />
+    <Content Include="MyInfragisticsImages\ig_serv_d.gif" />
+    <Content Include="MyInfragisticsImages\ig_serv_s.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_blue1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_blue2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_blue3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_blueb1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_blueb2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_bluebY1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_bluebY2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_blueY1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_blueY2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defb1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defb2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defbc1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defbc2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defbr1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defbr2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defbv1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defbv2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defbvc1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defbvc2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defl1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defl2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deflc1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deflc2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deflr1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deflr2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deflv1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deflv2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deflvc1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deflvc2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defr1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defr2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defrc1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defrc2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defrr1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defrr2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defrv1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defrv2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defrvc1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_defrvc2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deft1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deft2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deftc1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deftc2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deftr1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deftr2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deftv1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deftv2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deftvc1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_deftvc2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_light0.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_light1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_light11.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_light2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_light3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_lightb1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_lightb2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_lightb3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_lightb4.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_lightbY1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_lightbY2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_lightY1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_lightY2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_msn0.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_msn1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_msn2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_msn4.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_msnY0.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_msnY1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_msnY2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_msnY4.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_scroll0.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_scroll1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_scroll2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_scroll3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_scrollXP0.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_scrollXP1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_scrollXP2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_scrollXP3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_win2000.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_win2000Y.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXP1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXP2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXP3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPo1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPo2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPo3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPs1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPs2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPs3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPY1.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPY2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tab_winXPY3.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblBlank.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblcrm_rowarrow_down.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblcrm_rowarrow_right.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblFixedOff.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblFixedOn.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblGroupBy.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblMinus.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblNewrow.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblPimgDn.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblPimgUp.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblPlus.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblSortAsc.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblSortAsc_White.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblSortDesc.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblSortDesc_White.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTriEdit.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Aqua3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Black.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Black3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Blue.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Blue3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_BrightRed.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_BrightRed3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Brown.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Brown3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Fleshcolor.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Fleshcolor3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Gray.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Gray2.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_gray3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_GrayB3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Green.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Green3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_LightBlue.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_LightBlue3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_LightRed.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_LightRed3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_LightYellow.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_LightYellow3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_MintGreen.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_MintGreen3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Navy.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Navy3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Olivegreen.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Olivegreen3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Red.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Red3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Rust.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Rust3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_SageGreen.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_SageGreen3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Tan.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Tan3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Teal.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Teal3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_White.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_White3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Yellow.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblTri_Yellow3d.gif" />
+    <Content Include="MyInfragisticsImages\ig_tblUnGroupBy.gif" />
+    <Content Include="MyInfragisticsImages\ig_tb_back03.gif" />
+    <Content Include="MyInfragisticsImages\ig_tb_move00.gif" />
+    <Content Include="MyInfragisticsImages\ig_tb_move03.gif" />
+    <Content Include="MyInfragisticsImages\ig_treearrowdown.gif" />
+    <Content Include="MyInfragisticsImages\ig_treearrowdown_2.gif" />
+    <Content Include="MyInfragisticsImages\ig_treearrowdown_3.gif" />
+    <Content Include="MyInfragisticsImages\ig_treearrowright.gif" />
+    <Content Include="MyInfragisticsImages\ig_treearrowright_2.gif" />
+    <Content Include="MyInfragisticsImages\ig_treearrowright_3.gif" />
+    <Content Include="MyInfragisticsImages\ig_treearrowup.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeBlack_box.gif" />
+    <Content Include="MyInfragisticsImages\ig_treecheck.gif" />
+    <Content Include="MyInfragisticsImages\ig_treecheck_2.gif" />
+    <Content Include="MyInfragisticsImages\ig_treedown.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeDownArrow.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeF.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeFaq_folder.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeFaq_leaf.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeFminus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treefolder.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeFolderopen.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeFplus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeHelp_closed.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeHelp_leaf.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeHelp_open.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeI.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeInbox.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeL.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeLminus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeLplus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeMinus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeMinus2.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeMminus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeMplus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeMsdn_minus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeMsdn_plus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeNews.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeOfficeFolder.GIF" />
+    <Content Include="MyInfragisticsImages\ig_treeOminus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeOplus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treePlus.gif" />
+    <Content Include="MyInfragisticsImages\ig_treePlus2.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeright.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeRightArrow.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeS.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeT.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeTri.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeUpArrow.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeWhite.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeXPFolderClosed.GIF" />
+    <Content Include="MyInfragisticsImages\ig_treeXPFolderOpen.gif" />
+    <Content Include="MyInfragisticsImages\ig_treeXPMinus.GIF" />
+    <Content Include="MyInfragisticsImages\ig_treeXPPlus.GIF" />
+    <Content Include="MyInfragisticsImages\ig_tree_X.gif" />
+    <Content Include="MyInfragisticsImages\ig_tree_X_1.gif" />
+    <Content Include="MyInfragisticsImages\inbox.gif" />
+    <Content Include="MyInfragisticsImages\Inbox.ico" />
+    <Content Include="MyInfragisticsImages\LargeIcons\cdrive.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\Control.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\ENet.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\Excel.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\file.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\floppy_disk.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\folder.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\folder_open.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\MSN.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\MyMusic.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\MyPics.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\my_comp.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\my_docs.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\my_network.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\Powerpoint.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\recycle.gif" />
+    <Content Include="MyInfragisticsImages\LargeIcons\wordDoc.gif" />
+    <Content Include="MyInfragisticsImages\Large\Calendar.gif" />
+    <Content Include="MyInfragisticsImages\Large\Calendar.ico" />
+    <Content Include="MyInfragisticsImages\Large\Calendar.jpg" />
+    <Content Include="MyInfragisticsImages\Large\Contacts.gif" />
+    <Content Include="MyInfragisticsImages\Large\Contacts.ico" />
+    <Content Include="MyInfragisticsImages\Large\Contacts.jpg" />
+    <Content Include="MyInfragisticsImages\Large\DeletedItems.gif" />
+    <Content Include="MyInfragisticsImages\Large\DeletedItems.ico" />
+    <Content Include="MyInfragisticsImages\Large\DeletedItems.jpg" />
+    <Content Include="MyInfragisticsImages\Large\Folder.gif" />
+    <Content Include="MyInfragisticsImages\Large\Folder.ico" />
+    <Content Include="MyInfragisticsImages\Large\Folder.jpg" />
+    <Content Include="MyInfragisticsImages\Large\FolderGroup.gif" />
+    <Content Include="MyInfragisticsImages\Large\FolderGroup.ico" />
+    <Content Include="MyInfragisticsImages\Large\FolderGroup.jpg" />
+    <Content Include="MyInfragisticsImages\Large\FolderGroupWithArrow.gif" />
+    <Content Include="MyInfragisticsImages\Large\FolderGroupWithArrow.ico" />
+    <Content Include="MyInfragisticsImages\Large\FolderGroupWithArrow.jpg" />
+    <Content Include="MyInfragisticsImages\Large\FolderMail.gif" />
+    <Content Include="MyInfragisticsImages\Large\FolderMail.ico" />
+    <Content Include="MyInfragisticsImages\Large\FolderMail.jpg" />
+    <Content Include="MyInfragisticsImages\Large\Inbox.gif" />
+    <Content Include="MyInfragisticsImages\Large\Inbox.ico" />
+    <Content Include="MyInfragisticsImages\Large\Inbox.jpg" />
+    <Content Include="MyInfragisticsImages\Large\Journal.gif" />
+    <Content Include="MyInfragisticsImages\Large\Journal.ico" />
+    <Content Include="MyInfragisticsImages\Large\Journal.jpg" />
+    <Content Include="MyInfragisticsImages\Large\Notes.gif" />
+    <Content Include="MyInfragisticsImages\Large\Notes.ico" />
+    <Content Include="MyInfragisticsImages\Large\Notes.jpg" />
+    <Content Include="MyInfragisticsImages\Large\Outbox.gif" />
+    <Content Include="MyInfragisticsImages\Large\Outbox.ico" />
+    <Content Include="MyInfragisticsImages\Large\Outbox.jpg" />
+    <Content Include="MyInfragisticsImages\Large\SentItems.gif" />
+    <Content Include="MyInfragisticsImages\Large\SentItems.ico" />
+    <Content Include="MyInfragisticsImages\Large\SentItems.jpg" />
+    <Content Include="MyInfragisticsImages\Large\Tasks.gif" />
+    <Content Include="MyInfragisticsImages\Large\Tasks.ico" />
+    <Content Include="MyInfragisticsImages\Large\Tasks.jpg" />
+    <Content Include="MyInfragisticsImages\left.bmp" />
+    <Content Include="MyInfragisticsImages\left.gif" />
+    <Content Include="MyInfragisticsImages\leftCollapsed.gif" />
+    <Content Include="MyInfragisticsImages\Left_BlueStripe.bmp" />
+    <Content Include="MyInfragisticsImages\loans.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\col.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\exp.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\folder.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\ie.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\internetExplore.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\leafnode.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\netscape.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\netscape2.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\nsdir.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\outlook.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\quicktime.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\safari.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\setup.gif" />
+    <Content Include="MyInfragisticsImages\MacOSX\tools.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\apple_off.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\background.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\belowApple.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\belowBtns.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\belowMacOSX.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\belowStore.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\belowSupport.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\blue_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\grey_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\iPod_off.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\iPod_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\MACOSX_off.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\MACOSX_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\mac_off.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\mac_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\purple_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\quickTime_off.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\quickTime_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\silver_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\store_off.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\store_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\support_off.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\support_on.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\ts.gif" />
+    <Content Include="MyInfragisticsImages\MacSite\white_off.gif" />
+    <Content Include="MyInfragisticsImages\minus.gif" />
+    <Content Include="MyInfragisticsImages\moneymanager.gif" />
+    <Content Include="MyInfragisticsImages\movies.gif" />
+    <Content Include="MyInfragisticsImages\MSDNLibrary\col.gif" />
+    <Content Include="MyInfragisticsImages\MSDNLibrary\exp.gif" />
+    <Content Include="MyInfragisticsImages\MSDNLibrary\noexp.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\ADDRESSBook.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\ADDRESSBook1.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\addressBook2.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\addressBook_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\addressBook_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\backGround.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\calendar.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Calendar_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Calendar_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\computerFolder.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\computerFolder_no.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\deselectedFolder.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\downArrow.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\dropBkgd.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Favorites.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\favorites_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\favorites_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\GoButton.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\GoButton_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\highlight.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\highlight_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Home.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\home_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\home_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\hover.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\hoverBack.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\ie.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\MailandMore.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\MailandMore_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\MailandMore_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Money.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Money_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Money_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\People.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\PeopleSearch2.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Person.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\photos.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\photos_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\photos_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\popUpGaurd.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\popUpGaurd_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\refresh.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\refresh_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\safety.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\safety_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\safety_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Search.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\search2_ico_8.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Search3_ico_4.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\search_dd.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Search_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Search_ico_12.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Search_ico_8.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Search_off.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\SelectedFolder.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\seperator.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Stop.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Stop_hov.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Time.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\TitleBar2.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\trans.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\ts.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\upArrow.gif" />
+    <Content Include="MyInfragisticsImages\MSNExplorer\Web4_ico_4.gif" />
+    <Content Include="MyInfragisticsImages\mutualfunds.gif" />
+    <Content Include="MyInfragisticsImages\Office2003BlueBG.png" />
+    <Content Include="MyInfragisticsImages\Office2003DropDownBlue.gif" />
+    <Content Include="MyInfragisticsImages\Office2003DropDownGreen.gif" />
+    <Content Include="MyInfragisticsImages\Office2003DropDownOrange.gif" />
+    <Content Include="MyInfragisticsImages\Office2003DropDownSilver.gif" />
+    <Content Include="MyInfragisticsImages\Office2003OliveBG.png" />
+    <Content Include="MyInfragisticsImages\Office2003SelRow.png" />
+    <Content Include="MyInfragisticsImages\Office2003SilverBG.png" />
+    <Content Include="MyInfragisticsImages\OliveExplorer.gif" />
+    <Content Include="MyInfragisticsImages\OpenBook.bmp" />
+    <Content Include="MyInfragisticsImages\OrangeExplorer.gif" />
+    <Content Include="MyInfragisticsImages\OrangeExplorer2.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\calendar.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\col.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\contacts.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\deleted.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\drafts.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\exp.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\folder.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\folders.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\inbox.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\junk.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\notes.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\outbox.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\root.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\search.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\search_no.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\sentItems.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\tasks.gif" />
+    <Content Include="MyInfragisticsImages\Outlook2003\TitleBar_Bkgd.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\blueFlag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\calendar.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\calendar24.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\checkbox.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\col.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\contact24.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\contacts.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\deleted.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\drafts.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\exclamationPoint.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\exclamationPoint_trans.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\exp.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\flag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\flagCleared.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\flag_blue.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\flag_hover.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\flag_notFlagged.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\flag_red.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\flag_up.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\folder.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\folders.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\GrayExplorer.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\GrayExplorer_35.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\greenFlag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\greyBar_Calendar.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\greyBar_contacts.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\greyBar_journal.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\greyBar_mail.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\greyBar_notes.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\hdr_attachment.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\hdr_flag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\hdr_importance.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\hdr_leftBorder.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\hdr_message.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\headerBkgd.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\inbox.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\journal.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\journal24.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\junk.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\LeftBtn_off.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\listBar_bkgd.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\mail.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\mail24.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\msg_attachment.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\msg_forwarded.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\msg_lowPriority.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\msg_read.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\msg_repliedto.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\msg_unread.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\msg_urgent.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\noFlag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\notes.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\notes24.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\oMailICO.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\OrangeBar_mail.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\OrangeExplorer.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\OrangeExplorer_35.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\OrangeExplorer_hover.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\OrangeExplorer_hover.jpg" />
+    <Content Include="MyInfragisticsImages\OutlookMail\OrangeExplorer_hover_35.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\orangeFlag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\outbox.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\panelBkgd.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\paper.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\paperClip.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\paperClip_trans.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\purpleFlag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\redFlag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\root.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\search.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\search_no.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\sentItems.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\tasks.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\ts.gif" />
+    <Content Include="MyInfragisticsImages\OutlookMail\yellowFlag.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\calendar.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\contact24.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\drafts.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\folder.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\inbox.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\journal.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\notes.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\outbox.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\outlook_today.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\sent_items.gif" />
+    <Content Include="MyInfragisticsImages\OutlookSidebar\Tasks.gif" />
+    <Content Include="MyInfragisticsImages\OutlookTasks\checkbox.gif" />
+    <Content Include="MyInfragisticsImages\OutlookTasks\exclamationPoint.gif" />
+    <Content Include="MyInfragisticsImages\OutlookTasks\exclamationPoint_trans.gif" />
+    <Content Include="MyInfragisticsImages\OutlookTasks\paper.gif" />
+    <Content Include="MyInfragisticsImages\OutlookTasks\paperClip.gif" />
+    <Content Include="MyInfragisticsImages\OutlookTasks\paperClip_trans.gif" />
+    <Content Include="MyInfragisticsImages\OutlookTasks\taskBkgd.gif" />
+    <Content Include="MyInfragisticsImages\OutlookTasks\tasks.gif" />
+    <Content Include="MyInfragisticsImages\plus.gif" />
+    <Content Include="MyInfragisticsImages\public.gif" />
+    <Content Include="MyInfragisticsImages\right.bmp" />
+    <Content Include="MyInfragisticsImages\right.gif" />
+    <Content Include="MyInfragisticsImages\rightCollapsed.gif" />
+    <Content Include="MyInfragisticsImages\RoundedBlueExplorer.gif" />
+    <Content Include="MyInfragisticsImages\RoundedGrayExplorer.gif" />
+    <Content Include="MyInfragisticsImages\RoundedOrangeExplorer.gif" />
+    <Content Include="MyInfragisticsImages\Santa Fe Stucco.bmp" />
+    <Content Include="MyInfragisticsImages\Small\Calendar.gif" />
+    <Content Include="MyInfragisticsImages\Small\Calendar.ico" />
+    <Content Include="MyInfragisticsImages\Small\Calendar.jpg" />
+    <Content Include="MyInfragisticsImages\Small\Contacts.gif" />
+    <Content Include="MyInfragisticsImages\Small\Contacts.ico" />
+    <Content Include="MyInfragisticsImages\Small\Contacts.jpg" />
+    <Content Include="MyInfragisticsImages\Small\DeletedItems.gif" />
+    <Content Include="MyInfragisticsImages\Small\DeletedItems.ico" />
+    <Content Include="MyInfragisticsImages\Small\DeletedItems.jpg" />
+    <Content Include="MyInfragisticsImages\Small\Folder.gif" />
+    <Content Include="MyInfragisticsImages\Small\Folder.ico" />
+    <Content Include="MyInfragisticsImages\Small\Folder.jpg" />
+    <Content Include="MyInfragisticsImages\Small\FolderGroup.gif" />
+    <Content Include="MyInfragisticsImages\Small\FolderGroup.ico" />
+    <Content Include="MyInfragisticsImages\Small\FolderGroup.jpg" />
+    <Content Include="MyInfragisticsImages\Small\FolderGroupWithArrow.gif" />
+    <Content Include="MyInfragisticsImages\Small\FolderGroupWithArrow.ico" />
+    <Content Include="MyInfragisticsImages\Small\FolderGroupWithArrow.jpg" />
+    <Content Include="MyInfragisticsImages\Small\FolderMail.gif" />
+    <Content Include="MyInfragisticsImages\Small\FolderMail.ico" />
+    <Content Include="MyInfragisticsImages\Small\FolderMail.jpg" />
+    <Content Include="MyInfragisticsImages\Small\Inbox.gif" />
+    <Content Include="MyInfragisticsImages\Small\Inbox.ico" />
+    <Content Include="MyInfragisticsImages\Small\Inbox.jpg" />
+    <Content Include="MyInfragisticsImages\Small\Journal.gif" />
+    <Content Include="MyInfragisticsImages\Small\Journal.ico" />
+    <Content Include="MyInfragisticsImages\Small\Journal.jpg" />
+    <Content Include="MyInfragisticsImages\Small\Notes.gif" />
+    <Content Include="MyInfragisticsImages\Small\Notes.ico" />
+    <Content Include="MyInfragisticsImages\Small\Notes.jpg" />
+    <Content Include="MyInfragisticsImages\Small\Outbox.gif" />
+    <Content Include="MyInfragisticsImages\Small\Outbox.ico" />
+    <Content Include="MyInfragisticsImages\Small\Outbox.jpg" />
+    <Content Include="MyInfragisticsImages\Small\SentItems.gif" />
+    <Content Include="MyInfragisticsImages\Small\SentItems.ico" />
+    <Content Include="MyInfragisticsImages\Small\SentItems.jpg" />
+    <Content Include="MyInfragisticsImages\Small\Tasks.gif" />
+    <Content Include="MyInfragisticsImages\Small\Tasks.ico" />
+    <Content Include="MyInfragisticsImages\Small\Tasks.jpg" />
+    <Content Include="MyInfragisticsImages\Soap Bubbles.bmp" />
+    <Content Include="MyInfragisticsImages\taxes.gif" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\grid_header_bg.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\grid_header_selected_bg.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\groupBy_bg.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\header_bg.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\header_bg_19.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\header_bg_19.png" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\header_blue_bg_19.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\header_blue_bg_hover_19.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\header_ltBlue_bg_19.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\header_silver_bg_19.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\ig_CurrentRow.gif" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\ig_tblFixedOff.gif" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\ig_tblFixedOn.gif" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\ig_tblPimgDn.gif" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\ig_tblPimgUp.gif" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\ig_treeArrowMinus.png" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\ig_treeArrowPlus.png" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\mail_header_bg.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\row_selected_bg.jpg" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\row_selected_bg.png" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\sort_ascending.gif" />
+    <Content Include="MyInfragisticsImages\Themes\Aero\sort_descending.gif" />
+    <Content Include="MyInfragisticsImages\Themes\Royale\header_bg.png" />
+    <Content Include="MyInfragisticsImages\uparrows_trans.gif" />
+    <Content Include="MyInfragisticsImages\uparrows_white.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\cd.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\classic_Bkgd.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\classic_left.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\downArrow.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\downArrow_noSel.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\musci.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\MyComputer.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\MyDocuments.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\myNetwork.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\newFolder.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\orderPrintsOnline.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\printPics.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\publish.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\SharedPics.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\SharingFolder.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\trans.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\upArrow.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\upArrow_noSel.gif" />
+    <Content Include="MyInfragisticsImages\WindowsClassic\viewSlideShow.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\addToLibrary.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\album.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\albumArtist.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\allMusic.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\AllMusicBkgd.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\allTV.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\allVideo.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\autoPlaylist.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\Btn_0ff.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\Btn_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\Btn_On.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\burnBtn.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\burnBtn_0ff.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\burnBtn_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\col.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\composer.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\dd_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\dd_off.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\dd_sel.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\endTab.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\exp.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\genre.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\guideBtn.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\guideBtn_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\guideBtn_off.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\libraryBtn.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\libraryBtn_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\libraryBtn_off.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\libraryOptions.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\MediaPlayerSymbol.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\moreInfo.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\movies.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\Music.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\Music_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\myPlaylist.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\nowPlayingBtn.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\nowPlayingBtn_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\nowPlayingBtn_off.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\otherMedia.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\play.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\playNow.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\purchaseMusic.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\radio.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\radio_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\ratedSongs.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\rightSep.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\rightTop.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\RIPBtn.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\RIPBtn_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\RIPBtn_off.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\Search.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\Seperator.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\startBurn.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\startSync.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\syncBtn.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\syncBtn_hov.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\syncBtn_off.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\tblBkgd.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\topBack.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\TopBackground.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\ts.gif" />
+    <Content Include="MyInfragisticsImages\WinMediaPlayer\yearReleased.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\cd.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\downArrow_default.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\downArrow_sel.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\music.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\music3.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\musicNote.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\musicNote2.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\musicNote2_01.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\musicNote2_02.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\MyComputer.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\MyDocuments.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\myNetwork.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\newFolder.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\pictures.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\play.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\SharingFolder.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\upArrow_Default.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\upArrow_sel.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\worldMusic.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\XPDefault_Blue.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\XPSelected_Blue.gif" />
+    <Content Include="MyInfragisticsImages\WinXPSideBar\XP_Selected.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\add_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\add_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\add_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\add_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\del_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\del_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\del_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\del_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\draggable_cap.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\end_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\end_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\end_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\end_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\ff_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\ff_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\ff_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\ff_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\ig_menuCurrent_disabled.png" />
+    <Content Include="MyInfragisticsImages\XpBlue\ig_menuCurrent_down.png" />
+    <Content Include="MyInfragisticsImages\XpBlue\ig_menuCurrent_hover.png" />
+    <Content Include="MyInfragisticsImages\XpBlue\ig_menuCurrent_up.png" />
+    <Content Include="MyInfragisticsImages\XpBlue\next_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\next_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\next_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\next_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\plain_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\plain_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\plain_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\plain_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\prev_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\prev_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\prev_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\prev_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\rew_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\rew_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\rew_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\rew_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\start_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\start_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\start_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\start_up.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\submit_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\submit_down.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\submit_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpBlue\submit_up.gif" />
+    <Content Include="MyInfragisticsImages\xpgreendn.gif" />
+    <Content Include="MyInfragisticsImages\xpgreenup.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\add_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\add_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\add_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\add_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\del_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\del_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\del_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\del_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\end_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\end_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\end_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\end_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\ff_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\ff_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\ff_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\ff_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\next_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\next_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\next_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\next_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\plain_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\plain_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\plain_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\plain_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\prev_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\prev_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\prev_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\prev_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\rew_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\rew_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\rew_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\rew_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\start_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\start_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\start_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\start_up.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\submit_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\submit_down.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\submit_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpOlive\submit_up.gif" />
+    <Content Include="MyInfragisticsImages\xpsilverdn.gif" />
+    <Content Include="MyInfragisticsImages\xpsilverup.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\add_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\add_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\add_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\add_up.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\del_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\del_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\del_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\del_up.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\end_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\end_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\end_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\end_up.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\ff_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\ff_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\ff_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\ff_up.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\next_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\next_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\next_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\next_up.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\prev_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\prev_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\prev_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\prev_up.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\rew_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\rew_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\rew_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\rew_up.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\start_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\start_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\start_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\start_up.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\submit_disabled.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\submit_down.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\submit_hover.gif" />
+    <Content Include="MyInfragisticsImages\XpSilver\submit_up.gif" />
+    <Content Include="MyInfragisticsImages\yahoo.gif" />
+    <Content Include="MyInfragisticsImages\yahoo2.gif" />
+    <Content Include="MyInfragisticsScripts\HM_Loader.js" />
+    <Content Include="MyInfragisticsScripts\HM_ScriptDOM.js" />
+    <Content Include="MyInfragisticsScripts\HM_ScriptIE4.js" />
+    <Content Include="MyInfragisticsScripts\HM_ScriptNS4.js" />
+    <Content Include="MyInfragisticsScripts\ig_addappointmentdialog.js" />
+    <Content Include="MyInfragisticsScripts\ig_button.js" />
+    <Content Include="MyInfragisticsScripts\ig_calendar.js" />
+    <Content Include="MyInfragisticsScripts\ig_csom.js" />
+    <Content Include="MyInfragisticsScripts\ig_edit.js" />
+    <Content Include="MyInfragisticsScripts\ig_htmleditor.js" />
+    <Content Include="MyInfragisticsScripts\ig_htmleditor_ie.js" />
+    <Content Include="MyInfragisticsScripts\ig_htmleditor_ie_t.js" />
+    <Content Include="MyInfragisticsScripts\ig_htmleditor_moz.js" />
+    <Content Include="MyInfragisticsScripts\ig_htmleditor_moz_t.js" />
+    <Content Include="MyInfragisticsScripts\ig_htmleditor_upload.js" />
+    <Content Include="MyInfragisticsScripts\ig_mask.js" />
+    <Content Include="MyInfragisticsScripts\ig_reminderdialog.js" />
+    <Content Include="MyInfragisticsScripts\ig_shared.js" />
+    <Content Include="MyInfragisticsScripts\ig_spellchecker.js" />
+    <Content Include="MyInfragisticsScripts\ig_spellcheckerdialog.js" />
+    <Content Include="MyInfragisticsScripts\ig_wbgWrapper.xslt" />
+    <Content Include="MyInfragisticsScripts\ig_webcalendarview.js" />
+    <Content Include="MyInfragisticsScripts\ig_webchart.js" />
+    <Content Include="MyInfragisticsScripts\ig_webchart_browser.js" />
+    <Content Include="MyInfragisticsScripts\ig_webchart_crosshair.js" />
+    <Content Include="MyInfragisticsScripts\ig_webchart_eventpayload.js" />
+    <Content Include="MyInfragisticsScripts\ig_webchart_scrollbar.js" />
+    <Content Include="MyInfragisticsScripts\ig_webchart_windowviewer.js" />
+    <Content Include="MyInfragisticsScripts\ig_webcombo3_1.js" />
+    <Content Include="MyInfragisticsScripts\ig_webdayview.js" />
+    <Content Include="MyInfragisticsScripts\ig_webdialog.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebDropDown.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid.xslt" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_an.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_cb.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_dl.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_dom.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_ft.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_gb.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_ie.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_ie6.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_kb.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_ml.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_nn.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_ro.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_ro2.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_srt.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebGrid_xml.js" />
+    <Content Include="MyInfragisticsScripts\ig_weblistbar2_2.js" />
+    <Content Include="MyInfragisticsScripts\ig_weblistbarASC.js" />
+    <Content Include="MyInfragisticsScripts\ig_weblistbarIE4.js" />
+    <Content Include="MyInfragisticsScripts\ig_weblistbarNS4.js" />
+    <Content Include="MyInfragisticsScripts\ig_webmenu.js" />
+    <Content Include="MyInfragisticsScripts\ig_webmenu2.js" />
+    <Content Include="MyInfragisticsScripts\ig_webmonthview.js" />
+    <Content Include="MyInfragisticsScripts\ig_WebNavBar.js" />
+    <Content Include="MyInfragisticsScripts\ig_webpanel.js" />
+    <Content Include="MyInfragisticsScripts\ig_webschedule.js" />
+    <Content Include="MyInfragisticsScripts\ig_webscheduleinfo.js" />
+    <Content Include="MyInfragisticsScripts\ig_webtab.js" />
+    <Content Include="MyInfragisticsScripts\ig_webtoolbar2_2.js" />
+    <Content Include="MyInfragisticsScripts\ig_webtree.js" />
+    <Content Include="MyInfragisticsScripts\ig_webweekview.js" />
+    <Content Include="MyInfragisticsScripts\localization-de-DE.xml" />
+    <Content Include="MyInfragisticsScripts\localization-es-ES.xml" />
+    <Content Include="MyInfragisticsScripts\localization-fr-FR.xml" />
+    <Content Include="MyInfragisticsScripts\localization.xml" />
+    <Content Include="Password.aspx" />
+    <Content Include="Permission.aspx" />
+    <Content Include="PersonInput.aspx" />
+    <Content Include="PersonSelect.aspx" />
+    <Content Include="Picture.aspx" />
+    <Content Include="pop_up.js" />
+    <Content Include="Preview.aspx" />
+    <Content Include="PubRequest.aspx" />
+    <Content Include="Question.aspx" />
+    <Content Include="QuestionGroups.aspx" />
+    <Content Include="Report.aspx" />
+    <Content Include="ReportOutput.aspx" />
+    <Content Include="SendSurvey.aspx" />
+    <Content Include="signature.asp" />
+    <Content Include="Styles.css" />
+    <Content Include="Survey.aspx" />
+    <Content Include="SurveyDelegates.aspx" />
+    <Content Include="SurveyResponse.aspx" />
+    <Content Include="SurveyTag.aspx" />
+    <Content Include="Tag.aspx" />
+    <Content Include="Template.aspx" />
+    <Content Include="TemplateDelegates.aspx" />
+    <Content Include="Web.config" />
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups.aspx.resx">
+      <DependentUpon>Groups.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.aspx.resx">
+      <DependentUpon>Help.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="List.aspx.resx">
+      <DependentUpon>List.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.aspx.resx">
+      <DependentUpon>Login.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.aspx.resx">
+      <DependentUpon>Main.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUsers.aspx.resx">
+      <DependentUpon>ManageUsers.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message.aspx.resx">
+      <DependentUpon>Message.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password.aspx.resx">
+      <DependentUpon>Password.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permission.aspx.resx">
+      <DependentUpon>Permission.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonInput.aspx.resx">
+      <DependentUpon>PersonInput.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonSelect.aspx.resx">
+      <DependentUpon>PersonSelect.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Picture.aspx.resx">
+      <DependentUpon>Picture.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preview.aspx.resx">
+      <DependentUpon>Preview.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubRequest.aspx.resx">
+      <DependentUpon>PubRequest.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Question.aspx.resx">
+      <DependentUpon>Question.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionGroups.aspx.resx">
+      <DependentUpon>QuestionGroups.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.aspx.resx">
+      <DependentUpon>Report.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportOutput.aspx.resx">
+      <DependentUpon>ReportOutput.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendSurvey.aspx.resx">
+      <DependentUpon>SendSurvey.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Survey.aspx.resx">
+      <DependentUpon>Survey.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveyDelegates.aspx.resx">
+      <DependentUpon>SurveyDelegates.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveyResponse.aspx.resx">
+      <DependentUpon>SurveyResponse.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveyTag.aspx.resx">
+      <DependentUpon>SurveyTag.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag.aspx.resx">
+      <DependentUpon>Tag.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template.aspx.resx">
+      <DependentUpon>Template.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateDelegates.aspx.resx">
+      <DependentUpon>TemplateDelegates.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Graphics\00000002" />
+    <None Include="Graphics\Thumbs.db" />
+    <Content Include="MasterPage.master" />
+    <None Include="MyInfragisticsImages\Alphabet\Thumbs.db" />
+    <None Include="MyInfragisticsImages\arrows\Thumbs.db" />
+    <None Include="MyInfragisticsImages\CorporateGold\Thumbs.db" />
+    <None Include="MyInfragisticsImages\CorporateSilver\Thumbs.db" />
+    <None Include="MyInfragisticsImages\Large\Thumbs.db" />
+    <None Include="MyInfragisticsImages\Small\Thumbs.db" />
+    <None Include="MyInfragisticsImages\XpBlue\Thumbs.db" />
+    <None Include="MyInfragisticsImages\XpOlive\Thumbs.db" />
+    <None Include="MyInfragisticsImages\XpSilver\Thumbs.db" />
+    <None Include="Web References\Authentication\authentication.disco" />
+    <None Include="Web References\Authentication\authentication.wsdl" />
+    <None Include="Web References\Authentication\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <WebReferenceUrl Include="http://training.pnl.gov/services/authentication/authentication.asmx">
+      <RelPath>Web References\Authentication\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+      <UpdateFromURL>http://training.pnl.gov/services/authentication/authentication.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2756</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

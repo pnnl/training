@@ -1,0 +1,2718 @@
+Imports System.Text
+Imports System.Collections.Specialized
+Public Class Template
+    Inherits System.Web.UI.Page
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Me.sqlTemplates = New System.Data.SqlClient.SqlDataAdapter
+        Me.SqlSelectCommand1 = New System.Data.SqlClient.SqlCommand
+        Me.dsCommon = New System.Data.DataSet
+        Me.CommonConn = New System.Data.SqlClient.SqlConnection
+        CType(Me.dsCommon, System.ComponentModel.ISupportInitialize).BeginInit()
+        '
+        'sqlTemplates
+        '
+        Me.sqlTemplates.SelectCommand = Me.SqlSelectCommand1
+        Me.sqlTemplates.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "fempTemplates", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("seqTemplate", "seqTemplate"), New System.Data.Common.DataColumnMapping("strTemplateName", "strTemplateName"), New System.Data.Common.DataColumnMapping("strDescription", "strDescription"), New System.Data.Common.DataColumnMapping("datDateCreated", "datDateCreated"), New System.Data.Common.DataColumnMapping("blnActive", "blnActive"), New System.Data.Common.DataColumnMapping("intCreatorID", "intCreatorID"), New System.Data.Common.DataColumnMapping("blnTraining", "blnTraining"), New System.Data.Common.DataColumnMapping("blnOptional", "blnOptional")})})
+        '
+        'SqlSelectCommand1
+        '
+        Me.SqlSelectCommand1.CommandText = "SELECT seqTemplate, strTemplateName, strDescription, datDateCreated, blnActive, i" & _
+        "ntCreatorID, blnTraining, blnOptional FROM VARCONN.fempTemplates"
+        '
+        'dsCommon
+        '
+        Me.dsCommon.DataSetName = "NewDataSet"
+        Me.dsCommon.Locale = New System.Globalization.CultureInfo("en-US")
+        CType(Me.dsCommon, System.ComponentModel.ISupportInitialize).EndInit()
+
+    End Sub
+    Protected WithEvents hlpServerSwitch As System.Web.UI.WebControls.Image
+    Protected WithEvents chkServerSwitch As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents Image1 As System.Web.UI.WebControls.Image
+    Protected WithEvents lblSecPriv As System.Web.UI.WebControls.Label
+    Protected WithEvents lblWebmaster As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpCopy As System.Web.UI.WebControls.Image
+    Protected WithEvents btnCopy As System.Web.UI.WebControls.Button
+    Protected WithEvents hlpDuplicate As System.Web.UI.WebControls.Image
+    Protected WithEvents btnDuplicate As System.Web.UI.WebControls.Button
+    Protected WithEvents hlpSelectTemplate As System.Web.UI.WebControls.Image
+    Protected WithEvents txtDuplicate As System.Web.UI.WebControls.TextBox
+    Protected WithEvents sqlTemplates As System.Data.SqlClient.SqlDataAdapter
+    Protected WithEvents SqlSelectCommand1 As System.Data.SqlClient.SqlCommand
+    Protected WithEvents dsCommon As System.Data.DataSet
+    Protected WithEvents ddlTemplateList As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lblSelectTemplate As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpTemplateName As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpTemplateDescription As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpTrainingSurvey As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpSurveyOptional As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpTemplateActive As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpSetPermissions As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpTemplatePreview As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpTags As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpQuestions As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpSurveys As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpDelegates As System.Web.UI.WebControls.Image
+    Protected WithEvents lblTemplateSelect As System.Web.UI.WebControls.Label
+    Protected WithEvents txtTemplateName As System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblTemplateDescription As System.Web.UI.WebControls.Label
+    Protected WithEvents txtDescription As System.Web.UI.WebControls.TextBox
+    Protected WithEvents chkTQSurvey As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents chkOptional As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents chkActive As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents lblSurveyOptional As System.Web.UI.WebControls.Label
+    Protected WithEvents lblTemplateActive As System.Web.UI.WebControls.Label
+    Protected WithEvents lblTrainingSurvey As System.Web.UI.WebControls.Label
+    Protected WithEvents btnSetPermissions As System.Web.UI.WebControls.Button
+    Protected WithEvents btnTemplatePreview As System.Web.UI.WebControls.Button
+    Protected WithEvents Label1 As System.Web.UI.WebControls.Label
+    Protected WithEvents Label2 As System.Web.UI.WebControls.Label
+    Protected WithEvents Label3 As System.Web.UI.WebControls.Label
+    Protected WithEvents Label4 As System.Web.UI.WebControls.Label
+    Protected WithEvents rptrQuestions As System.Web.UI.WebControls.Repeater
+    Protected WithEvents rptrSurveys As System.Web.UI.WebControls.Repeater
+    Protected WithEvents rptrDelegates As System.Web.UI.WebControls.Repeater
+    Protected WithEvents rptrTags As System.Web.UI.WebControls.Repeater
+    Protected WithEvents ddlPageOptions As System.Web.UI.WebControls.DropDownList
+    Protected strSurveyList As String
+    Protected myUtility As New Utility
+    Protected WithEvents Td1 As System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents btnDuplicate2 As System.Web.UI.WebControls.Button
+    Protected WithEvents txtDuplicate2 As System.Web.UI.WebControls.TextBox
+    Protected WithEvents hlpTemplatePreview2 As System.Web.UI.WebControls.Image
+    Protected WithEvents btnTemplatePreview2 As System.Web.UI.WebControls.Button
+    Protected WithEvents btnSubmit As System.Web.UI.WebControls.Button
+    Protected sqlCommonAdapter As New System.Data.SqlClient.SqlDataAdapter
+    Protected sqlCommonAction As New System.Data.SqlClient.SqlCommand
+    Protected WithEvents Label5 As System.Web.UI.WebControls.Label
+    Protected WithEvents hlpDuplicate2 As System.Web.UI.WebControls.Image
+    Protected WithEvents hlpCopy2 As System.Web.UI.WebControls.Image
+    Protected WithEvents btnCopy2 As System.Web.UI.WebControls.Button
+    Protected WithEvents hlpQuestionGroups As System.Web.UI.WebControls.Image
+    Protected WithEvents lblQuestionGroups As System.Web.UI.WebControls.Label
+    Protected WithEvents rptrQuestionGroups As System.Web.UI.WebControls.Repeater
+    Protected WithEvents Label6 As System.Web.UI.WebControls.Label
+    Protected WithEvents CommonConn As System.Data.SqlClient.SqlConnection
+
+    'NOTE: The following placeholder declaration is required by the Web Form Designer.
+    'Do not delete or move it.
+    Private designerPlaceholderDeclaration As System.Object
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+
+#Region "Basic"
+    'loads the page
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Trace.Warn("Loading Page")
+
+        'catch incoming alert messages
+        alert(Session("Alert"))
+
+        'clear session
+        myUtility.clearSession()
+
+        If (Session.IsNewSession) Then
+            Session("Alert") = "Your session has timed out for security purposes.  Please log in again."
+        End If
+
+        'get the from page
+        If Not (IsPostBack) Then
+            Session("FromPage") = getFromPage()
+            Session("BackgroundColor") = "-1"
+        End If
+
+        'Put user code to initialize the page here
+        If (Session("isAuthenticated") <> "True") Then
+            redirect("./Login.aspx")
+        Else
+            Session("CurrentPage") = "./Template.aspx"
+        End If
+
+        'if the user's password has expired send them to the password reset page
+        If (Session("isExpired") = "True") Then
+            Session("CurrentPage") = "./Password.aspx"
+            redirect(Session("CurrentPage"))
+        End If
+
+        'Set the connection based on the machine
+        myUtility.getConnection(Me.CommonConn)
+
+        'Set the server switch text on initial page load
+        If Not (IsPostBack) Then
+            'get anything on the request line
+            myUtility.getRequest(Page.Request.Url.Query())
+
+            'set the server switch text
+            setServerText()
+
+            'set the template id if it is not set at all
+            If (Session("seqTemplate") Is Nothing) Then
+                Session("seqTemplate") = -1
+            End If
+
+            'Fill the template and survey drop-downs
+            loadData()
+
+            'alter the control text
+            changeControlText()
+
+            Me.btnSubmit.Attributes.Add("onClick", "return confirm('Are you sure you want to perform this action.');")
+        End If
+    End Sub
+
+    'Set location and re-direct
+    Private Sub redirect(Optional ByVal currentPage As String = "")
+        If (currentPage = "") Then
+            Session("CurrentPage") = Session("FromPage")
+            Response.Redirect(Session("CurrentPage"))
+        Else
+            Session("CurrentPage") = currentPage
+            Response.Redirect(Session("CurrentPage"))
+        End If
+    End Sub
+
+    'gets the referring or from page and returns it
+    Public Function getFromPage() As String
+        Dim coll As NameValueCollection
+        ' Load ServerVariable collection into NameValueCollection object.
+        coll = Request.ServerVariables
+        ' Get referring page.
+        Return (coll.Item("HTTP_REFERER"))
+    End Function
+
+    'handles error messages
+    Public Sub alert(ByVal message As String)
+        If (message <> "") Then
+            Response.Write("<script type='text/javascript'>window.alert('" & message & "');</script>")
+            Session("Alert") = ""
+        End If
+    End Sub
+
+    'sets the server switch text
+    Public Sub setServerText()
+        If (Session("Machine") = "Production") Then
+            Me.chkServerSwitch.Text = "To Development Server. Current Server: " & Session("Machine")
+        Else
+            Me.chkServerSwitch.Text = "To Production Server. Current Server: " & Session("Machine")
+        End If
+    End Sub
+#End Region
+
+#Region "Data Loading"
+    'Loads data into the form
+    Private Sub loadData(Optional ByVal failure As Boolean = False)
+        Trace.Warn("Loading Data")
+
+        Try
+            'Set up the common data adapter and select command
+            Dim sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter
+            Dim sqlCommonSelect As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+            sqlCommonSelect.Connection = Me.CommonConn
+            sqlCommonAdapter.SelectCommand = sqlCommonSelect
+
+            'Fill the template list
+            templateFill()
+
+            'loads the rest of the data if a template has been selected
+            If (Session("seqTemplate") <> -1 And Session("TemplatesExist") = "Yes") Then
+                'Fill the Tags list
+                If (tagsFill(sqlCommonSelect, sqlCommonAdapter)) Then
+                    'Fill the Questions list
+                    If (questionsFill(sqlCommonSelect, sqlCommonAdapter)) Then
+                        'Fill the Question Group list
+                        If (questionGroupsFill(sqlCommonSelect, sqlCommonAdapter)) Then
+                            'Fill the Surveys list
+                            If (surveysFill(sqlCommonSelect, sqlCommonAdapter)) Then
+                                'List the Delegates/Owners
+                                If (delegatesFill(sqlCommonSelect, sqlCommonAdapter)) Then
+                                    'Populate the page with the template data
+                                    If Not (failure) Then
+                                        Me.txtTemplateName.Text = Me.dsCommon.Tables("Templates").Rows(Me.ddlTemplateList.SelectedIndex() - 1).Item("strTemplateName")
+                                        Me.txtDescription.Text = Me.dsCommon.Tables("Templates").Rows(Me.ddlTemplateList.SelectedIndex() - 1).Item("strDescription")
+                                        Me.chkTQSurvey.Checked = Me.dsCommon.Tables("Templates").Rows(Me.ddlTemplateList.SelectedIndex() - 1).Item("blnTraining")
+                                        Me.chkOptional.Checked = Me.dsCommon.Tables("Templates").Rows(Me.ddlTemplateList.SelectedIndex() - 1).Item("blnOptional")
+                                        Me.chkActive.Checked = Me.dsCommon.Tables("Templates").Rows(Me.ddlTemplateList.SelectedIndex() - 1).Item("blnActive")
+                                    End If
+
+                                    'determine the approval status of the selected template
+                                    Session("isApproved") = myUtility.isApproved(Me.dsCommon, Me.CommonConn)
+                                    If (Session("Alert") <> "") Then
+                                        alert(Session("Alert"))
+                                    End If
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
+            Else
+                'Clear all fields
+                Me.txtDescription.Text = ""
+                Me.txtTemplateName.Text = ""
+                Me.chkTQSurvey.Checked = False
+                Me.chkOptional.Checked = False
+                Me.chkActive.Checked = True
+                Session("seqTemplate") = -1
+            End If
+        Catch ex As Exception
+            alert("Failed to load all template information.")
+        End Try
+    End Sub
+
+    'Fill the list of templates
+    Private Sub templateFill()
+        Trace.Warn("Template Fill")
+        Try
+            'Execute the SQL Call based on the user type
+            If (Session("UserType") <> 4 And Session("UserType") <> 1) Then
+                Me.SqlSelectCommand1.CommandText = "SELECT * FROM " & myUtility.getExtension() & "fempTemplates ft, " & myUtility.getProdExtension() & "fempPermission fp where " & _
+                "ft.seqTemplate = fp.seqTemplate AND fp.seqUserID = " & Session("UserID") & _
+                " Order by strTemplateName"
+
+                'clear out the old data if it's there
+                If (Me.dsCommon.Tables.Contains("Templates")) Then
+                    Me.dsCommon.Tables("Templates").Rows.Clear()
+                End If
+                Me.SqlSelectCommand1.Connection = Me.CommonConn
+                Me.sqlTemplates.Fill(dsCommon, "Templates")
+            Else
+                Me.SqlSelectCommand1.CommandText = "SELECT * FROM " & myUtility.getExtension() & "fempTemplates Order by " & _
+                "strTemplateName"
+                'clear out the old data if it's there
+                If (Me.dsCommon.Tables.Contains("Templates")) Then
+                    Me.dsCommon.Tables("Templates").Rows.Clear()
+                End If
+                Me.SqlSelectCommand1.Connection = Me.CommonConn
+                Me.sqlTemplates.Fill(dsCommon, "Templates")
+            End If
+
+            'if there are templates then build the list of templates otherwise set the existence session to "No"
+            If (Me.dsCommon.Tables("Templates").Rows.Count() > 0) Then
+                'Bind the data and add an additional item for no template selected
+                Me.ddlTemplateList.DataSource = Me.dsCommon.Tables("Templates")
+                Me.ddlTemplateList.DataValueField = "seqTemplate"
+                Me.ddlTemplateList.DataTextField = "strTemplateName"
+                Me.ddlTemplateList.DataBind()
+                Dim li As System.Web.UI.WebControls.ListItem = New System.Web.UI.WebControls.ListItem
+                li.Text = "-- Select a Template --"
+                li.Value = "-1"
+                Me.ddlTemplateList.Items.Insert(0, li)
+
+                'Check to see if this is our first time on the page or not
+                If (Session("seqTemplate") <> -1 And Not Me.ddlTemplateList.Items.FindByValue(Session("seqTemplate")) Is Nothing) Then
+                    Me.ddlTemplateList.Items.FindByValue(Session("seqTemplate")).Selected = True
+                    Session("isDirty") = Me.myUtility.isDirty(Me.dsCommon, Me.CommonConn)
+                Else
+                    Me.ddlTemplateList.SelectedIndex = 0
+                End If
+
+                Session("TemplatesExist") = "Yes"
+            Else
+                Session("TemplatesExist") = "No"
+            End If
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Session("TemplatesExist") = "No"
+        End Try
+    End Sub
+
+    'Fills the tags repeater
+    Private Function tagsFill(ByVal sqlCommonAction As Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As Data.SqlClient.SqlDataAdapter) As Boolean
+        Trace.Warn("Filling Tags")
+
+        Try
+            'clear out the questions if the are any residual
+            If (Me.dsCommon.Tables.Contains("Tags")) Then
+                Me.dsCommon.Tables("Tags").Rows.Clear()
+            End If
+
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempComments where seqTemplate = " & Session("seqTemplate")
+            sqlCommonAdapter.Fill(Me.dsCommon, "Tags")
+            Me.rptrTags.DataSource = Me.dsCommon.Tables("Tags")
+            Me.rptrTags.DataBind()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to load the Template Tag Items.")
+            Return False
+        End Try
+    End Function
+
+    'Fills the questions repeater
+    Private Function questionsFill(ByVal sqlCommonAction As Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As Data.SqlClient.SqlDataAdapter) As Boolean
+        Trace.Warn("Filling Questions")
+
+        Try
+            'clear out the questions if the are any residual
+            If (Me.dsCommon.Tables.Contains("Questions")) Then
+                Me.dsCommon.Tables("Questions").Rows.Clear()
+            End If
+
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempQuestions where seqTemplate = " & Session("seqTemplate")
+            sqlCommonAdapter.Fill(Me.dsCommon, "Questions")
+            Me.rptrQuestions.DataSource = Me.dsCommon.Tables("Questions")
+            Me.rptrQuestions.DataBind()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to load the Template Questions.")
+            Return False
+        End Try
+    End Function
+
+    'Fills the question groups repeater
+    Private Function questionGroupsFill(ByVal sqlCommonAction As Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As Data.SqlClient.SqlDataAdapter) As Boolean
+        Trace.Warn("Filling Question Groups")
+
+        Try
+            'clear out the question groups if the are any residual
+            If (Me.dsCommon.Tables.Contains("QuestionGroups")) Then
+                Me.dsCommon.Tables("QuestionGroups").Rows.Clear()
+            End If
+
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempReportGroup where seqTemplate = " & Session("seqTemplate")
+            sqlCommonAdapter.Fill(Me.dsCommon, "QuestionGroups")
+            Me.rptrQuestionGroups.DataSource = Me.dsCommon.Tables("QuestionGroups")
+            Me.rptrQuestionGroups.DataBind()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to load the Template Question Groups.")
+            Return False
+        End Try
+    End Function
+
+    'Fills the surveys repeater and gets a table listing all surveys as well as a count of all surveys
+    Private Function surveysFill(ByVal sqlCommonAction As Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As Data.SqlClient.SqlDataAdapter) As Boolean
+        Trace.Warn("Filling Surveys")
+
+        Try
+            'clear out the surveys if there are any residual
+            If (Me.dsCommon.Tables.Contains("Surveys")) Then
+                Me.dsCommon.Tables("Surveys").Rows.Clear()
+            End If
+
+            'clear out the survey results if there are any residual
+            If (Me.dsCommon.Tables.Contains("SurveyResults")) Then
+                Me.dsCommon.Tables("SurveyResults").Rows.Clear()
+            End If
+
+            'Get count of survey results from production
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempSurvey fs, " & _
+            myUtility.getProdExtension() & "fempResults fr where seqTemplate = " & _
+                Session("seqTemplate") & " and fs.seqSurvey = fr.seqSurvey"
+            Trace.Warn(sqlCommonAction.CommandText)
+            sqlCommonAdapter.Fill(Me.dsCommon, "SurveyResults")
+            Session("Results") = Me.dsCommon.Tables("SurveyResults").Rows.Count()
+
+            'Get only surveys available to the user
+            If (Session("UserType") <> 4 And Session("UserType") <> 1) Then
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempSurvey fs, " & _
+                    myUtility.getProdExtension() & "fempPermission fp where fs.seqTemplate = " & _
+                    Session("seqTemplate") & " and fs.seqSurvey = fp.seqSurvey and fp.seqUserID = " & _
+                    Session("UserID") & " and (fp.blnOwner = 1 or fp.blnDelegate = 1)"
+                sqlCommonAdapter.Fill(Me.dsCommon, "Surveys")
+                Me.rptrSurveys.DataSource = Me.dsCommon.Tables("Surveys")
+                Me.rptrSurveys.DataBind()
+            Else
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempSurvey fs where fs.seqTemplate = " & _
+                    Session("seqTemplate")
+                sqlCommonAdapter.Fill(Me.dsCommon, "Surveys")
+                Me.rptrSurveys.DataSource = Me.dsCommon.Tables("Surveys")
+                Me.rptrSurveys.DataBind()
+            End If
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to load the Template Surveys.")
+            Return False
+        End Try
+    End Function
+
+    'Fills the delegates repeater
+    Private Function delegatesFill(ByVal sqlCommonAction As Data.SqlClient.SqlCommand, ByVal sqlCommonAdapter As Data.SqlClient.SqlDataAdapter) As Boolean
+        Trace.Warn("Filling Delegates")
+
+        Try
+            'clear out the questions if the are any residual
+            If (Me.dsCommon.Tables.Contains("Delegates")) Then
+                Me.dsCommon.Tables("Delegates").Rows.Clear()
+            End If
+
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempPermission fp, " & _
+            myUtility.getProdExtension() & "fempUsers fu where seqTemplate = " & Session("seqTemplate") & " " & _
+            "and fp.seqUserID = fu.seqUserID and (fp.blnOwner = 1 or fp.blnDelegate = 1) order by fu.strLastName, fu.strFirstName"
+
+            sqlCommonAdapter.Fill(Me.dsCommon, "Delegates")
+            Me.rptrDelegates.DataSource = Me.dsCommon.Tables("Delegates")
+            Me.rptrDelegates.DataBind()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to load the Template Delegates.")
+            Return False
+        End Try
+    End Function
+
+    'gets the list of surveys in the template for deletion
+    Private Function getSurveyList(Optional ByVal tableName As String = "Surveys") As String
+        'Get list of surveys if they exist or return true since there will be no responses
+        Try
+            If (Me.dsCommon.Tables(tableName).Rows.Count() > 0) Then
+                Dim strSurveyList As System.Text.StringBuilder = New System.Text.StringBuilder
+                Dim index As Integer = 0
+                strSurveyList.Append("seqSurvey in (")
+                While (index < Me.dsCommon.Tables(tableName).Rows.Count())
+                    If (index = 0) Then
+                        strSurveyList.Append(Me.dsCommon.Tables(tableName).Rows(index).Item("seqSurvey"))
+                    Else
+                        strSurveyList.Append("," & Me.dsCommon.Tables(tableName).Rows(index).Item("seqSurvey"))
+                    End If
+                    index += 1
+                End While
+                strSurveyList.Append(") ")
+                Return strSurveyList.ToString
+            Else
+                Return ""
+            End If
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to determine the surveys that go with this Template.")
+            Return ""
+        End Try
+    End Function
+#End Region
+
+#Region "Control Settings"
+    'Changes text to reflect the current database
+    Private Sub changeControlText()
+        Trace.Warn("Change Control Text")
+        Try
+            'Set the visibility and interactibility of the controls based on template selection
+            If (Session("seqTemplate") <> -1) Then
+                If (Session("UserType") <> 4 And Session("UserType") <> 1) Then
+                    'determine if the user is a delegate/owner
+                    'Set up the common data adapter and select command
+                    Dim sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter
+                    Dim sqlCommonAction As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+                    sqlCommonAction.Connection = Me.CommonConn
+                    sqlCommonAdapter.SelectCommand = sqlCommonAction
+                    myUtility.determineUserOwnership(sqlCommonAction, sqlCommonAdapter, True)
+
+                    'set visibility and text of the controls based on the results
+                    If ((CType(Session("isTemplateOwner"), Boolean) Or CType(Session("isTemplateDelegate"), Boolean)) And Session("AllSurveyCount") <= 0) Then
+                        If (Session("Results") > 0 And Session("UserType") <> 4) Then
+                            setInteractivity(False)
+                        ElseIf (Not Session("isDirty") And Session("isApproved") And Session("Machine") = "Production") Then
+                            Me.hlpCopy2.ToolTip = "Clicking this button will copy the Template and attached Surveys to Development."
+                            Me.btnCopy2.Text = "Copy to Development"
+                            Me.btnCopy2.ToolTip = "Copy to Development"
+                            If (Session("UserType") >= 3) Then
+                                setInteractivity(True)
+                            Else
+                                setInteractivity(False)
+                            End If
+                        ElseIf (Not Session("isDirty") Or (Session("isDirty") And Session("isApproved"))) Then
+                            Me.hlpCopy.ToolTip = "Clicking this button will take you to the publication request page."
+                            Me.btnCopy.Text = "Re-Submit"
+                            Me.btnCopy.ToolTip = "Re-Submit"
+                            If (Session("UserType") >= 3) Then
+                                setInteractivity(True)
+                            Else
+                                setInteractivity(False)
+                            End If
+                        ElseIf (Session("isDirty")) Then
+                            Me.hlpCopy.ToolTip = "Clicking this button will take you to the publication request page."
+                            Me.btnCopy.Text = "Publication Request"
+                            Me.btnCopy.ToolTip = "Publication Request"
+                            If (Session("UserType") >= 3) Then
+                                setInteractivity(True)
+                            Else
+                                setInteractivity(False)
+                            End If
+                        End If
+                    Else
+                        setInteractivity(False)
+                    End If
+                Else
+                    'determine if the user is a delegate/owner
+                    'Set up the common data adapter and select command
+                    Dim sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter
+                    Dim sqlCommonAction As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+                    sqlCommonAction.Connection = Me.CommonConn
+                    sqlCommonAdapter.SelectCommand = sqlCommonAction
+                    myUtility.determineUserOwnership(sqlCommonAction, sqlCommonAdapter, True)
+                    If (Session("Machine") = "Development") Then
+                        If (Not Session("isDirty") And Session("isApproved")) Then
+                            Me.hlpCopy.ToolTip = "Clicking this button will copy the Template and attached Surveys to Production."
+                            Me.btnCopy.Text = "Copy to Production"
+                            Me.btnCopy.ToolTip = "Copy to Production"
+                        ElseIf (Not Session("isDirty") Or (Session("isDirty") And Session("isApproved"))) Then
+                            Me.hlpCopy.ToolTip = "Clicking this button will take you to the publication request page."
+                            Me.btnCopy.Text = "Re-Submit"
+                            Me.btnCopy.ToolTip = "Re-Submit"
+                        ElseIf (Session("isDirty")) Then
+                            Me.hlpCopy.ToolTip = "Clicking this button will take you to the publication request page."
+                            Me.btnCopy.Text = "Publication Request"
+                            Me.btnCopy.ToolTip = "Publication Request"
+                        End If
+                    Else
+                        Me.hlpCopy2.ToolTip = "Clicking this button will copy the Template and attached Surveys to Development."
+                        Me.btnCopy2.Text = "Copy to Development"
+                        Me.btnCopy2.ToolTip = "Copy to Development"
+                    End If
+                    If (Session("UserType") <> 1) Then
+                        setInteractivity(True)
+                    Else
+                        setInteractivity(False)
+                    End If
+                End If
+            Else
+                'set the interactivity based on no template selected
+                If (Session("UserType") < 3) Then
+                    setInteractivity(False)
+                Else
+                    setInteractivity(True)
+                End If
+            End If
+
+            myUtility.optionPreSetTemplate(Session("seqTemplate"), Me.dsCommon.Tables("Templates").Rows.Count(), Me.ddlPageOptions, True)
+
+        Catch ex As Exception
+            alert("Unable to determine your ownership status at this time.  This template will not be editable.")
+        End Try
+    End Sub
+
+    'Sets the interactivity of the controls on the page
+    Private Sub setInteractivity(ByVal Active As Boolean)
+        Trace.Warn("Set Interactivity")
+
+        If (Active And Session("Machine") <> "Production") Then
+            Me.txtDescription.Enabled = True
+            Me.txtTemplateName.Enabled = True
+            Me.chkTQSurvey.Enabled = True
+            Me.chkOptional.Enabled = True
+            If (Session("UserType") <> 1 And (CType(Session("isTemplateOwner"), Boolean) Or CType(Session("isTemplateDelegate"), Boolean))) Then
+                Me.chkActive.Enabled = True
+            Else
+                Me.chkActive.Enabled = False
+            End If
+            If (Session("Results") > 0 And Session("UserType") <> 4) Then
+                Me.hlpCopy.Visible = False
+                Me.btnCopy.Visible = False
+            Else
+                Me.hlpCopy.Visible = True
+                Me.btnCopy.Visible = True
+            End If
+            Me.hlpCopy2.Visible = False
+            Me.btnCopy2.Visible = False
+            Me.hlpDuplicate2.Visible = True
+            Me.btnDuplicate2.Visible = True
+            Me.txtDuplicate2.Visible = True
+        Else
+            Me.txtDescription.Enabled = False
+            Me.txtTemplateName.Enabled = False
+            Me.chkTQSurvey.Enabled = False
+            Me.chkOptional.Enabled = False
+            If (Session("UserType") <> 1 And (CType(Session("isTemplateOwner"), Boolean) Or CType(Session("isTemplateDelegate"), Boolean))) Then
+                Me.chkActive.Enabled = True
+            Else
+                Me.chkActive.Enabled = False
+            End If
+            Me.hlpCopy.Visible = False
+            Me.btnCopy.Visible = False
+            If (Session("Results") > 0 And Session("UserType") <> 4) Then
+                Me.hlpCopy2.Visible = False
+                Me.btnCopy2.Visible = False
+            Else
+                Me.hlpCopy2.Visible = True
+                Me.btnCopy2.Visible = True
+            End If
+            Me.hlpDuplicate2.Visible = False
+            Me.btnDuplicate2.Visible = False
+            Me.txtDuplicate2.Visible = False
+        End If
+
+        'Hide duplication and disable inputs on Production
+        If (Session("Machine") = "Production") Then
+            Me.hlpDuplicate.Visible = False
+            Me.btnDuplicate.Visible = False
+            Me.txtDuplicate.Visible = False
+            Me.hlpDuplicate2.Visible = False
+            Me.btnDuplicate2.Visible = False
+            Me.txtDuplicate2.Visible = False
+            Me.hlpSetPermissions.Visible = False
+            Me.btnSetPermissions.Visible = False
+        Else
+            Me.hlpDuplicate.Visible = True
+            Me.btnDuplicate.Visible = True
+            Me.txtDuplicate.Visible = True
+            Me.hlpDuplicate2.Visible = True
+            Me.btnDuplicate2.Visible = True
+            Me.txtDuplicate2.Visible = True
+            If ((((Session("UserType") = 4) Or (CType(Session("isTemplateOwner"), Boolean) Or CType(Session("isTemplateDelegate"), Boolean))) And Session("UserType") <> 1) And (Session("seqTemplate") <> -1)) Then
+                Me.hlpSetPermissions.Visible = True
+                Me.btnSetPermissions.Visible = True
+            Else
+                Me.hlpSetPermissions.Visible = False
+                Me.btnSetPermissions.Visible = False
+            End If
+            If (Session("seqTemplate") <> -1) Then
+                Me.hlpTemplatePreview.Visible = True
+                Me.btnTemplatePreview.Visible = True
+                Me.hlpTemplatePreview2.Visible = True
+                Me.btnTemplatePreview2.Visible = True
+            Else
+                Me.hlpTemplatePreview.Visible = False
+                Me.btnTemplatePreview.Visible = False
+                Me.hlpTemplatePreview2.Visible = False
+                Me.btnTemplatePreview2.Visible = False
+            End If
+        End If
+    End Sub
+#End Region
+
+#Region "Checks"
+    'Switch the server
+    Private Sub chkServerSwitch_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkServerSwitch.CheckedChanged
+        Trace.Warn("Server Switch")
+
+        'if it exists do the switch otherwise abort and alert the user
+        If (checkExistence()) Then
+            'Switch the server in name and connection
+            myUtility.swapMachine()
+            setServerText()
+            Me.chkServerSwitch.Checked = False
+
+            'reload the page data
+            loadData()
+
+            'Changes text to reflect the current database
+            changeControlText()
+        Else
+            alert("Server switch aborted.  This template does not exist on the other server.")
+            Me.chkServerSwitch.Checked = False
+        End If
+    End Sub
+
+    'Checks for the existence of the selected template on the other server
+    Private Function checkExistence() As Boolean
+        Trace.Warn("Checking Template Existence")
+
+        Try
+            If (Session("seqTemplate") <> -1) Then
+                'Get the templates based on the user's type
+                If (Session("UserType") <> 4 And Session("UserType") <> 1) Then
+                    Me.SqlSelectCommand1.CommandText = "SELECT * FROM " & myUtility.getExtension(True) & "fempTemplates ft, " & _
+                    myUtility.getProdExtension() & "fempPermission fp where " & _
+                    "ft.seqTemplate = fp.seqTemplate AND fp.seqUserID = " & Session("UserID")
+                    Me.SqlSelectCommand1.Connection = Me.CommonConn
+                    Me.sqlTemplates.Fill(dsCommon, "Templates")
+                Else
+                    Me.SqlSelectCommand1.CommandText = "SELECT * FROM " & myUtility.getExtension(True) & "fempTemplates"
+                    Me.SqlSelectCommand1.Connection = Me.CommonConn
+                    Me.sqlTemplates.Fill(dsCommon, "Templates")
+                End If
+
+                'determine if the template exists in the result set and return true if it is
+                Dim dr As DataRow
+                For Each dr In Me.dsCommon.Tables("Templates").Rows()
+                    If (dr.Item("seqTemplate") = Me.ddlTemplateList.SelectedItem.Value) Then
+                        Return True
+                    End If
+                Next
+                Return False
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            alert("Failed to read other server.")
+            Return False
+        End Try
+    End Function
+
+    'Determines if the currently selected template is dirty
+    Private Function isDirty() As Boolean
+        'Execute the SQL Call based on the user type
+        Try
+            Me.SqlSelectCommand1.CommandText = "SELECT blnDirty FROM " & myUtility.getDevExtension() & "fempTemplates where " & _
+                "seqTemplate = " & Session("seqTemplate")
+            'clear out the old data if it's there
+            If (Me.dsCommon.Tables.Contains("Dirty")) Then
+                Me.dsCommon.Tables("Dirty").Rows.Clear()
+            End If
+            Me.SqlSelectCommand1.Connection = Me.CommonConn
+            Me.sqlTemplates.Fill(dsCommon, "Dirty")
+            Return Me.dsCommon.Tables("Dirty").Rows(0).Item("blnDirty")
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Unable to determine if this template has been altered or not.  Database error.  This template is assumed to have been altered.")
+            Return True
+        End Try
+    End Function
+
+    'determines whether the template name exists already
+    Private Function doesTemplateNameExist(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, Optional ByVal isUpdate As Boolean = False, Optional ByVal isDuplicate As Boolean = False) As Boolean
+        Trace.Warn("Verifying no other template has this same name.")
+        Try
+            If (isDuplicate) Then
+                'set up the sql command based on whether or not we're updating a current template or not
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempTemplates where strTemplateName = @strTemplateName"
+
+                Dim param0 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strTemplateName", System.Data.SqlDbType.VarChar, 50, "strTemplateName")
+                If (Trim("" & Me.txtDuplicate.Text) = "") Then
+                    param0.Value = Me.txtDuplicate2.Text
+                Else
+                    param0.Value = Me.txtDuplicate.Text
+                End If
+
+                sqlCommonAction.Parameters.Add(param0)
+
+                'select the template with the same name if it exists and return true of there others with the same name
+                Dim ds As DataSet = New DataSet
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(ds)
+                If (ds.Tables(0).Rows.Count() > 0) Then
+                    Return True
+                Else
+                    Return False
+                End If
+            Else
+                'set up the sql command based on whether or not we're updating a current template or not
+                If (isUpdate) Then
+                    sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempTemplates where strTemplateName = @strTemplateName" & _
+                           " AND seqTemplate <> " & Session("seqTemplate")
+                Else
+                    sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempTemplates where strTemplateName = @strTemplateName"
+                End If
+
+                Dim param0 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strTemplateName", System.Data.SqlDbType.VarChar, 50, "strTemplateName")
+                param0.Value = Me.txtTemplateName.Text
+                sqlCommonAction.Parameters.Add(param0)
+
+                'select the template with the same name if it exists and return true of there others with the same name
+                Dim ds As DataSet = New DataSet
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(ds)
+                If (ds.Tables(0).Rows.Count() > 0) Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End If
+        Catch ex As Exception
+            alert("Unable to determine if template name exists or not.  Aborting.")
+            Return True
+        End Try
+    End Function
+
+    'determines if significant changes were made to the data
+    Private Function significantChange() As Boolean
+        Try
+            'get the data
+            Dim oldCommand As String = Me.sqlCommonAction.CommandText
+            Me.sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempTemplates where seqTemplate = " & _
+                Session("seqTemplate")
+            If (Me.dsCommon.Tables.Contains("OriginalData")) Then
+                Me.dsCommon.Tables("OriginalData").Rows.Clear()
+            End If
+            Me.sqlCommonAdapter.Fill(Me.dsCommon, "OriginalData")
+            Me.sqlCommonAction.CommandText = oldCommand
+
+            'compare data against alterable fields - only 1 row so loop runs once
+            Dim dr As DataRow
+            For Each dr In Me.dsCommon.Tables("OriginalData").Rows
+                If (dr.Item("strTemplateName") <> Me.txtTemplateName.Text) Then
+                    Return True
+                ElseIf (Me.txtDescription.Text <> dr.Item("strDescription")) Then
+                    Return True
+                ElseIf (Me.chkOptional.Checked <> CType(dr.Item("blnOptional"), Boolean)) Then
+                    Return True
+                ElseIf (Me.chkTQSurvey.Checked <> CType(dr.Item("blnTraining"), Boolean)) Then
+                    Return True
+                Else
+                    Return False
+                End If
+            Next
+
+            'default return of True if there was no data retrieved for the loop above to run through
+            If (Me.dsCommon.Tables("OriginalData").Rows.Count = 0) Then
+                alert("Unable to determine if significant changes were made.  This template has been marked dirty by default in this case.")
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            alert("Unable to determine if significant changes were made.  This template has been marked dirty by default in this case.")
+            Return True
+        End Try
+    End Function
+#End Region
+
+#Region "Page Switch"
+    'handles the user wanting to set permissions for users
+    Private Sub btnSetPermissions_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSetPermissions.Click
+        Session("CurrentPage") = "./Permission.aspx"
+        redirect(Session("CurrentPage"))
+    End Sub
+
+    'brings up a pop-up window with the template preview in it
+    Private Sub btnTemplatePreview_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTemplatePreview.Click, btnTemplatePreview2.Click
+        Response.Write("<script>newWin = window.open('./Preview.aspx', 'PreviewWindow', 'width=600,height=400,scrollbars=yes,toolbar=no,titlebar=no,status=no,resizable=yes,menubar=no');newWin.focus();</script>")
+    End Sub
+#End Region
+
+#Region "Template Selection"
+    'Fill the lists and populate the page with data
+    Private Sub ddlTemplateList_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ddlTemplateList.SelectedIndexChanged
+        Trace.Warn("Template Selection Changed")
+
+        'Store the recently selected template sequence number
+        Session("seqTemplate") = Me.ddlTemplateList.SelectedItem.Value()
+        Session("TemplateName") = Me.ddlTemplateList.SelectedItem.Text()
+        Session("Results") = 0
+
+        'loads the appropriate data
+        loadData()
+
+        'change control text
+        changeControlText()
+
+        'reset lingering variables for approvers
+        Session("isADCHSR") = Nothing
+        Session("hsrHID") = Nothing
+        Session("adcHID") = Nothing
+    End Sub
+#End Region
+
+#Region "Page Action"
+    'Handles the user attempting to do something with the template
+    Private Sub btnSubmit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSubmit.Click
+        Trace.Warn("Page Option Selected")
+
+        'store the selected option and act on the value
+        Dim strValue As String = Me.ddlPageOptions.SelectedItem.Value
+
+        'check for possible malicious code input
+        Dim blnContinue As Boolean = True
+        If Not (myUtility.goodInput(Me.txtDescription, True) And myUtility.goodInput(Me.txtTemplateName, True)) Then
+            blnContinue = False
+            alert("Possible malicious code entry(s).  " & strValue & " aborted.")
+        End If
+
+        If (blnContinue) Then
+            'determine if the template is dirty or not
+            If (strValue <> "Insert") Then
+                Dim tempConn As Data.SqlClient.SqlConnection = New Data.SqlClient.SqlConnection
+                Session("isDirty") = myUtility.isDirty(Me.dsCommon, myUtility.getConnection(tempConn))
+            End If
+
+            'Reset the form data to that in the db
+            If (strValue = "Reset") Then
+                loadData()
+                Me.ddlPageOptions.SelectedIndex = 0
+            ElseIf (strValue = "Delete") Then
+                'Delete the Template and all Surveys attached to it on development
+                executeDelete()
+            ElseIf (strValue = "Update") Then
+                'Update the template
+                executeUpdate()
+            ElseIf (strValue = "Insert") Then
+                'insert the template generating a new template even if it currently exists
+                executeInsert()
+            End If
+
+            Session("TransExists") = False
+        End If
+    End Sub
+#End Region
+
+#Region "Insert Template"
+    'executes the insert command
+    Private Sub executeInsert()
+        Try
+            sqlCommonAction.Connection = Me.CommonConn
+
+            Dim continue As Boolean = True
+            'determine if the user gave this template a name.  If not alert the user and abort all transactions with the db
+            If (Trim("" & Me.txtTemplateName.Text) = "") Then
+                alert("Failed to add the new template. You must provide a name for your template.")
+                continue = False
+            End If
+
+            'check to see if a template with the same name exists on development
+            If (doesTemplateNameExist(sqlCommonAdapter, sqlCommonAction)) Then
+                alert("Failed to add the new template. A template already exists with that name.")
+                continue = False
+            End If
+
+            If (continue) Then
+                'set up the transaction
+                myUtility.setupTransaction(sqlCommonAction, Me.CommonConn)
+
+                'Insert new Template
+                If (continue) Then
+                    If Not (InsertTemplate(sqlCommonAdapter, sqlCommonAction)) Then
+                        continue = False
+                    End If
+                End If
+                If (continue) Then
+                    If Not (InsertPermissions(sqlCommonAdapter, sqlCommonAction)) Then
+                        continue = False
+                    End If
+                End If
+                If (continue) Then
+                    If Not (InsertComments(sqlCommonAdapter, sqlCommonAction)) Then
+                        continue = False
+                    End If
+                End If
+                If (continue) Then
+                    If Not (InsertQuestions(sqlCommonAdapter, sqlCommonAction)) Then
+                        continue = False
+                    End If
+                End If
+                If (continue) Then
+                    If Not (InsertList(sqlCommonAdapter, sqlCommonAction)) Then
+                        continue = False
+                    End If
+                End If
+                If (continue) Then
+                    If Not (InsertReportGroup(sqlCommonAdapter, sqlCommonAction)) Then
+                        continue = False
+                    End If
+                End If
+                If (continue) Then
+                    Trace.Warn("Committing transaction")
+                    'no errors?  Then we made it far enough to commit the data and we're nearly done.
+                    sqlCommonAction.Transaction.Commit()
+
+                    'set the template to the new template and reload the data from the database
+                    Session("seqTemplate") = Session("newSeqTemplate")
+                    Me.ddlPageOptions.SelectedIndex = 0
+                    Session("isDirty") = Me.myUtility.isDirty(Me.dsCommon, Me.CommonConn)
+                    Session("TemplateName") = Me.txtTemplateName.Text
+                    loadData()
+                    changeControlText()
+                Else
+                    'roll back the transaction
+                    sqlCommonAction.Transaction.Rollback()
+                    loadData(True)
+                    changeControlText()
+                End If
+            Else
+                loadData(True)
+                changeControlText()
+            End If
+        Catch ex As Exception
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            alert("Template insertion failure.")
+            loadData(True)
+            changeControlText()
+        End Try
+    End Sub
+
+    'Insert the template
+    Private Function InsertTemplate(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting the Template")
+        Try
+            'Set up the insert query
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempTemplates (strTemplateName, strDescription, datDateCreated, blnActive, " & _
+                "intCreatorID, blnTraining, blnOptional, blnDirty, blnHSRItems) VALUES (@strTemplateName, @strDescription" & _
+                ", '" & Now & "', " & IIf(Me.chkActive.Checked, 1, 0) & ", " & CType(Session("UserID"), Integer) & ", " & _
+                IIf(Me.chkTQSurvey.Checked, 1, 0) & ", " & IIf(Me.chkOptional.Checked, 1, 0) & ", 1, 0)"
+
+            'parameterized the text input to allow for things like quotes to get through
+            sqlCommonAction.Parameters(0).Value = Me.txtTemplateName.Text
+            Dim param1 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strDescription", System.Data.SqlDbType.VarChar, 1800, "strDescription")
+            param1.Value = Server.HtmlDecode(Me.txtDescription.Text)
+            sqlCommonAction.Parameters.Add(param1)
+
+            sqlCommonAction.ExecuteNonQuery()
+
+            'if we make it this far also get the new template seqID
+            Dim ds As DataSet = New DataSet
+            sqlCommonAction.CommandText = "Select seqTemplate from " & myUtility.getExtension() & "fempTemplates where strTemplateName = @strTemplateName" & _
+                " AND strDescription = @strDescription AND intCreatorID = " & Session("UserID") & _
+                " AND blnActive = " & IIf(Me.chkActive.Checked, 1, 0) & " AND blnTraining = " & IIf(Me.chkTQSurvey.Checked, 1, 0) & _
+                " AND blnOptional = " & IIf(Me.chkOptional.Checked, 1, 0)
+            sqlCommonAdapter.Fill(ds)
+            Session("newSeqTemplate") = ds.Tables(0).Rows(0).Item("seqTemplate")
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to add the new template.")
+            Return False
+        End Try
+    End Function
+
+    'Insert the template permissions
+    Private Function InsertPermissions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Setting Template Permissions")
+
+        'Add permissions for the template
+        sqlCommonAction.CommandText = "Insert INTO " & myUtility.getProdExtension() & "fempPermission (seqUserID, seqTemplate, seqSurvey, intCreatorID, " & _
+            "datCreatedDate, blnOwner, blnDelegate, blnUser) VALUES (" & Session("UserID") & ", " & Session("newSeqTemplate") & _
+            ", -1, " & Session("UserID") & ", '" & Now & "', 1, 1, 1)"
+        Trace.Warn(sqlCommonAction.CommandText)
+        Try
+            sqlCommonAction.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to add permissions for the new template.")
+            Return False
+        End Try
+    End Function
+
+    'Insert the template comments
+    Private Function InsertComments(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Comments")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the tag items over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempComments (seqTemplate, intTagID, strTemplateTagName, strTemplateTagQuestion) " & _
+                "SELECT seqTemplate, intTagID, strTemplateTagName, strTemplateTagQuestion FROM " & _
+                "(Select ft.seqTemplate, fc.intTagID, fc.strTemplateTagName, fc.strTemplateTagQuestion from " & myUtility.getExtension() & "fempComments fc, " & myUtility.getExtension() & "fempTemplates " & _
+                "ft WHERE fc.seqTemplate = " & Session("seqTemplate") & " AND ft.seqTemplate = " & Session("newSeqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the comments for the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'Insert the template Questions
+    Private Function InsertQuestions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Questions")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the questions over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempQuestions (seqTemplate, intQuestion, blnRequired, blnPageBreak, " & _
+                "blnFilter, blnTopIsNotApp, strQuestionType, strValue, strGraphType, intCount, intInterval, intInitial, " & _
+                "intBranch) " & _
+                "SELECT seqTemplate, intQuestion, blnRequired, blnPageBreak, blnFilter, blnTopIsNotApp, strQuestionType, " & _
+                "strValue, strGraphType, intCount, intInterval, intInitial, intBranch FROM " & _
+                "(Select ft.seqTemplate, fq.intQuestion, fq.blnRequired, fq.blnPageBreak, fq.blnFilter, fq.blnTopIsNotApp, " & _
+                "fq.strQuestionType, fq.strValue, fq.strGraphType, fq.intCount, fq.intInterval, fq.intInitial, fq.intBranch " & _
+                "from " & myUtility.getExtension() & "fempQuestions fq, " & myUtility.getExtension() & "fempTemplates ft WHERE fq.seqTemplate = " & _
+                Session("seqTemplate") & " AND ft.seqTemplate = " & Session("newSeqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the questions for the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'Insert the question lists
+    Private Function InsertList(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Lists for Questions")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the lists for the questions over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempList (seqTemplate, intQuestion, intList, intListValue, strLabel, rawIMGBlob, " & _
+                "strContent, intBranch) " & _
+                "SELECT seqTemplate, intQuestion, intList, intListValue, strLabel, rawIMGBlob, strContent, intBranch FROM " & _
+                "(Select ft.seqTemplate, fl.intQuestion, fl.intList, fl.intListValue, fl.strLabel, fl.rawIMGBlob, fl.strContent, " & _
+                "fl.intBranch from " & myUtility.getExtension() & "fempList fl, " & myUtility.getExtension() & "fempTemplates ft WHERE fl.seqTemplate = " & Session("seqTemplate") & _
+                " AND ft.seqTemplate = " & Session("newSeqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the lists for the questions in the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'Insert the report groups
+    Private Function InsertReportGroup(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Report Groups for Questions")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the report groups for the questions over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempReportGroup (intReportGroup, strLabel, seqTemplate) " & _
+                "SELECT intReportGroup, strLabel, seqTemplate FROM (Select ft.seqTemplate, frg.strLabel, " & _
+                "frg.intReportGroup from " & myUtility.getExtension() & "fempReportGroup frg, " & myUtility.getExtension() & "fempTemplates ft WHERE frg.seqTemplate = " & _
+                Session("seqTemplate") & " AND ft.seqTemplate = " & Session("newSeqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the report groups for the questions in the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+#End Region
+
+#Region "Update Template"
+    'executes the update command
+    Private Sub executeUpdate()
+        Try
+            'set up the connection and db interaction tools
+            sqlCommonAction.Parameters.Clear()
+
+            Dim continue As Boolean = True
+            continue = myUtility.setupTransaction(sqlCommonAction, Me.CommonConn)
+
+            If (continue) Then
+                If (Session("Machine") = "Development") Then
+                    'determine if the user gave this template a name.  If not alert the user and abort all transactions with the db
+                    If (Trim("" & Me.txtTemplateName.Text) = "") Then
+                        alert("Failed to update the template. You must provide a name for your template.")
+                        continue = False
+                    End If
+
+                    'check to see if a template with the same name exists on development
+                    If (doesTemplateNameExist(sqlCommonAdapter, sqlCommonAction, True)) Then
+                        alert("Failed to update the template. A template with the same name in the development database already exists.")
+                        continue = False
+                    End If
+                End If
+
+                If (continue) Then
+                    sqlCommonAction.Connection = Me.CommonConn
+                    sqlCommonAction.Parameters.Clear()
+                    Me.sqlCommonAdapter.SelectCommand = sqlCommonAction
+
+                    'try to do the update
+                    sqlCommonAction.CommandText = "Update " & myUtility.getExtension() & "fempTemplates SET strTemplateName = @strTemplateName, " & _
+                    "strDescription = @strDescription, blnActive = " & IIf(Me.chkActive.Checked, 1, 0) & ", " & _
+                    "blnTraining = " & IIf(Me.chkTQSurvey.Checked, 1, 0) & ", blnOptional = " & IIf(Me.chkOptional.Checked, 1, 0) & ", "
+
+                    'some smart updating to avoid dirty bit settings when users are not lvl 4 users
+                    If (Session("UserType") < 4 And Session("Results") > 0) Then
+                        sqlCommonAction.CommandText &= "blnDirty = 0 WHERE seqTemplate = " & Session("seqTemplate")
+                    Else
+                        If (significantChange()) Then
+                            sqlCommonAction.CommandText &= "blnDirty = 1 WHERE seqTemplate = " & Session("seqTemplate")
+                        Else
+                            sqlCommonAction.CommandText &= "blnDirty = 0 WHERE seqTemplate = " & Session("seqTemplate")
+                        End If
+                    End If
+
+                    'parameterized the text input to allow for things like quotes to get through
+                    Dim param0 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strTemplateName", System.Data.SqlDbType.VarChar, 1800, "strTemplateName")
+                    param0.Value = Me.txtTemplateName.Text
+                    sqlCommonAction.Parameters.Add(param0)
+                    Dim param1 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strDescription", System.Data.SqlDbType.VarChar, 1800, "strDescription")
+                    param1.Value = Server.HtmlDecode(Me.txtDescription.Text)
+                    sqlCommonAction.Parameters.Add(param1)
+
+                    Trace.Warn(sqlCommonAction.CommandText)
+                    sqlCommonAction.ExecuteNonQuery()
+
+                    're-load the data from the database
+                    sqlCommonAction.Transaction.Commit()
+                    Trace.Warn("loading data from update")
+                    loadData()
+                    changeControlText()
+                Else
+                    If (Session("transExists") = True) Then
+                        sqlCommonAction.Transaction.Rollback()
+                    End If
+                    alert("Template update failure.")
+                    loadData(True)
+                    changeControlText()
+                End If
+            End If
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            alert("Template update failure.")
+            loadData(True)
+            changeControlText()
+        End Try
+    End Sub
+#End Region
+
+#Region "Delete Template"
+    'Executes the deletion of the Template
+    Private Function executeDelete(Optional ByVal isCopy As Boolean = False) As Boolean
+        Trace.Warn("Executing Delete")
+        Try
+            'Load fresh from the DB only if we're on our first pass through
+            loadData()
+
+            'get the list of surveys for the template
+            strSurveyList = getSurveyList()
+
+            'set up the transaction
+            myUtility.setupTransaction(sqlCommonAction, Me.CommonConn)
+
+            'do db data manipulation and commit if all manipulations are complete
+            Dim blnContinue As Boolean = True
+            Try
+                'Remove all data pertaining to the template
+                'if there are surveys attached to this template remove them and their stuff
+                If (strSurveyList <> "") Then
+                    If Not (removeTags(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                        blnContinue = False
+                    End If
+                    If (blnContinue) Then
+                        If Not (removeSurveyPermissions(sqlCommonAdapter, sqlCommonAction, strSurveyList, isCopy)) Then
+                            blnContinue = False
+                        End If
+                    End If
+                    If (blnContinue) Then
+                        If Not (removeResponses(sqlCommonAdapter, sqlCommonAction, strSurveyList, isCopy)) Then
+                            blnContinue = False
+                        End If
+                    End If
+                    If (blnContinue) Then
+                        If Not (removeResults(sqlCommonAdapter, sqlCommonAction, strSurveyList, isCopy)) Then
+                            blnContinue = False
+                        End If
+                    End If
+                    If (blnContinue) Then
+                        If Not (removeSurveys(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                            blnContinue = False
+                        End If
+                    End If
+                End If
+                'remove everything else related to the template
+                If (blnContinue) Then
+                    If Not (removeReportGroups(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeListItems(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeQuestions(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeComments(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeTemplatePermissions(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeTemplateSignatures(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If (removeTemplate(sqlCommonAdapter, sqlCommonAction, isCopy)) Then
+                        Trace.Warn("Committing transaction")
+                        'no errors?  Then we made it far enough to commit the data and we're nearly done.
+                        sqlCommonAction.Transaction.Commit()
+
+                        'notify the survey owners of the loss of their surveys
+                        If (Me.dsCommon.Tables.Contains("SurveyNotifyList")) Then
+                            If (Me.dsCommon.Tables("SurveyNotifyList").Rows.Count > 0) Then
+                                Dim row As DataRow
+                                For Each row In Me.dsCommon.Tables("SurveyNotifyList").Rows()
+                                    If Not (sendDeleteMail(row.Item("strEmail"), row.Item("strComments"), True)) Then
+                                        alert("Failed to notify " & _
+                                        row.Item("strFirstName") & " " & row.Item("strLastName") & _
+                                        " about the deletion of the survey called " & _
+                                        row.Item("strComments") & ".")
+                                    End If
+                                Next
+                            End If
+                        End If
+
+                        'notify the template owners of the loss of their template
+                        If (Me.dsCommon.Tables.Contains("TemplateNotifyList")) Then
+                            If (Me.dsCommon.Tables("TemplateNotifyList").Rows.Count > 0) Then
+                                Dim row As DataRow
+                                For Each row In Me.dsCommon.Tables("TemplateNotifyList").Rows()
+                                    If Not (sendDeleteMail(row.Item("strEmail"), row.Item("strTemplateName"))) Then
+                                        alert("Failed to notify " & _
+                                        row.Item("strFirstName") & " " & row.Item("strLastName") & _
+                                        " about the deletion of the template called " & _
+                                        row.Item("strTemplateName") & ".")
+                                    End If
+                                Next
+                            End If
+                        End If
+
+                        'set the template to nothing and reload the data from the database
+                        If (Not isCopy) Then
+                            Session("seqTemplate") = -1
+                            loadData()
+                            changeControlText()
+                        End If
+                        Return True
+                    Else
+                        'roll back the transaction
+                        sqlCommonAction.Transaction.Rollback()
+                        loadData(True)
+                        changeControlText()
+                        Return False
+                    End If
+                Else
+                    'roll back the transaction
+                    sqlCommonAction.Transaction.Rollback()
+                    loadData(True)
+                    changeControlText()
+                    Return False
+                End If
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                sqlCommonAction.Transaction.Rollback()
+                loadData(True)
+                changeControlText()
+                Return False
+            End Try
+        Catch ex As Exception
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            alert("Template delete failure.")
+            loadData(True)
+            changeControlText()
+        End Try
+    End Function
+
+    'removes the tag items for the surveys
+    Private Function removeTags(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Tags")
+
+        If (isCopy) Then
+            'Remove all Tags for the surveys if there are surveys otherwise return true
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempTags where seqTemplate = " & _
+            Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the tags for the template.")
+                Return False
+            End Try
+        Else
+            'Remove all Tags for the surveys if there are surveys otherwise return true
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempTags where seqTemplate = " & _
+            Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the tags for the template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'removes the permissions for the surveys
+    Private Function removeSurveyPermissions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal strSurveyList As String, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Survey Permissions")
+
+        'if not doing a copy then get the list of surveys needed to be removed
+        If Not (isCopy) Then
+            'make a list of all individuals that will need to be notified of the loss of their surveys
+            Try
+                sqlCommonAction.CommandText = "SELECT fp.seqUserID, fs.strComments, fu.strEmail, " & _
+                "fu.strLastName, fu.strFirstName, fu.strMiddleName from " & _
+                myUtility.getProdExtension() & "fempPermission fp, " & myUtility.getExtension() & _
+                "fempSurvey fs, " & myUtility.getProdExtension() & "fempUsers fu where fp.seqUserID = " & _
+                "fu.seqUserID And fs.seqSurvey = fp.seqSurvey And fs.seqTemplate = " & _
+                Session("seqTemplate") & " and (fp.blnOwner = 1 or fp.blnDelegate = 1) order by fp.seqSurvey"
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(Me.dsCommon, "SurveyNotifyList")
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to create a notification list for the survey owners.")
+                Return False
+            End Try
+
+            'determine if the template still exists on the other side
+            Try
+                sqlCommonAction.CommandText = "SELECT * from " & myUtility.getExtension(True) & "fempTemplates where seqTemplate = " & _
+                Session("seqTemplate")
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(Me.dsCommon, "TemplateExistence")
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to determine if the template exists on the other server.")
+                Return False
+            End Try
+
+            If (Me.dsCommon.Tables("TemplateExistence").Rows.Count() = 0) Then
+                If (strSurveyList <> "") Then
+                    'Remove all permissions for the surveys if there are surveys otherwise return true
+                    sqlCommonAction.CommandText = "Delete from " & myUtility.getProdExtension() & "fempPermission where " & strSurveyList
+                    Trace.Warn(sqlCommonAction.CommandText)
+                    Try
+                        sqlCommonAction.ExecuteNonQuery()
+                        Return True
+                    Catch ex As Exception
+                        Trace.Warn(ex.ToString)
+                        alert("Failed to remove the permissions for the surveys in the template.")
+                        Return False
+                    End Try
+                Else
+                    Return True
+                End If
+            Else
+                Return True
+            End If
+        Else
+            Return True
+        End If
+    End Function
+
+    'removes the responses for the surveys in the template
+    Private Function removeResponses(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal strSurveyList As String, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing survey responses")
+
+        If Not (isCopy) Then
+            'Remove all responses for the surveys if there are surveys otherwise return true
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempResponse where " & strSurveyList
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the responses for the surveys in this template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'removes the responses for the surveys in the template
+    Private Function removeResults(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal strSurveyList As String, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing survey responses")
+
+        If Not (isCopy) Then
+            'Remove all responses for the surveys if there are surveys otherwise return true
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempResults where " & strSurveyList
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the results for the surveys in this template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'removes the surveys for the template
+    Private Function removeSurveys(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Surveys")
+
+        If (isCopy) Then
+            'Remove all Surveys for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempSurvey where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the surveys for the template.")
+                Return False
+            End Try
+        Else
+            'Remove all Surveys for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempSurvey where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the surveys for the template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'removes the list items for the questions in the template
+    Private Function removeListItems(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing List Items")
+
+        If (isCopy) Then
+            'Remove all List Items for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempList where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the list items for the questions in the template.")
+                Return False
+            End Try
+        Else
+            If Not (Me.dsCommon.Tables.Contains("TemplateExistence")) Then
+                'determine if the survey still exists on the other side
+                Try
+                    sqlCommonAction.CommandText = "SELECT * from " & myUtility.getExtension(True) & "fempTemplates where seqTemplate = " & _
+                    Session("seqTemplate")
+                    sqlCommonAdapter.SelectCommand = sqlCommonAction
+                    sqlCommonAdapter.Fill(Me.dsCommon, "TemplateExistence")
+                Catch ex As Exception
+                    Trace.Warn(ex.ToString)
+                    alert("Failed to determine if the template exists on the other server.")
+                    Return False
+                End Try
+            End If
+
+            'Remove all Surveys for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempList where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the list items for the questions in the template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'removes the report groups for the questions in the template
+    Private Function removeReportGroups(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Report Groups")
+
+        If (isCopy) Then
+            'Remove all report groups for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempReportGroup where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the report groups for the questions in the template.")
+                Return False
+            End Try
+        Else
+            If Not (Me.dsCommon.Tables.Contains("TemplateExistence")) Then
+                'determine if the report template still exists on the other side
+                Try
+                    sqlCommonAction.CommandText = "SELECT * from " & myUtility.getExtension(True) & "fempTemplates where seqTemplate = " & _
+                    Session("seqTemplate")
+                    sqlCommonAdapter.SelectCommand = sqlCommonAction
+                    sqlCommonAdapter.Fill(Me.dsCommon, "TemplateExistence")
+                Catch ex As Exception
+                    Trace.Warn(ex.ToString)
+                    alert("Failed to determine if the template exists on the other server.")
+                    Return False
+                End Try
+            End If
+
+            'Remove all report groups for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempReportGroup where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the report groups for the questions in the template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'removes the questions for the template
+    Private Function removeQuestions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Questions")
+
+        If (isCopy) Then
+            'Remove all Questions for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempQuestions where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the questions for the template.")
+                Return False
+            End Try
+        Else
+            'Remove all Surveys for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempQuestions where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the questions for the template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'removes the comments for the template
+    Private Function removeComments(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Comments")
+
+        If (isCopy) Then
+            'Remove all comments for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempComments where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the comments for the template.")
+                Return False
+            End Try
+        Else
+            'Remove all Surveys for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempComments where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the comments for the template.")
+                Return False
+            End Try
+        End If
+    End Function
+
+    'removes the permissions for the template
+    Private Function removeTemplatePermissions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Template Permissions")
+
+        If Not (isCopy) Then
+            'make a list of all individuals that will need to be notified of the loss of this Template
+            Try
+                sqlCommonAction.CommandText = "SELECT fp.seqUserID, ft.strTemplateName, fu.strEmail, " & _
+                "fu.strLastName, fu.strFirstName, fu.strMiddleName from " & myUtility.getProdExtension() & "fempPermission fp, " & _
+                myUtility.getExtension() & "fempTemplates ft, " & myUtility.getProdExtension() & "fempUsers fu where fp.seqUserID = fu.seqUserID " & _
+                "And ft.seqTemplate = fp.seqTemplate And ft.seqTemplate = " & _
+                Session("seqTemplate") & " order by fp.seqTemplate"
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(Me.dsCommon, "TemplateNotifyList")
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to create a notification list for the template owners.")
+                Return False
+            End Try
+
+            If (Me.dsCommon.Tables("TemplateExistence").Rows.Count() = 0) Then
+                'Remove all permissions for the template
+                sqlCommonAction.CommandText = "Delete from " & myUtility.getProdExtension() & "fempPermission where seqTemplate = " & Session("seqTemplate")
+
+                Try
+                    sqlCommonAction.ExecuteNonQuery()
+                    Return True
+                Catch ex As Exception
+                    Trace.Warn(ex.ToString)
+                    alert("Failed to remove the permissions for the template.")
+                    Return False
+                End Try
+            Else
+                Return True
+            End If
+        Else
+            Return True
+        End If
+    End Function
+
+    'removes the the template signatures
+    Private Function removeTemplateSignatures(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Template Signatures")
+
+        If (Not isCopy And Me.dsCommon.Tables("TemplateExistence").Rows.Count() = 0) Then
+            'Remove all signatures for this template.
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getProdExtension() & "fempSurveySigned where " & _
+            " seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the signatures for this template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'removes the the template
+    Private Function removeTemplate(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isCopy As Boolean) As Boolean
+        Trace.Warn("Removing Templates")
+
+        If (isCopy) Then
+            'Remove all Surveys for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension(True) & "fempTemplates where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the template.")
+                Return False
+            End Try
+        Else
+            'Remove all Surveys for the template
+            sqlCommonAction.CommandText = "Delete from " & myUtility.getExtension() & "fempTemplates where seqTemplate = " & Session("seqTemplate")
+
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to remove the template.")
+                Return False
+            End Try
+        End If
+    End Function
+#End Region
+
+#Region "Template Copy"
+    'Handles a request to copy or the actual copy Development --> Production.
+    Private Sub btnCopy_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCopy.Click
+        'if it's a publication request then send an e-mail to those that need it.
+        If (Me.btnCopy.Text = "Publication Request" Or Me.btnCopy.Text = "Re-Submit") Then
+            'go to the ADC picker page to find an ADC and then send e-mail to the ADC and HF
+            Session("CurrentPage") = "./PubRequest.aspx"
+            Response.Redirect("./PubRequest.aspx")
+        ElseIf (Me.btnCopy.Text = "Copy to Production") Then
+            'if there are no results go ahead and overwrite the production version if it exists
+            If (Session("Results") = 0 And Session("UserType") = 4) Then
+                executeCopyDelete(True)
+            Else
+                alert("You cannot overwrite a template that has survey results.")
+            End If
+        End If
+    End Sub
+
+    'Handles a request to copy or the actual copy Production --> Development.
+    Private Sub btnCopy2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCopy2.Click
+        executeCopyDelete()
+    End Sub
+
+    'Executes the deletion of the Template
+    Private Function executeCopyDelete(Optional ByVal Production As Boolean = False) As Boolean
+        Trace.Warn("Executing Delete")
+        Try
+            'Load fresh from the DB
+            loadData()
+
+            'get the list of surveys for the template
+            strSurveyList = getSurveyList()
+
+            'set up the transaction
+            Dim blnContinue As Boolean
+            blnContinue = myUtility.setupTransaction(sqlCommonAction, Me.CommonConn)
+
+            'set up the transaction
+            If (blnContinue) Then
+                'do db data manipulation and commit if all manipulations are complete
+                'Remove all data pertaining to the template
+                'if there are surveys attached to this template remove them and their stuff
+                If Not (removeTags(sqlCommonAdapter, sqlCommonAction, True)) Then
+                    blnContinue = False
+                End If
+                If (blnContinue) Then
+                    If Not (removeSurveys(sqlCommonAdapter, sqlCommonAction, True)) Then
+                        blnContinue = False
+                    End If
+                End If
+                'remove everything else related to the template
+                If (blnContinue) Then
+                    If Not (removeReportGroups(sqlCommonAdapter, sqlCommonAction, True)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeListItems(sqlCommonAdapter, sqlCommonAction, True)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeQuestions(sqlCommonAdapter, sqlCommonAction, True)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeComments(sqlCommonAdapter, sqlCommonAction, True)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    If Not (removeTemplate(sqlCommonAdapter, sqlCommonAction, True)) Then
+                        blnContinue = False
+                    End If
+                End If
+                If (blnContinue) Then
+                    'no errors?  Then we made it far enough to do the copy before comitting this transaction.
+                    If (doCopy(sqlCommonAdapter, sqlCommonAction, Production)) Then
+                        Trace.Warn("Committing transaction")
+                        sqlCommonAction.Transaction.Commit()
+                        If (Production) Then
+                            sendCopyMail()
+                        End If
+                        changeControlText()
+                        Return True
+                    Else
+                        'roll back the transaction
+                        alert("Failed to copy the template.")
+                        sqlCommonAction.Transaction.Rollback()
+                        changeControlText()
+                        Return False
+                    End If
+                Else
+                    'roll back the transaction
+                    alert("Failed to copy the template.")
+                    sqlCommonAction.Transaction.Rollback()
+                    changeControlText()
+                    Return False
+                End If
+            Else
+                If (Session("transExists") = True) Then
+                    sqlCommonAction.Transaction.Rollback()
+                End If
+                alert("Template copy failure.")
+                changeControlText()
+            End If
+        Catch ex As Exception
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            alert("Template copy failure.")
+            changeControlText()
+        End Try
+    End Function
+
+    'do the copy to the other DB
+    Private Function doCopy(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, Optional ByVal isProductionCopy As Boolean = False) As Boolean
+        Dim continue As Boolean = True
+
+        Try
+            'Insert new Template
+            If (continue) Then
+                If Not (CopyTemplate(sqlCommonAdapter, sqlCommonAction, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                If Not (CopyComments(sqlCommonAdapter, sqlCommonAction, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                If Not (CopyQuestions(sqlCommonAdapter, sqlCommonAction, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                If Not (CopyList(sqlCommonAdapter, sqlCommonAction, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                If Not (CopyReportGroups(sqlCommonAdapter, sqlCommonAction, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                If Not (CopySurvey(sqlCommonAdapter, sqlCommonAction, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                If Not (CopyTags(sqlCommonAdapter, sqlCommonAction, isProductionCopy)) Then
+                    continue = False
+                End If
+            End If
+            If (continue) Then
+                'no errors?  Then we made it far enough to commit the data and we're nearly done.
+                Return True
+            Else
+                'roll back the transaction
+                Return False
+            End If
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+    End Function
+
+    'Copy the template
+    Private Function CopyTemplate(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying the Template")
+
+        Try
+            If (isProductionCopy) Then
+                'Set up the insert query
+                sqlCommonAction.CommandText = "Insert INTO " & myUtility.getProdExtension() & "fempTemplates Select * FROM " & myUtility.getExtension() & "fempTemplates " & _
+                    "ft where ft.seqTemplate = " & Session("seqTemplate")
+                sqlCommonAction.ExecuteNonQuery()
+            Else
+                'Set up the update query
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempTemplates " & _
+                    " where seqTemplate = " & Session("seqTemplate")
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(Me.dsCommon, "ProdTemplates")
+                Dim row As DataRow = Me.dsCommon.Tables("ProdTemplates").Rows(0)
+
+                Dim param0 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strTemplateName", System.Data.SqlDbType.VarChar, 50, "strTemplateName")
+                param0.Value = row.Item("strTemplateName")
+                sqlCommonAction.Parameters.Add(param0)
+                Dim param1 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strDescription", System.Data.SqlDbType.VarChar, 50, "strDescription")
+                param1.Value = row.Item("strDescription")
+                sqlCommonAction.Parameters.Add(param1)
+
+                sqlCommonAction.CommandText = "SET IDENTITY_INSERT " & myUtility.getExtension(True) & "fempTemplates ON " & _
+                "Insert INTO " & myUtility.getExtension(True) & "fempTemplates (seqTemplate, strTemplateName, strDescription, " & _
+                "datDateCreated, intCreatorID, blnActive, blnTraining, blnOptional, " & _
+                "blnDirty, blnHSRItems) Values (" & _
+                row.Item("seqTemplate") & ", @strTemplateName, @strDescription, '" & _
+                row.Item("datDateCreated") & "', " & row.Item("intCreatorID") & ", " & _
+                IIf(row.Item("blnActive"), 1, 0) & ", " & _
+                IIf(row.Item("blnTraining"), 1, 0) & ", " & _
+                IIf(row.Item("blnOptional"), 1, 0) & ", " & _
+                IIf(row.Item("blnDirty"), 1, 0) & ", " & _
+                IIf(row.Item("blnHSRItems"), 1, 0) & ")"
+                sqlCommonAction.ExecuteNonQuery()
+                Trace.Warn(sqlCommonAction.CommandText)
+                sqlCommonAction.Parameters.Clear()
+            End If
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the template.")
+            Return False
+        End Try
+    End Function
+
+    'Copy the Template Comments
+    Private Function CopyComments(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying Template Comments")
+
+        Try
+            'Set up the insert query
+            sqlCommonAction.CommandText = "INSERT INTO " & myUtility.getExtension(True) & "fempComments Select * From "
+
+            'determine where we're going to get the data from and execute the query
+            sqlCommonAction.CommandText &= "" & myUtility.getExtension() & "fempComments fc where fc.seqTemplate = " & Session("seqTemplate")
+
+            Trace.Warn(sqlCommonAction.CommandText)
+            sqlCommonAction.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the template comments.")
+            Return False
+        End Try
+    End Function
+
+    'Copy the Template Questions
+    Private Function CopyQuestions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying Template Questions")
+
+        Try
+            'Set up the insert query
+            sqlCommonAction.CommandText = "INSERT INTO " & myUtility.getExtension(True) & "fempQuestions Select * From "
+
+            'determine where we're going to get the data from and execute the query
+            sqlCommonAction.CommandText &= "" & myUtility.getExtension() & "fempQuestions fq where fq.seqTemplate = " & Session("seqTemplate")
+
+            Trace.Warn(sqlCommonAction.CommandText)
+            sqlCommonAction.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the template questions.")
+            Return False
+        End Try
+    End Function
+
+    'Copy the Template Lists
+    Private Function CopyList(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying Template Lists")
+
+        Try
+            'Set up the insert query
+            sqlCommonAction.CommandText = "INSERT INTO " & myUtility.getExtension(True) & "fempList Select * From "
+
+            'determine where we're going to get the data from and execute the query
+            sqlCommonAction.CommandText &= "" & myUtility.getExtension() & "fempList fl where fl.seqTemplate = " & Session("seqTemplate")
+
+            Trace.Warn(sqlCommonAction.CommandText)
+            sqlCommonAction.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the template question list items.")
+            Return False
+        End Try
+    End Function
+
+    'Copy the Template Lists
+    Private Function CopyReportGroups(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying Report Groups")
+
+        Try
+            'Set up the insert query
+            sqlCommonAction.CommandText = "INSERT INTO " & myUtility.getExtension(True) & "fempReportGroup Select * From "
+
+            'determine where we're going to get the data from and execute the query
+            sqlCommonAction.CommandText &= "" & myUtility.getExtension() & "fempReportGroup fl where fl.seqTemplate = " & Session("seqTemplate")
+
+            Trace.Warn(sqlCommonAction.CommandText)
+            sqlCommonAction.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the template question report groups.")
+            Return False
+        End Try
+    End Function
+
+    'Copy the Template Surveys
+    Private Function CopySurvey(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying Template Surveys")
+
+        Try
+            If (isProductionCopy) Then
+                'Set up the insert query
+                sqlCommonAction.CommandText = "Insert INTO " & myUtility.getProdExtension() & "fempSurvey Select * FROM " & _
+                    myUtility.getExtension() & "fempSurvey fs where fs.seqTemplate = " & Session("seqTemplate")
+                Trace.Warn(sqlCommonAction.CommandText)
+                sqlCommonAction.ExecuteNonQuery()
+            Else
+                'Set up the update query
+                sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempSurvey " & _
+                    " where seqTemplate = " & Session("seqTemplate")
+                sqlCommonAdapter.SelectCommand = sqlCommonAction
+                sqlCommonAdapter.Fill(Me.dsCommon, "ProdSurveys")
+                Dim row As DataRow
+
+                Dim param0 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strComments", System.Data.SqlDbType.VarChar, 50, "strComments")
+                sqlCommonAction.Parameters.Add(param0)
+
+                For Each row In Me.dsCommon.Tables("ProdSurveys").Rows()
+                    param0.Value = row.Item("strComments")
+                    sqlCommonAction.CommandText = "SET IDENTITY_INSERT " & myUtility.getExtension(True) & "fempSurvey ON " & _
+                    "Insert INTO " & myUtility.getExtension(True) & "fempSurvey (seqSurvey, intCreatorID, seqTemplate, " & _
+                    "datClosing, strComments, strSymbol, blnOptional, blnActive, " & _
+                    "strColor, intSubmitted, datCreatedDate) Values (" & _
+                    row.Item("seqSurvey") & ", " & row.Item("intCreatorID") & ", " & _
+                    row.Item("seqTemplate") & ", '" & row.Item("datClosing") & "', " & _
+                    "@strComments, '" & row.Item("strSymbol") & "', " & _
+                    IIf(row.Item("blnOptional"), 1, 0) & ", " & _
+                    IIf(row.Item("blnActive"), 1, 0) & ", '" & _
+                    row.Item("strColor") & "', " & row.Item("intSubmitted") & ", '" & _
+                    row.Item("datCreatedDate") & "')"
+                    Trace.Write(sqlCommonAction.CommandText)
+                    sqlCommonAction.ExecuteNonQuery()
+                Next
+                sqlCommonAction.Parameters.Clear()
+            End If
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the template surveys.")
+            Return False
+        End Try
+    End Function
+
+    'Copy the Template Tags
+    Private Function CopyTags(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand, ByVal isProductionCopy As Boolean) As Boolean
+        Trace.Warn("Copying Template Tags")
+
+        Try
+            If (Trim("" & strSurveyList) <> "") Then
+                'Set up the insert query
+                sqlCommonAction.CommandText = "INSERT INTO " & myUtility.getExtension(True) & "fempTags Select * From "
+
+                'determine where we're going to get the data from and execute the query
+                sqlCommonAction.CommandText &= "" & myUtility.getExtension() & "fempTags ft where ft." & strSurveyList
+
+                Trace.Warn(sqlCommonAction.CommandText)
+                sqlCommonAction.ExecuteNonQuery()
+            End If
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to copy the template survey tags.")
+            Return False
+        End Try
+    End Function
+#End Region
+
+#Region "Template Duplicate"
+    'handles a user's request to duplicate a template and all of its contents
+    Private Sub btnDuplicate_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDuplicate.Click, btnDuplicate2.Click
+        'if it's a publication request then send an e-mail to those that need it.
+        If (Trim("" & Me.txtDuplicate.Text) <> "") Then
+            executeDuplicate()
+        ElseIf (Trim("" & Me.txtDuplicate2.Text <> "")) Then
+            executeDuplicate()
+        Else
+            alert("You must enter a name for the new template you are creating.")
+        End If
+    End Sub
+
+    'executes the insert command
+    Private Sub executeDuplicate()
+        Try
+            sqlCommonAction.Connection = Me.CommonConn
+            Dim continue As Boolean = True
+
+            'check for possible malicious code entries
+            If Not (myUtility.goodInput(Me.txtDuplicate, True) And myUtility.goodInput(Me.txtDuplicate2, True)) Then
+                continue = False
+                alert("Possible malicious code entry for the new template name.  Template duplication aborted.")
+            End If
+
+            If (continue) Then
+                'determine if the user gave this template a name.  If not alert the user and abort all transactions with the db
+                If (Trim("" & Me.txtDuplicate.Text) = "" And Trim("" & Me.txtDuplicate2.Text = "")) Then
+                    alert("Failed to add the new template. You must provide a name for your template.")
+                    continue = False
+                End If
+
+                'check to see if a template with the same name exists on development
+                If (doesTemplateNameExist(sqlCommonAdapter, sqlCommonAction, False, True)) Then
+                    alert("Failed to add the new template. A template already exists with that name.")
+                    continue = False
+                End If
+
+                If (continue) Then
+                    'set up the transaction
+                    myUtility.setupTransaction(sqlCommonAction, Me.CommonConn)
+
+                    Try
+                        'Insert new Template
+                        If (continue) Then
+                            If Not (DuplicateTemplate(sqlCommonAdapter, sqlCommonAction)) Then
+                                continue = False
+                            End If
+                        End If
+                        If (continue) Then
+                            If Not (DuplicateTemplatePermissions(sqlCommonAdapter, sqlCommonAction)) Then
+                                continue = False
+                            End If
+                        End If
+                        If (continue) Then
+                            If Not (DuplicateComments(sqlCommonAdapter, sqlCommonAction)) Then
+                                continue = False
+                            End If
+                        End If
+                        If (continue) Then
+                            If Not (DuplicateQuestions(sqlCommonAdapter, sqlCommonAction)) Then
+                                continue = False
+                            End If
+                        End If
+                        If (continue) Then
+                            If Not (DuplicateList(sqlCommonAdapter, sqlCommonAction)) Then
+                                continue = False
+                            End If
+                        End If
+                        If (continue) Then
+                            If Not (DuplicateReportGroups(sqlCommonAdapter, sqlCommonAction)) Then
+                                continue = False
+                            End If
+                        End If
+                        If (continue) Then
+                            If Not (DuplicateSurveys(sqlCommonAdapter, sqlCommonAction)) Then
+                                continue = False
+                            End If
+                        End If
+                        If (continue) Then
+                            strSurveyList = newSurveyList(sqlCommonAdapter, sqlCommonAction)
+                        End If
+                        If (continue And Trim("" & strSurveyList) <> "") Then
+                            If (continue) Then
+                                If Not (DuplicateSurveyPermissions(sqlCommonAdapter, sqlCommonAction)) Then
+                                    continue = False
+                                End If
+                            End If
+                            If (continue) Then
+                                If Not (DuplicateTags(sqlCommonAdapter, sqlCommonAction)) Then
+                                    continue = False
+                                End If
+                            End If
+                            If (continue) Then
+                                If Not (DuplicateSurveyGroups(sqlCommonAdapter, sqlCommonAction)) Then
+                                    continue = False
+                                End If
+                            End If
+                        End If
+                        If (continue) Then
+                            Trace.Warn("Committing transaction")
+                            'no errors?  Then we made it far enough to commit the data and we're nearly done.
+                            sqlCommonAction.Transaction.Commit()
+
+                            'set the template to the new template and reload the data from the database
+                            Session("seqTemplate") = Session("newSeqTemplate")
+                            Session("isDirty") = Me.myUtility.isDirty(Me.dsCommon, Me.CommonConn)
+                            If (Trim("" & Me.txtDuplicate.Text) = "") Then
+                                Session("TemplateName") = Me.txtDuplicate2.Text
+                            Else
+                                Session("TemplateName") = Me.txtDuplicate.Text
+                            End If
+                            loadData()
+                            changeControlText()
+                            Me.txtDuplicate.Text = ""
+                            Me.txtDuplicate2.Text = ""
+                        Else
+                            'roll back the transaction
+                            sqlCommonAction.Transaction.Rollback()
+                            loadData(True)
+                            changeControlText()
+                        End If
+                    Catch ex As Exception
+                        Trace.Warn(ex.ToString)
+                        loadData(True)
+                        changeControlText()
+                    End Try
+                Else
+                    loadData(True)
+                    changeControlText()
+                End If
+            End If
+        Catch ex As Exception
+            If (Session("transExists") = True) Then
+                sqlCommonAction.Transaction.Rollback()
+            End If
+            alert("Template duplication failure.")
+            changeControlText()
+        End Try
+    End Sub
+
+    'Insert the template
+    Private Function DuplicateTemplate(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting the Template")
+        Try
+            'parameterized the text input to allow for things like quotes to get through
+            If (((Session("UserType") > 2 And (Session("isTemplateOwner") Or Session("isTemplateDelegate"))) Or Session("UserType") = 4) And Session("Machine") <> "Production") Then
+                sqlCommonAction.Parameters(0).Value = Me.txtDuplicate.Text
+            Else
+                sqlCommonAction.Parameters(0).Value = Me.txtDuplicate2.Text
+            End If
+            Dim param1 As System.Data.SqlClient.SqlParameter = New System.Data.SqlClient.SqlParameter("@strDescription", System.Data.SqlDbType.VarChar, 1800, "strDescription")
+            param1.Value = Server.HtmlDecode(Me.txtDescription.Text)
+            sqlCommonAction.Parameters.Add(param1)
+
+            'Set up the insert query
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempTemplates (strTemplateName, strDescription, datDateCreated, blnActive, " & _
+                "intCreatorID, blnTraining, blnOptional, blnDirty, blnHSRItems) VALUES (@strTemplateName, @strDescription," & _
+                " '" & Now & "', " & IIf(Me.chkActive.Checked, 1, 0) & ", " & CType(Session("UserID"), Integer) & ", " & _
+                IIf(Me.chkTQSurvey.Checked, 1, 0) & ", " & IIf(Me.chkOptional.Checked, 1, 0) & ", 1, 0)"
+            Trace.Warn(sqlCommonAction.CommandText)
+            sqlCommonAction.ExecuteNonQuery()
+
+            'if we make it this far also get the new template seqID
+            Dim ds As DataSet = New DataSet
+            sqlCommonAction.CommandText = "Select seqTemplate from " & myUtility.getExtension() & "fempTemplates where strTemplateName = @strTemplateName" & _
+                " AND strDescription = @strDescription AND intCreatorID = " & Session("UserID") & _
+                " AND blnActive = " & IIf(Me.chkActive.Checked, 1, 0) & " AND blnTraining = " & IIf(Me.chkTQSurvey.Checked, 1, 0) & _
+                " AND blnOptional = " & IIf(Me.chkOptional.Checked, 1, 0)
+            sqlCommonAdapter.Fill(ds)
+            Session("newSeqTemplate") = ds.Tables(0).Rows(0).Item("seqTemplate")
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to add the new template.")
+            Return False
+        End Try
+    End Function
+
+    'Insert the template permissions
+    Private Function DuplicateTemplatePermissions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Setting Template Permissions")
+
+        'Add permissions for the template
+        sqlCommonAction.CommandText = "Insert INTO " & myUtility.getProdExtension() & "fempPermission (seqUserID, seqTemplate, seqSurvey, intCreatorID, " & _
+            "datCreatedDate, blnOwner, blnDelegate, blnUser) VALUES (" & Session("UserID") & ", " & Session("newSeqTemplate") & _
+            ", -1, " & Session("UserID") & ", '" & Now & "', 1, 1, 1)"
+        Trace.Warn(sqlCommonAction.CommandText)
+        Try
+            sqlCommonAction.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to add permissions for the new template.")
+            Return False
+        End Try
+    End Function
+
+    'Insert the template comments
+    Private Function DuplicateComments(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Comments")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the comments over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempComments (seqTemplate, intTagID, strTemplateTagName, strTemplateTagQuestion) " & _
+                "SELECT seqTemplate, intTagID, strTemplateTagName, strTemplateTagQuestion FROM " & _
+                "(Select " & Session("newSeqTemplate") & " as seqTemplate, fc.intTagID, fc.strTemplateTagName, fc.strTemplateTagQuestion from " & myUtility.getExtension() & "fempComments fc " & _
+                "WHERE fc.seqTemplate = " & Session("seqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the comments for the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'Insert the template Questions
+    Private Function DuplicateQuestions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Questions")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the questions over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempQuestions (seqTemplate, intQuestion, blnRequired, blnPageBreak, " & _
+                "blnFilter, blnTopIsNotApp, strQuestionType, strValue, strGraphType, intCount, intInterval, intInitial, intBranch, strQueryTitle) " & _
+                "SELECT seqTemplate, intQuestion, blnRequired, blnPageBreak, blnFilter, blnTopIsNotApp, strQuestionType, " & _
+                "strValue, strGraphType, intCount, intInterval, intInitial, intBranch, strQueryTitle FROM " & _
+                "(Select ft.seqTemplate, fq.intQuestion, fq.blnRequired, fq.blnPageBreak, fq.blnFilter, fq.blnTopIsNotApp, " & _
+                "fq.strQuestionType, fq.strValue, fq.strGraphType, fq.intCount, fq.intInterval, fq.intInitial, fq.intBranch, fq.strQueryTitle " & _
+                "from " & myUtility.getExtension() & "fempQuestions fq, " & myUtility.getExtension() & "fempTemplates ft WHERE fq.seqTemplate = " & _
+                Session("seqTemplate") & " AND ft.seqTemplate = " & Session("newSeqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the questions for the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'Insert the template report groups
+    Private Function DuplicateReportGroups(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Report Groups")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the report groups over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempReportGroup (intReportGroup, strLabel, seqTemplate) " & _
+                "SELECT intReportGroup, strLabel, seqTemplate FROM (Select ft.seqTemplate, frg.intReportGroup, " & _
+                "frg.strLabel from " & myUtility.getExtension() & "fempReportGroup frg, " & myUtility.getExtension() & "fempTemplates ft WHERE frg.seqTemplate = " & _
+                Session("seqTemplate") & " AND ft.seqTemplate = " & Session("newSeqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the report groups for the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'Insert the question lists
+    Private Function DuplicateList(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Lists for Questions")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the lists for the questions over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempList (seqTemplate, intQuestion, intList, intListValue, strLabel, rawIMGBlob, " & _
+                "strContent, intBranch) " & _
+                "SELECT seqTemplate, intQuestion, intList, intListValue, strLabel, rawIMGBlob, strContent, intBranch FROM " & _
+                "(Select ft.seqTemplate, fl.intQuestion, fl.intList, fl.intListValue, fl.strLabel, fl.rawIMGBlob, fl.strContent, " & _
+                "fl.intBranch from " & myUtility.getExtension() & "fempList fl, " & myUtility.getExtension() & "fempTemplates ft WHERE fl.seqTemplate = " & Session("seqTemplate") & _
+                " AND ft.seqTemplate = " & Session("newSeqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the lists for the questions in the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'Insert the Surveys
+    Private Function DuplicateSurveys(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Template Surveys")
+        'Do only if duplicating an existing template
+        If (Session("seqTemplate") <> -1) Then
+            'copy the lists for the questions over to the new template
+            sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempSurvey (intCreatorID, seqTemplate, datClosing, strComments, strSymbol, " & _
+                "blnOptional, blnActive, strColor, intSubmitted, datCreatedDate) " & _
+                "SELECT intCreatorID, seqTemplate, datClosing, strComments, strSymbol, blnOptional, blnActive, strColor, " & _
+                "intSubmitted, datCreatedDate FROM " & _
+                "(Select fs.intCreatorID, ft.seqTemplate, fs.datClosing, fs.strComments, fs.strSymbol, fs.blnOptional, " & _
+                "fs.blnActive, fs.strColor, fs.intSubmitted, fs.datCreatedDate from " & myUtility.getExtension() & "fempSurvey fs, " & myUtility.getExtension() & "fempTemplates ft " & _
+                "WHERE fs.seqTemplate = " & Session("seqTemplate") & " AND ft.seqTemplate = " & Session("newSeqTemplate") & ") a"
+            Trace.Warn(sqlCommonAction.CommandText)
+            Try
+                sqlCommonAction.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Trace.Warn(ex.ToString)
+                alert("Failed to insert the surveys for the new template.")
+                Return False
+            End Try
+        Else
+            Return True
+        End If
+    End Function
+
+    'Insert the survey permissions
+    Private Function DuplicateSurveyPermissions(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Survey Permissions")
+        'attempt to insert permissions for each survey
+        Try
+            Dim dr As DataRow
+            For Each dr In Me.dsCommon.Tables("Surveys").Rows
+                'Add permissions for the surveys
+                sqlCommonAction.CommandText = "Insert INTO " & myUtility.getProdExtension() & "fempPermission (seqUserID, seqTemplate, seqSurvey, intCreatorID, " & _
+                    "datCreatedDate, blnOwner, blnDelegate, blnUser) VALUES (" & Session("UserID") & ", -1, " & _
+                    dr.Item("seqSurvey") & ", " & Session("UserID") & ", '" & Now & "', 1, 1, 1)"
+                Trace.Warn(sqlCommonAction.CommandText)
+                sqlCommonAction.ExecuteNonQuery()
+            Next
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to add permissions for the new surveys in the template.")
+            Return False
+        End Try
+    End Function
+
+    'Insert the survey comments
+    Private Function DuplicateTags(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Survey Tags")
+        'Do only if duplicating an existing template
+        Try
+            'get a list of surveys old and new
+            sqlCommonAction.CommandText = "Select seqSurvey from " & myUtility.getExtension() & "fempSurvey where seqTemplate = " & _
+            Session("newSeqTemplate") & " order by seqSurvey"
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+            sqlCommonAdapter.Fill(Me.dsCommon, "NewSurveys")
+            sqlCommonAction.CommandText = "Select seqSurvey from " & myUtility.getExtension() & "fempSurvey where seqTemplate = " & _
+            Session("SeqTemplate") & " order by seqSurvey"
+            sqlCommonAdapter.Fill(Me.dsCommon, "OldSurveys")
+
+            Dim dr As DataRow
+            Dim index As Integer = 0
+            For Each dr In Me.dsCommon.Tables("NewSurveys").Rows
+                If (Session("seqTemplate") <> -1) Then
+                    'copy the tag items over to the new template
+                    sqlCommonAction.CommandText = "Insert INTO " & myUtility.getExtension() & "fempTags (seqSurvey, seqTemplate, intTagID, strTagTitle, strTagValue) " & _
+                    "SELECT seqSurvey, seqTemplate, intTagID, strTagTitle, strTagValue FROM " & _
+                    "(Select " & dr.Item("seqSurvey") & " as seqSurvey, " & Session("newSeqTemplate") & " as seqTemplate, intTagID, " & _
+                    "strTagTitle, strTagValue from " & myUtility.getExtension() & "fempTags WHERE seqTemplate = " & Session("seqTemplate") & _
+                    " AND seqSurvey = " & Me.dsCommon.Tables("OldSurveys").Rows(index).Item("seqSurvey") & ") a"
+                    Trace.Warn(sqlCommonAction.CommandText)
+                    sqlCommonAction.ExecuteNonQuery()
+                    index += 1
+                End If
+            Next
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to insert the tags for the new template.")
+            Return False
+        End Try
+    End Function
+
+    'Insert the survey report groups
+    Private Function DuplicateSurveyGroups(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As Boolean
+        Trace.Warn("Inserting Survey Groups")
+        'Do only if duplicating an existing template
+        Try
+            Dim dr As DataRow
+            Dim index As Integer = 0
+            For Each dr In Me.dsCommon.Tables("NewSurveys").Rows
+                If (Session("seqTemplate") <> -1) Then
+                    'copy the tag items over to the new template
+                    sqlCommonAction.CommandText = "Insert INTO " & myUtility.getProdExtension() & "fempGroups " & _
+                    "(seqSurvey, intGroupID, strGroupName, strUserList) " & _
+                    "SELECT seqSurvey, intGroupID, strGroupName, strUserList FROM " & _
+                    "(Select " & dr.Item("seqSurvey") & " as seqSurvey, intGroupID, " & _
+                    "strGroupName, strUserLIst from " & myUtility.getProdExtension() & "fempGroups WHERE seqSurvey = " & _
+                    Me.dsCommon.Tables("OldSurveys").Rows(index).Item("seqSurvey") & ") a"
+                    Trace.Warn(sqlCommonAction.CommandText)
+                    sqlCommonAction.ExecuteNonQuery()
+                    index += 1
+                End If
+            Next
+            Return True
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to insert the survey groups for the new template.")
+            Return False
+        End Try
+    End Function
+
+    'gets the newly created list of surveys
+    Private Function newSurveyList(ByVal sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter, ByVal sqlCommonAction As System.Data.SqlClient.SqlCommand) As String
+        sqlCommonAction.CommandText = "Select * from " & myUtility.getExtension() & "fempSurvey where seqTemplate = " & Session("newSeqTemplate")
+        Trace.Warn(sqlCommonAction.CommandText)
+        sqlCommonAdapter.SelectCommand = sqlCommonAction
+        sqlCommonAdapter.Fill(Me.dsCommon, "Surveys")
+        Return getSurveyList()
+    End Function
+#End Region
+
+#Region "Send Mail"
+    'Sends an e-mail to users with changed passwords, except level 0 users.
+    Private Function sendDeleteMail(ByVal Email As String, ByVal strItemName As String, Optional ByVal isSurvey As Boolean = False) As Boolean
+        Trace.Warn("Sending user an email")
+        'Set up the mail messsage
+        Dim strFrom As String = "survey.administrator@pnl.gov"
+        Dim strTo As String = Email
+
+        Dim strbldrSubject As New StringBuilder("Survey Admin Tool Template Deletion.")
+
+        'get the current user's name and e-mail
+        Try
+            Dim sqlCommonAction As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+            Dim sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+            sqlCommonAction.Connection = Me.CommonConn
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempUsers where seqUserID = " & Session("UserID")
+            sqlCommonAdapter.Fill(Me.dsCommon, "ModifyID")
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            Return False
+        End Try
+
+        If (Me.dsCommon.Tables("ModifyID").Rows.Count < 1) Then
+            alert("Critical error getting sender's information.  Unable to locate your information.  You may have been removed from the database in the last few minutes.  Contact the Survey Administrator immediately.")
+            Return False
+        End If
+
+        Dim strbldrMessage As New StringBuilder
+        'notify the user of their status change
+        If (isSurvey) Then
+            strbldrMessage.Append("Survey: " & strItemName & " in Template: " & Me.txtTemplateName.Text & " has been deleted, by")
+        Else
+            strbldrMessage.Append("Template " & strItemName & " has been deleted, by")
+        End If
+        strbldrMessage.Append(" " & Me.dsCommon.Tables("ModifyID").Rows(0).Item("strFirstName") & ", ")
+        strbldrMessage.Append(Me.dsCommon.Tables("ModifyID").Rows(0).Item("strLastName") & ".")
+        strbldrMessage.Append("  You may contact this person at this e-mail address: <b>")
+        strbldrMessage.Append(Me.dsCommon.Tables("ModifyID").Rows(0).Item("strEmail") & "</b>")
+
+        If Not (myUtility.genericSendMail(strFrom, strTo, strbldrSubject.ToString, strbldrMessage.ToString)) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    'Sends an e-mail to users with changed passwords, except level 0 users.
+    Private Function sendCopyMail() As Boolean
+        Trace.Warn("Sending user an email")
+        'Set up the mail messsage
+        Dim strFrom As String = "survey.administrator@pnl.gov"
+
+        'get the owners and delegates of this template
+        sqlCommonAction.CommandText = "Select fu.strEmail from " & myUtility.getProdExtension() & "fempPermission fp, " & myUtility.getProdExtension() & "fempUsers fu where " & _
+        "fp.seqTemplate = " & Session("seqTemplate") & " and fp.seqUserID = fu.seqUserID"
+        sqlCommonAction.Connection = Me.CommonConn
+        sqlCommonAdapter.SelectCommand = sqlCommonAction
+        sqlCommonAdapter.Fill(Me.dsCommon, "FromEmail")
+        Dim dr As DataRow
+        Dim strTo As String
+        For Each dr In Me.dsCommon.Tables("FromEmail").Rows
+            strTo &= dr.Item("strEmail") & ","
+        Next
+
+        Dim strbldrSubject As New StringBuilder("Survey Admin Tool Template Publication Notice.")
+
+        'get the current user's name and e-mail
+        Try
+            Dim sqlCommonAction As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+            Dim sqlCommonAdapter As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter
+            sqlCommonAdapter.SelectCommand = sqlCommonAction
+            sqlCommonAction.Connection = Me.CommonConn
+            sqlCommonAction.CommandText = "Select * from " & myUtility.getProdExtension() & "fempUsers where seqUserID = " & Session("UserID")
+            sqlCommonAdapter.Fill(Me.dsCommon, "ModifyID")
+        Catch ex As Exception
+            Trace.Warn(ex.ToString)
+            alert("Failed to locate your information for sending an e-mail to the owners/delegates of this template.  Please send a courtesy e-mail to them.")
+            Return False
+        End Try
+
+        If (Me.dsCommon.Tables("ModifyID").Rows.Count < 1) Then
+            alert("Failed to locate your information for sending an e-mail to the owners/delegates of this template.  Please send a courtesy e-mail to them.")
+            Return False
+        End If
+
+        Dim strbldrMessage As New StringBuilder
+        strbldrMessage.Append("The template " & Me.txtTemplateName.Text & " has been published, by")
+        strbldrMessage.Append(" " & Me.dsCommon.Tables("ModifyID").Rows(0).Item("strFirstName") & " ")
+        strbldrMessage.Append(Me.dsCommon.Tables("ModifyID").Rows(0).Item("strLastName") & ".")
+        strbldrMessage.Append("  You may begin sending surveys with this template.")
+
+        If Not (myUtility.genericSendMail(strFrom, strTo, strbldrSubject.ToString, strbldrMessage.ToString)) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+#End Region
+End Class

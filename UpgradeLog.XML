@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SurveyAdmin">
+</Property><Property Name="Solution File" Value="C:\Inetpub\wwwroot\SurveyAdmin\SurveyAdmin.sln">
+</Property><Property Name="Date" Value="Saturday, December 06, 2008">
+</Property><Property Name="Time" Value="10:16 AM">
+</Property></Properties><Event ErrorLevel="2" Project="SurveyAdmin" Source="http://localhost/SurveyAdmin/SurveyAdmin.vbproj" Description="Unable to open the Web 'http://localhost/SurveyAdmin/SurveyAdmin.vbproj'.  Server error: There is no web named &quot;/SurveyAdmin/SurveyAdmin.vbproj&quot;. If this Web site exists on the server, check to make sure the FrontPage Server Extensions are installed, and that you have permission to access the server.">
+</Event><Event ErrorLevel="0" Project="" Source="SurveyAdmin.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="SurveyAdmin.sln" Description="Converted">
+</Event></UpgradeLog>

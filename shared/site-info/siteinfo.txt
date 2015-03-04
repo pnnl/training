@@ -1,0 +1,23 @@
+Site: Safety & Health
+URLs:
+    Production:  http://wwwi.pnl.gov/sh (Internal site)
+    Development: http://traindev.pnl.gov
+    Site Originally Created: 1999
+    Redesign: Oct 2005
+    Peer Reviewed by: 
+
+Site into production: Jan 2006
+
+Content Owner: Brad Atencio
+    Delegate:	Lowell Howard
+Webmaster: Karen Brun
+Graphic Designer(s): Mike Perkins
+Developed in Homesite and Photoshop
+
+Original Graphics file: (see Mike Perkins)
+
+
+
+
+
+

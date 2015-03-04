@@ -1,0 +1,48 @@
+/*-- Print Style Sheet
+/*-- Created by: Cameron Bates, Dec 19, 2003
+/*-- For ARM Website*/
+
+@media print { /* IE5.x and Opera 6 for some reason apply the rules to screen media without this */
+
+
+body {
+    background-image: none;
+    background-color: white;
+	border: none;
+}
+
+#wrapper {
+    background-image: none;
+    background-color: white;
+	border: none;
+}
+
+#search {
+	display: none;
+}
+
+#leftNav {
+	display: ;
+}
+
+#relatedLinks {
+	display: none;
+}
+
+#content {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+#content a:link:after, #content a:visited:after {
+	content: " (" attr(href)")";
+}
+#content a[href^="/"]:after {
+   content: " (http://www.arm.gov" attr(href)")";
+   }
+
+
+
+
+}

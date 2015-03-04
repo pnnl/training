@@ -1,0 +1,269 @@
+/* Default CSS Stylesheet for a new Web Application project */
+/* change .surveyHome to name of current page. */
+body.Main #leftNav a#mainpage, 
+body.surveyHome #leftNav a#elhome, 
+body.Template #leftNav a#template, 
+body.SurveyInput #leftNav a#surveyinput, 
+body.ManageUsers #leftNav a#manageusers, 
+body.Report #leftNav a#report, 
+body.Message #leftNav a#message, 
+body.Help #leftNav a#help, 
+body.Password #leftNav a#password, 
+body.SendSurvey #leftNav a#sendsurvey, 
+body.Logout #leftNav a#logout
+{
+		/*background-image: url(http://www.pnl.gov/images/bullet.gif);
+		background-repeat: no-repeat;
+		background-position: center left;*/
+		 color: #d57500;
+		 font-weight: bold;
+		 background-color: white;
+		 border-radius: 4px 0 0 4px;
+		 -moz-border-radius: 4px 0 0 4px;
+		 -webkit-border-radius: 4px 0 0 4px;
+}
+
+#main th, #main td {
+padding:2px;
+}
+
+/*Odds N' Ends*/
+	
+.info
+{
+	COLOR: Teal; 
+	text-decoration: underline;
+	cursor: pointer;
+	cursor: hand;	
+}
+
+.pointer
+{
+	cursor: pointer;
+	cursor: hand;	
+}
+
+HR
+{
+	color: BLACK;
+	height: 2px;
+}
+
+/*navigational*/
+
+FONT.disabled
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: x-small; 
+	COLOR: Gray;
+	FONT-FAMILY: Verdana;	
+	text-decoration: underline;
+}
+
+.navPanel
+{
+	background-color: #66CCCC;
+	height: 25px;
+}
+
+.navPanelLeft
+{
+	background-color: #FFFFFF;
+	height: 25px;
+}
+
+.navPanel2
+{
+	background-color: #99FFFF;
+	height: 25px;
+}
+
+.lblNavPanel
+{
+	FONT-WEIGHT: bold; 
+	font-family: Verdana;
+	font-size: small;
+	background-color: Transparent;
+}
+
+.btnSpace
+{
+	margin-left: 2px;
+}
+
+
+
+/*Fonts*/
+
+.content
+{
+	FONT-SIZE: x-small; 
+	FONT-FAMILY: Verdana;
+}
+
+.reportContent
+{
+	FONT-SIZE: xx-small; 
+	FONT-FAMILY: Verdana;
+}
+
+.boldContent
+{
+	FONT-WEIGHT: bold; 
+	COLOR: Black;
+}
+
+.boldHeader
+{
+	FONT-WEIGHT: bold; 
+	COLOR: Black; 
+	text-decoration: underline;
+}
+
+.boldContentTeal
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: x-small; 
+	COLOR: Teal; 
+	FONT-FAMILY: Verdana;
+}
+
+.boldContentRed
+{
+	font-weight: bold;
+	color: Red;
+}
+
+.ReportHeaderData
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: x-small; 
+	COLOR: Black; 
+	FONT-FAMILY: Verdana;
+	text-align: right;
+}
+
+.ReportHeaderDataUl
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: smaller; 
+	COLOR: Black; 
+	FONT-FAMILY: Verdana;
+	text-align: right;
+	text-decoration: underline;
+}
+
+.ReportHeaderRed
+{
+	FONT-WEIGHT: bold; 
+	COLOR: Red; 
+	text-align: left;
+}
+
+.NoDataRed
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: xx-small; 
+	COLOR: Red; 
+	FONT-FAMILY: Verdana;
+	text-align: left;
+}
+
+.ReportHeaderBlue
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: x-small; 
+	COLOR: Blue; 
+	FONT-FAMILY: Verdana;
+	text-align: left;
+}
+
+.sectionHeadTeal
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: smaller; 
+	COLOR: Teal; 
+	FONT-FAMILY: Verdana;
+	text-align: Center;
+}
+
+.ReportHeaderBlueUl
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: smaller; 
+	COLOR: Blue; 
+	FONT-FAMILY: Verdana;
+	text-align: left;
+	text-decoration: underline;
+}
+
+.ReportHeaderRedUl
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: smaller; 
+	COLOR: Red; 
+	FONT-FAMILY: Verdana;
+	text-align: left;
+	text-decoration: underline;
+}
+
+.ReportValueBlue
+{
+	font-weight: bold;
+	font-size: x-small;
+	color: blue;
+	font-family: Verdana;
+}
+
+.ReportValueRed
+{
+	font-weight: bold;
+	font-size: x-small;
+	color: red;
+	font-family: Verdana;
+	text-align: left;
+}
+
+.button
+{
+	background-color: #A7DCD2;
+	border-color: #60C0B4;
+	COLOR: Black; 
+}
+
+ol
+{
+	LIST-STYLE-POSITION: outside;
+	LIST-STYLE-TYPE: decimal;
+	FONT-SIZE: smaller; 
+	FONT-FAMILY: Verdana;
+}
+
+.FAQTD
+{
+	background-color: #66CCCC;
+	color: #FFFFFF;
+}
+
+.outside
+{
+	LIST-STYLE-POSITION: outside;
+}
+
+.Break
+{
+	page-break-after: always;
+}
+
+.BreakBefore
+{
+	page-break-before: always;
+}
+
+.noteHeader {
+  COLOR: #278c9e;
+}
+
+.noteText {
+  background-color: #FFFFCC;
+}

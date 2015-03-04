@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://www.tempuri.org/DataSet1.xsd" xmlns:mstns="http://www.tempuri.org/DataSet1.xsd" xmlns="http://www.tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="fempUsers" msprop:Generator_UserTableName="fempUsers" msprop:Generator_RowDeletedName="fempUsersRowDeleted" msprop:Generator_TableClassName="fempUsersDataTable" msprop:Generator_RowChangedName="fempUsersRowChanged" msprop:Generator_RowClassName="fempUsersRow" msprop:Generator_RowChangingName="fempUsersRowChanging" msprop:Generator_RowEvArgName="fempUsersRowChangeEvent" msprop:Generator_RowEvHandlerName="fempUsersRowChangeEventHandler" msprop:Generator_TablePropName="fempUsers" msprop:Generator_TableVarName="tablefempUsers" msprop:Generator_RowDeletingName="fempUsersRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="USER_KEY" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="USER_KEY" msprop:Generator_ColumnPropNameInRow="USER_KEY" msprop:Generator_ColumnVarNameInTable="columnUSER_KEY" msprop:Generator_ColumnPropNameInTable="USER_KEYColumn" type="xs:int" />
+              <xs:element name="USER_CODE" msprop:Generator_UserColumnName="USER_CODE" msprop:Generator_ColumnPropNameInRow="USER_CODE" msprop:Generator_ColumnVarNameInTable="columnUSER_CODE" msprop:Generator_ColumnPropNameInTable="USER_CODEColumn" type="xs:int" />
+              <xs:element name="Name" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="HANFORD_ID" msprop:Generator_UserColumnName="HANFORD_ID" msprop:Generator_ColumnPropNameInRow="HANFORD_ID" msprop:Generator_ColumnVarNameInTable="columnHANFORD_ID" msprop:Generator_ColumnPropNameInTable="HANFORD_IDColumn" type="xs:string" />
+              <xs:element name="EMAIL_ADDRESS" msprop:Generator_UserColumnName="EMAIL_ADDRESS" msprop:Generator_ColumnPropNameInRow="EMAIL_ADDRESS" msprop:Generator_ColumnVarNameInTable="columnEMAIL_ADDRESS" msprop:Generator_ColumnPropNameInTable="EMAIL_ADDRESSColumn" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:fempUsers" />
+      <xs:field xpath="mstns:HANFORD_ID" />
+      <xs:field xpath="mstns:EMAIL_ADDRESS" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

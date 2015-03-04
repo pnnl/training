@@ -1,0 +1,71 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SurveyAdmin
+</name>
+</assembly>
+<members>
+<member name="M:SurveyAdmin.Authentication.Service1.#ctor">
+	<remarks/>
+</member><member name="E:SurveyAdmin.Authentication.Service1.SHA256Completed">
+	<remarks/>
+</member><member name="E:SurveyAdmin.Authentication.Service1.createPasswordStringCompleted">
+	<remarks/>
+</member><member name="E:SurveyAdmin.Authentication.Service1.fetchSBMSContentCompleted">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.SHA256(System.String,System.String)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.BeginSHA256(System.String,System.String,System.AsyncCallback,System.Object)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.EndSHA256(System.IAsyncResult)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.SHA256Async(System.String,System.String)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.SHA256Async(System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.createPasswordString">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.BegincreatePasswordString(System.AsyncCallback,System.Object)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.EndcreatePasswordString(System.IAsyncResult)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.createPasswordStringAsync">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.createPasswordStringAsync(System.Object)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.fetchSBMSContent(System.String)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.BeginfetchSBMSContent(System.String,System.AsyncCallback,System.Object)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.EndfetchSBMSContent(System.IAsyncResult)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.fetchSBMSContentAsync(System.String)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.fetchSBMSContentAsync(System.String,System.Object)">
+	<remarks/>
+</member><member name="M:SurveyAdmin.Authentication.Service1.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:SurveyAdmin.Authentication.Service1">
+	<remarks/>
+</member><member name="T:SurveyAdmin.Authentication.SHA256CompletedEventHandler">
+	<remarks/>
+</member><member name="P:SurveyAdmin.Authentication.SHA256CompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:SurveyAdmin.Authentication.SHA256CompletedEventArgs">
+	<remarks/>
+</member><member name="T:SurveyAdmin.Authentication.createPasswordStringCompletedEventHandler">
+	<remarks/>
+</member><member name="P:SurveyAdmin.Authentication.createPasswordStringCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:SurveyAdmin.Authentication.createPasswordStringCompletedEventArgs">
+	<remarks/>
+</member><member name="T:SurveyAdmin.Authentication.fetchSBMSContentCompletedEventHandler">
+	<remarks/>
+</member><member name="P:SurveyAdmin.Authentication.fetchSBMSContentCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:SurveyAdmin.Authentication.fetchSBMSContentCompletedEventArgs">
+	<remarks/>
+</member>
+</members>
+</doc>

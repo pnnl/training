@@ -1,0 +1,30 @@
+<%@ Master Language="VB"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+<!--#include virtual="/shared/global.inc"-->
+<style type="text/css">@import url( ./styles.css );</style>
+<SCRIPT src="./pop_up.js" type="text/javascript"></SCRIPT>
+</head>
+<body class="col2 <%=session("pageSel")%>">
+    <!--#include virtual="/shared/intranet_banner.inc"-->
+    <div id="page">
+        <!--#include virtual="/shared/top.inc"-->
+        <div id="subBanner">
+            <img src="/images/el_banner_small.jpg" />
+        </div>
+        <div id="container">
+            <div id="main">
+                <div>
+                    <asp:contentplaceholder id="ContentPlaceHolder" runat="server">
+                    </asp:contentplaceholder>
+                </div>
+            </div>
+        </div>
+        <!--#include virtual="/shared/leftnav_survey.inc"-->
+        <!--#include virtual="/shared/footer.inc"-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,789 @@
+#main { min-height: 500px; min-width: 700px;}
+
+h1, h2 { color: #d57500; }
+h3, h4 { color: #cf6200; }
+h1 { font-size: 20px; margin-bottom: 12px; margin-top: 6px;}
+h2 { font-size: 16px; margin-bottom: 12px; margin-top: 6px;}
+#leftNav h2 {margin-top: 0;}
+h3 { font-size: 14px; margin-bottom: 12px; margin-top: 10px;}
+h4 { margin-top: 10px; }
+
+
+#appIcon { background-image: url(/common/sbms_appIcon.png); width: 505px; height: 48px; }
+
+div.navigation { float: left; }
+div#navigation input.button_copper { float: right; }
+
+img.indicator { border-width:0px; margin: -7px 0; }
+
+
+/* ======== fieldchooser ============== */
+ol.sort_chooser { list-style-type: none;}
+ol.sort_chooser li { padding: 3px 0; margin: 3px 0; border-bottom: 1px solid #eee; }
+div.clearing { clear: both; }
+div.multiselects select { width: 300px; height: 200px; }
+div.multiselects div {float: left; }
+div.widget_container h2 { clear: both; }
+/* central button column ul */
+div.widget_container ul { margin: 70px 10px 0 10px; padding: 0; }
+div.widget_container ul li { margin: 1px; padding: 1px 0; }
+
+.autoclear:after {content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.autoclear {display:inline-block;}
+.autoclear {display:block;}
+
+div.widget_container label select { margin: 0 0 0 5px; }
+
+
+/* jqModal */
+/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	the Window's z-index value will be set to 3000 by default (in jqModal.js). You
+	can change this value by either;
+	  a) supplying one via CSS
+	  b) passing the "zIndex" parameter. E.g.  (window).jqm({zIndex: 500}); */
+	
+.jqmWindow {
+    display: none;
+    position: fixed;
+    top: 17%;
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+    background-color: #eee;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.jqmOverlay { background-color: #000; }
+
+
+
+
+/* =scalableButtons, =scalableTabs */
+/* Note: be careful if you organize this section; order matters in several places. */
+ul.tabs li { float: left; margin: 0 0 0 0px; border-style: solid; border-color: #fff; border-width: 0 1px 2px; }
+ul.tabs { position: relative; /* margin-bottom: 2em; */ margin: 0 1em 2em 0; min-width: 42em; } /* min-width: 32em for 3 wide and 42em for 4 wide on Tasks submenu */
+ul.tabs li > * { 
+	line-height: 1.2; display: block; position: relative; float: left; padding: 5px; color: #fff; 
+								text-decoration: none; margin: 0 0px 0 0; text-align: center; width: 120px; background: #505050;
+								font-weight: bold;
+}
+
+ul.tabs li.last-child > * { padding-right: 10px; }
+
+/*a.button, 
+a.selected { line-height: 1.2; display: block; position: relative; float: right; padding: 5px; color: #fff; 
+								text-decoration: none; margin: 0 3px; text-align: right; width: 120px; background: #505050;
+								font-weight: bold;
+								 }*/
+/* approvals button width exception */
+div#approval_block a.button, div#process_queue a.button { width: 140px; }
+div#approval_block li { margin: 5px 0; }
+a.selected { width: auto; }
+								 
+a.button.center { float: none; text-align: center; }
+
+a.button.default,
+ul.tabs li > span,
+a.selected.default { background-color: #A83C0F; } /* active tab */
+
+a.button.disabled,
+a.button.disabled:hover,
+ul.tabs li a.disabled,
+ul.tabs li a.disabled:hover { background-color: #333 !important; cursor: default; color: #999; }
+
+a.button i,
+a.selected i,
+a.selected span,
+a.button span,
+ul.tabs li:first-child > * > *,
+ul.tabs li.last-child * > * { font-style: normal; background-image: url(../images/btn_border_rounded.png); background-repeat: no-repeat; display: block; position: relative; }
+
+ul.tabs li:first-child > span > span,
+ul.tabs li.last-child > span > span,
+ul.tabs > li:first-child:hover > * > span,
+ul.tabs > li.last-child:hover i { background-image: none; }
+
+a.button.dark_bg i,
+a.button.dark_bg span { background-image: url(../images/btn_border_rounded_dark.png) }
+
+a.button i,
+a.selected i,
+ul.tabs li:first-child > * > i { background-position: top left; position: absolute; margin-bottom: -5px; top: 0; left: 0; width: 5px; height: 5px; }
+
+a.button span,
+a.selected span,
+ul.tabs li:first-child > * > span { background-position: bottom left; left: -5px; padding: 0 0 5px 10px; margin-bottom: -5px; }
+
+a.button span i,
+a.selected span i { background-position: bottom right; margin-bottom: 0; position: absolute; left: 100%; width: 10px; height: 100%; top: 0; }
+
+ul.tabs li.last-child * i { background-position: bottom right; margin-bottom: 0; position: absolute; width: 10px; height: 100%; top: 0; right: 0;}
+
+
+a.button span span,
+a.selected span span { background-position: top right; position: absolute; right: -10px; margin-left: 10px; top: -5px; height: 0; }
+
+ul.tabs li.last-child * span { background-position: top right; margin: -5px -10px 0 0; padding: 5px 10px 0 0; }
+
+/*a.button[class],
+a.selected[class],*/
+ul.tabs li > * { background-image: url(../images/btn_shade.png); background-position: 0 0; background-repeat: repeat-x; }
+
+a.button.dark_bg { background-color: #ddd; color: #444; }
+
+a.button:hover,
+a.selected:hover,
+ul.tabs li:hover a { background-color: #D57500; }
+ul.tabs > li:hover { border-color: #fff #fff #d57500; }
+
+/* current tab border color */
+ul.tabs > li.current,
+ul.tabs:hover > li.current:hover { border-color: #fff #fff #a83c0f; }
+/* cancel it on other hovers */
+ul.tabs:hover > li.current { border-color: #fff; }
+/* but put it back in place if li.current is the one being hovered--see above */
+
+/* if it has no children, cover it up*/
+ul.tabs > li.current.last-child,
+ul.tabs:hover > li.current.last-child:hover { border: none; }
+
+
+ul.buttons li a.button { width: 120px; float:none; text-align: left;  }
+
+a.button img { margin: -3px 4px -3px 0; }
+a.button:link, a.button:visited, a.button:hover, a.button:focus, a.button:active { text-decoration: none; }
+
+/* subtabs */
+ul.tabs li > ul.subtabs { position: absolute; top: 1.75em; left: 0; display: none; }
+ul.tabs li > ul.subtabs { list-style-image: none; float: none; background: none; width: auto; font-weight: normal; }
+ul.tabs li > ul.subtabs li,
+ul.tabs li > ul.subtabs li > * { margin: 0; float: left; border-width: 0; }
+ul.tabs li > ul.subtabs li > span.disabled { background: #B2B3B5; cursor: default; color: #999; }
+
+/* active tab */
+ul.tabs li > span + ul.subtabs li { background: #fff url(../images/btn_border_rounded_tab.png) top right no-repeat; }
+ul.tabs li > span + ul.subtabs li > * { background: #A83C0F url(../images/btn_border_rounded_active.png) 0 0 no-repeat; }
+ul.tabs li > span + ul.subtabs { display: block; }
+ul.tabs li > span + ul.subtabs li.last-child * > * { background-image: url(../images/btn_border_rounded.png); }
+
+/* Custom subtab positioning (style guide) */
+ul.tabs li > ul.tab3sub { left: 5em; }
+ul.tabs li > ul.tab4sub { left: 20em; }
+
+/* Menu-specific postioning */
+ul.tabs li > ul.tasks_menu { left: -.9em; }
+ul.tabs li > ul.tools_menu { left: 7em; }
+ul.tabs li > ul.processes_menu { left: 5em; }
+
+/* subtab hover */
+ul.tabs:hover ul.subtabs { display: none; }
+ul.tabs li:hover > ul.subtabs { display: block; }
+ul.tabs li:hover > ul.subtabs li > a { background: #D57500 }
+ul.tabs li > ul.subtabs li:hover > a { background-color: #F1AB00;}
+ul.tabs li:hover > ul.subtabs li > span, ul.tabs li:hover > ul.subtabs li { background-image: url(../images/btn_border_rounded_hover.png); }
+
+ul.tabs li > ul.subtabs li > span { background-color: transparent; color: #666; /* add margin for non-transparent background image */ margin-right: 10px; background-image: url(../images/btn_border_rounded_tab.png); } /* active subtab */
+ul.subtabs li:first-child > * > span { padding-left: 10px; }
+
+ul.buttons_inline { margin: 0 auto; float: left; }
+ul.buttons_inline > li {float: left;}
+#activity_navigator li { margin: 0; }
+
+
+/* /scalableButtons */
+
+code { font: 12px Consolas, "Courier New", fixed; background: #E0E1E1; border: 1px solid #D57500; display: block; padding: 10px 20px; }
+/*
+ul.tabs li { float: left; margin: 1px; padding: 0; background: #505050; }
+*/
+
+
+/* Table styles, =table */
+table { border: 0; margin: 0; border-collapse: collapse; width: 100%; }
+tr td {vertical-align: top;}
+td { margin: 0; padding: 3px 4px; border: 1px solid #000; }
+th { margin: 0; padding: 6px; background: #d9d9d9 url(../images/btn_shade.png) 0 0 repeat-x; color: #333; border-width: 0; font-weight: bold; }
+td.first { white-space: nowrap; text-align: right; }
+td, th { border-color: #aaa }
+tr.alt td { background: #EFF6F9; }
+td span.time { color: #9B9C9F; }
+tr.shaded td, tr.highlighted td {background-color: #EFF6FF;}
+		
+tr.doctype_title th {	background-color: transparent; color: #D57500; font-weight: bold; padding-top: 20px; }
+tr.doctype_title th h3 { background-color:#EEE; color: #D57500; border-top: 1px solid #b2b3b5; border-bottom: 1px solid #b2b3b5; padding: 7px; margin: -7px -6px -7px -7px; }
+
+
+table.narrow { width: 350px !important; }
+
+/* =topper, multipurpose top bar */
+div.topper { margin: -20px -20px 0; padding: 3px 10px; background: #505050 url(../images/btn_shade.png) 0 0 repeat-x; color: #eee; }
+
+/* =impersonation */
+div.impersonation { margin-bottom: 5px; }
+div.impersonation > div { float: right; }
+a.never_visit:visited { color: #0077A4; }
+a.never_visit.dark:link, a.never_visit.dark:visited, a.never_visit.dark:focus, a.never_visit.dark:active { color: #9bcdde; }
+a.never_visit.dark:hover { color: #d9edf4; }
+
+/* Document Approval, =documentapproval*/
+div.process_details * { margin: 0; padding: 0; }
+div.process_details p { width: 20%; float: left; text-align: center; font-size: 12px; line-height: 1.1; }
+div.process_details.lower p { width: auto; }
+div.process_details.lower { float: right; margin-top: -40px; }
+div.process_details p strong { display: block; border-bottom: 1px solid #777; margin-bottom: 2px; padding-bottom: 2px; font-style: italic; }
+div.process_details p img { margin: -4px 3px; }
+div.process_details p a { color: #eee; margin: 10px;}
+
+.column_2 { width: 45%; float: left; padding: 1%; margin: 0 !important; }
+dd { margin-left: 10px; }
+
+div.signing_details h3 { margin: 10px 0 0; border-bottom: 1px solid #444; }
+div.signing_details table.activity_detail ul li { margin: 0; }
+.dark a:link, .dark a:visited { color: #9bcdde; }
+
+
+/* Process visualization - display process textual, =displayprocess =procvis */
+div.proc_vis h3 { border-top: 1px solid #d57500; margin: 10px 0 0; clear: both; font-weight: bold; }
+
+
+/* History - Approvals */
+img.approvalhistory { margin-right: 5px; }
+dt.approvalhistory { margin-left: 10px; color: #333 !important; }
+dd.approvalhistory { margin-left: 20px; }
+
+
+dt { color: #DD9133 !important; }
+
+/* Form inputs */
+select, textarea { border: 1px solid #666; border-color: #333 #aaa #aaa #333; }
+textarea { padding: 5px; font: 12px/1.5 "Avenir STD","Avenir LT STD",Avenir,Arial,"Helvetica Neue",Helvetica,sans-serif }
+div.signing_details textarea { width: 100%; border-width: 2px; }
+
+
+/*div#show_field_chooser { float: right; }*/
+div.tasklist_links, .tasklist_links { float: right; display: block; }
+div.tasklist_container, table.tasklist { clear: both; }
+
+#main, #header, #footer { width: auto; margin: 0 20px; }
+#footer { font-size: 12px; margin-top: 5px; }
+#header { padding: 0 20px; }
+#footerNav { width: auto; }  /* Communication's app.css has it at 49% ..... No footer should be that long, right? */
+/* Have to override footer setting in app.css to get icon padding right. */
+#footer a.linkIcon { padding-left: 18px; }
+/*a.about { background-image: url(../images/icon_approvals.png); }*/
+a.help { background-image: none !important; }  /* override the app.css file */
+.bug { background-image: url(../images/bug.png); }
+.rss { background-image: url(../images/feed.png); }
+.delegations { background-image: url(../images/icon_delegation.png); }
+.email { background-image: url(../images/email.png); }
+.view_proc_vis { background-image: url(../images/process.png); }
+
+
+#rss_feeds dl dt { background: url(../images/bullet_feed.png) 0 50% no-repeat; padding-left: 16px; }
+
+
+#activity_navigator p { text-align: center; }
+
+h2#addl_info { margin: 0; padding: 4px; background: #f7f7f7;}
+h2#addl_info a { color: #D57500; text-decoration: none;  }
+div#more_info { background: #f7f7f7; padding: 10px; color: #444; }
+
+div.signing_details { background: #505050 url(../images/btn_shade.png) 0 0 repeat-x; color: #eee; margin: 0 -20px -20px; padding: 10px 20px; }
+
+div.about p { padding: 0 0 5px 0; }
+div.clear + p { padding-top: 10px; }
+
+/* =Modal windows */
+div.modal { position: absolute; width: 800px; left: 10%; top: 20%; background: #fff;  
+            padding: 10px; color: #444; border-width: 1px 2px 2px 1px; border-color: #666 #333 #333 #666; border-style: solid; }  /* was width: 70%; left: 15% */
+div.modal_confirm { position: absolute; width: 500px; left: 25%; top:45%; background: #fff; }
+div.modal h2 { font-weight: bold; margin: -10px -10px 0; padding: 4px 10px; background: #d57500; border-bottom: 1px solid #666; color: #fff; }
+img.closebtn, input.closebtn { float: right; cursor: pointer; }
+
+ul.context_menu li { text-align: left; padding: 0; }
+ul.context_menu li img { margin: -4px 5px -4px -4px; }
+ul.context_menu li a { color: #000; text-decoration: none; display: block; margin: -2px -20px -2px -10px; padding: 2px 20px 2px 10px; cursor: default;}
+ul.context_menu li.no_icon, ul.context_menu li.no_icon a { padding-left: 26px; }
+ul.context_menu li a:hover { color: #fff; }
+
+p.note { font-size: 11px; line-height: 1.2; }
+
+img.personal_flag { cursor: pointer; }
+
+div.personal_notes textarea { width: 90%; margin: 0 auto; }
+
+a:link, a:visited, a:hover, a:focus, a:active { text-decoration: underline; }
+.focus{background-color: #F9DD99;;}
+div.save_message { float: right; }
+div.save_message.top { margin: -50px 0 0 0; }
+
+/* Scope Tree */
+div.scope_tree table { width: auto; }
+div.scope_tree table td { border: none; }
+
+
+p.page_desc { margin: 0; }
+
+/* =FieldSet two column form
+=========================================================================*/
+fieldset.form
+{
+	border-top: solid 1px #D57500;
+	clear: both;
+	padding-bottom: 20px;
+	margin-top: 10px;
+	position:relative; 
+	line-height: 100%;
+}
+ul.twoColumn > li > label, ul.oneColumn > li > label
+{
+	display: block;
+	text-align: left;
+	color:#d57500 !important;
+	padding-right: 1em;
+	line-height: 125%;
+	float: left;
+	width: 30%;	
+}
+.alternating { background-color: #EEEEEE; }
+ul.twoColumn > li.checkBox > label
+{
+	display: block;
+	text-align: left;
+	color:#d57500 !important;
+	padding-right: 1em;
+	line-height: 125%;
+	float: left;
+	width: 50%;	
+}
+ul.twoColumn > li.checkBox
+{
+	float: left;
+	padding: 3px 0px 3px 0px;
+	width: 49%;
+	list-style: none;
+	margin-left: 0px !important;
+	margin-bottom: 0px !important;
+}
+.small
+{
+	color:#666666;
+	display:block;
+	font-size:.8em;
+	font-weight:normal;
+	text-align:left;
+	padding: 0px;
+
+}
+.validationNote
+{
+	display:block;
+	font-size:.8em;
+	font-weight:normal;
+	text-align:left;
+	padding: 0px;
+	float: left;
+	margin-left: 10px;
+}
+
+.validationNote_NoFloat 
+{
+	float: none;
+	display: inline;
+}
+
+ul.oneColumn > li
+{
+	float: left;
+	padding: 3px 0px 3px 0px;
+	width: 100%;
+	list-style: none;
+	margin-left: 0px !important;
+	margin-bottom: 0px !important;
+}
+ul.twoColumn > li
+{
+	float: left;
+	padding: 3px 0px 3px 0px;
+	width: 49%;
+	list-style: none;
+	line-height: 125%;
+	margin-left: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+fieldset.form p.divhead, div.approval_history h3 {padding-top: 20px; border-top: solid 1px #D57500; clear: both; font-weight: bold; margin: 5px 0 5px 0; }
+fieldset.form p.subhead + a.button { top: -1em; }
+fieldset.form p.subhead + a.button + p.divhead { border-top: none; margin-top: 0; }
+/*fieldset.form p.subhead{padding-top: 2.0em;padding-bottom:1.3em;}*/
+fieldset.form div.formContent{padding-top: 2.0em;}
+fieldset.form legend{padding: 0;color: #545351;font-weight: bold;color: #cf6200;font-size:14px;}
+fieldset.form legend span {position: absolute;top: 0;margin-top: 0.2em;}
+ul.twoColumn li select {width: 17em;}
+
+ul.twoColumnWide > li > label{float: left;display: block;width: 47%;text-align: left;color:#DD9133 !important;padding-right: 10px;line-height: 100%; margin-left: 49%;}
+ul.twoColumnWide > li{float: left;padding: 3px .5%; height:6em; width: 49%;list-style: none;margin-left: 0px !important;}
+ul.twoColumnWide li select {width: 17em;}
+ul.twoColumnWide li input { clear: left; }
+ul.twoColumnWide label:first-child { margin: 0 -49% 0 0; }
+ul.twoColumnWide li.alternating { background-color: #EEEEEE; }
+
+ul.twoColumn li select
+{
+	width: 17em;
+	margin-left: 10px;	
+}
+ul.twoColumn li select.short
+{
+	width: 6em !important;
+}
+ul.twoColumn li input.short[type=text]
+{
+	width: 3em;
+}
+ul.twoColumn li input[type=text]
+{
+	width: 16em;
+}
+ul.twoColumn li input
+{
+	margin-left: 10px;
+}
+
+p.page_desc { margin: 0; }
+
+/* =datepicker, =calendar*/
+/* Main Style Sheet for jQuery UI date picker */
+#ui-datepicker-div, .ui-datepicker-inline {
+	/*resets*/margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none;
+	font-family: Verdana, Arial, sans-serif;
+	background: #E0E1E1;
+	font-size: 1.1em;
+	border: 2px solid #242424;
+	width: 15.5em;
+	padding: 2.5em .5em .5em .5em;
+	position: relative;
+}
+#ui-datepicker-div {
+	z-index: 9999; /*must have*/
+	display: none;
+	background: #E0E1E1;
+}
+.ui-datepicker-inline {
+	float: left;
+	display: block;
+}
+.ui-datepicker-control {
+	display: none;
+}
+.ui-datepicker-current {
+	display: none;
+}
+.ui-datepicker-next, .ui-datepicker-prev {
+	position: absolute;
+	left: .5em;
+	top: .5em;
+	background: #C6C7C8; /* url(../images/datepicker/C6C7C8_40x100_textures_01_flat_0.png) 0 50% repeat-x;*/
+}
+.ui-datepicker-next {
+	left: 14.6em;
+}
+.ui-datepicker-next label, .ui-datepicker-prev label 
+{
+	display: none;
+}
+.ui-datepicker-current-day a
+{
+	background: #A83C0F !important; /* url(../images/datepicker/A83C0F_40x100_textures_01_flat_0.png) 0 50% repeat-x !important; */
+	color: #FFF !important;
+}
+.ui-datepicker-next:hover, .ui-datepicker-prev:hover {
+	background: #D57500; /* url(../images/datepicker/D57500_40x100_textures_01_flat_0.png) 0 50% repeat-x;*/
+}
+.ui-datepicker-next a, .ui-datepicker-prev a {
+	text-indent: -999999px;
+	width: 1.3em;
+	height: 1.4em;
+	display: block;
+	font-size: 1em;
+	background: url(../images/datepicker/888888_7x7_arrow_left.gif) 50% 50% no-repeat;
+	border: 1px solid #242424;
+	cursor: pointer;
+}
+.ui-datepicker-next a {
+	background: url(../images/datepicker/888888_7x7_arrow_right.gif) 50% 50% no-repeat;
+}
+.ui-datepicker-prev a:hover {
+	background: url(../images/datepicker/454545_7x7_arrow_left.gif) 50% 50% no-repeat;
+}
+.ui-datepicker-next a:hover {
+	background: url(../images/datepicker/454545_7x7_arrow_right.gif) 50% 50% no-repeat;
+}
+.ui-datepicker-prev a:active {
+	background: url(../images/datepicker/222222_7x7_arrow_left.gif) 50% 50% no-repeat;
+}
+.ui-datepicker-next a:active {
+	background: url(../images/datepicker/222222_7x7_arrow_right.gif) 50% 50% no-repeat;
+}
+.ui-datepicker-header select {
+	border: 1px solid #242424;
+	color: #555555;
+	background: #C6C7C8;
+	font-size: 1em;
+	line-height: 1.4em;
+	position: absolute;
+	top: .5em;
+	margin: 0 !important;
+	
+}
+.ui-datepicker-header select.ui-datepicker-new-month {
+width: 7em;
+left: 2.2em;
+}
+.ui-datepicker-header select.ui-datepicker-new-year {
+width: 5em;
+left: 9.4em;
+}
+table.ui-datepicker {
+	width: 15.5em;
+	text-align: right;
+	margin: 0;
+}
+table.ui-datepicker td { padding: 0; }
+
+table.ui-datepicker td a {
+	/*padding: .1em .3em .1em 0;*/
+	display: block;
+	color: #555555;
+	background: #C6C7C8; /* url(../images/datepicker/C6C7C8_40x100_textures_01_flat_0.png) 0 50% repeat-x;*/
+	cursor: pointer;
+	border: 1px solid #E0E1E1;
+}
+table.ui-datepicker td a:hover {
+	border: 1px solid #242424;
+	color: #fdfcfc;
+	background: #D57500; /* url(../images/datepicker/D57500_40x100_textures_01_flat_0.png) 0 50% repeat-x;*/
+}
+table.ui-datepicker td a:active {
+	border: 1px solid #242424;
+	color: #222222;
+	background: #A83C0F; /* url(../images/datepicker/A83C0F_40x100_textures_01_flat_0.png) 0 50% repeat-x;*/
+}
+table.ui-datepicker .ui-datepicker-title-row td {
+	padding: .2em 0;
+	text-align: center;
+	font-size: .9em;
+	color: #222222;
+	text-transform: uppercase;
+	/*border-bottom: 1px solid #242424;*/
+}
+
+table.ui-datepicker .ui-datepicker-title-row td a {
+	color: #222222;
+}
+
+#persistent_notifier { width: 42%; background: #fff; position: absolute; top: 10px; left: 29%; }
+#persistent_notifier ul li {padding-top: 3px; margin-top: 3px; border-top: 1px solid #D57500;}
+#persistent_notifier ul li:first-child { padding-top: auto; margin-top: auto; border-top: none; }
+
+input.long, textarea.long { width: 300px; }
+input.medium { width: 200px; }
+/* -------------------- Autocompleters ----------------------------- */
+div.autocomplete {
+  position:absolute;
+  width:220px !important;
+  background-color:#F9DD99;
+  border: 1px solid #E0E1E1;
+  margin:0px;
+  padding:0px;
+  font-family: Verdana, Arial, sans-serif;
+  overflow: visible;
+  z-index: 10027;
+}
+div.autocomplete ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+}
+div.autocomplete ul li.selected { 
+	background-color: #D57500;
+	font-weight: bold;
+	color: #fff;
+	height: 17px;
+}
+div.autocomplete ul li.selected span{ 
+	background-color: #D57500;
+	color: #fff;
+}
+div.autocomplete ul li {
+  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:2px;
+  height:14px;
+  cursor:pointer;
+  white-space: nowrap;
+}		
+/* Stuff that should be checked to make sure its corrrect */
+.right
+{
+	float: right !important;
+}
+img.helpHover
+{
+cursor: pointer;}
+.helpHoverContent
+{
+	display:none;
+	position:absolute;
+	background-color: #F9DD99;
+	width: 300px;
+	min-height: 50px;
+	padding: 10px;
+	border: solid 1px #D57500;
+	z-index: 4000;
+}
+
+#footerDisclaimer {display: none;}
+#main {padding-left: 230px; position: relative;}
+
+#sideBar {
+  width: 220px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;}
+
+
+/*leftNav styles from pnnl.css brand*/
+#leftNav {
+
+  background-color: #e8e8e9;
+  font-size: 12px;
+  padding-top: 0;
+  border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px 0 0 4px;
+}
+
+#leftNav h2 {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #606060;
+  padding: 6px 4px 6px 11px;
+  background-image: url("/images/subnav_header_bg.png");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+/*
+#leftNav h2:first-child, #leftNav h2.first {
+  border-radius: 4px 0 0 0;
+  -moz-border-radius: 4px 0 0 0;
+  -webkit-border-radius: 4px 0 0 0;
+}
+*/
+
+#leftNav ul {
+  margin: 8px 0 8px 8px;
+}
+#leftNav li {
+  list-style-type: none !important;
+}
+* html #leftNav li {
+  margin: 0;
+  border: 1px solid #e8e8e9;
+  border-right: none;
+}
+#leftNav li strong {
+  font-weight: normal;
+}
+#leftNav a {
+  display: block;
+  padding: 5px 4px 5px 8px;
+  color: #606060;
+  background-image: none !important;
+  text-decoration: none;
+}
+#leftNav p {
+  padding: 5px 4px 5px 8px;
+}
+#leftNav a:hover {
+}
+#leftNav a img.icon {
+  border: 0;
+  padding-left: 3px;
+  vertical-align: middle;
+}
+#leftNav a[title^=Offsite] img.icon {
+  vertical-align: baseline;
+}
+
+/* Subject Area Navigation */
+ul#SAToC {margin-left:1.5em !important;}
+ul#SAToC li {list-style: none outside; line-height: 1.2 !important; padding-bottom: .8em !important;}
+ul#SAToC li a {display: inline !important; padding:0;}
+ul#SAToC li td {border: none;}
+#SAToC td.nav {line-height: 1.2;}
+body#home #homeLink{ display: none; }
+
+/* Added by Ryan Ostler from Ian Roberts */
+.headerBar{ height: 31px; background-image: url(/common/cc98g520.gif); background-position: top right; background-repeat: no-repeat; margin: 1em 0 .2em 0; }
+.headerBar h1{ height: 23px; background-image: url(/common/cc98g530.gif); background-position: top left; background-repeat: no-repeat; margin: 0 1em 0 0; padding: 8px 0 0 8px; }
+.headerBarorange{ height: 31px; background-image: url(copper_long.gif); background-position: top right; background-repeat: no-repeat; margin: 0 0 .2em 0; }
+.headerBarorange h1.orange{ height: 23px; background-image: url(copper_short.gif); background-position: top left; background-repeat: no-repeat; margin: 0 1em 0 0; padding: 8px 0 0 8px; color: #000 !important; }
+p.findtext{ background: url(/common/cc08g010.gif) left top no-repeat; padding-left: 25px !important; }
+.contentBox{ background-color: #fff;border: 2px solid #D57500;margin: 0 0 1em 0; padding: 1em; }
+.contentBox p{ margin: 0 0 1em 0; padding: 0; }
+/*.contentBox > table{ width: 692px; }*/
+.contentBox table.saProc ul, #content .formsBox ul{ margin: 0;padding: 0 1em 1em 1em; }
+#content .formsBox ul{ margin: 0; padding: 0 1em 1em 2em; }
+.contentBox table.saProc li,#content .formsBox li {margin: 0 0 .3em 0;padding: 0; }
+.contentBox table.saProc li ul,#content .formsBox li ul {list-style-type: square; }
+.contentBox table.saProc li ul ul,#content .formsBox li ul ul {list-style-type: circle; }
+
+.contentBox table td{ width: auto; }
+.contentBox table td.last{ width: 110px; }
+
+.contentBox ul {list-style: disc outside; margin-left: 1em;}
+.contentBox ul ul {list-style-type: square;}
+.contentBox ul ul ul {list-style-type: circle;}
+.contentBox ol {margin-left: 1em;}
+#recentUpdates {position: relative}
+/*
+#recentUpdates ul li a{ color: #0077A4; text-decoration: underline }
+#recentUpdates ul li a{ color: #6B2F81; text-decoration: underline }
+*/
+.headerBar h2 {position: absolute; top:0; left:0; height: 23px; background-image: url(/common/cc98g530.gif); background-position: top left; background-repeat: no-repeat; margin: 0 1em 0 0; padding: 8px 0 0 8px;}
+.narrowContent {position: absolute; top: 30px; left: 0; background-color: #eee; border: 1px solid #bbb; padding: 5px; margin-left: 2px; padding-top: 10px;}
+#main{min-height: 500px;}
+#recentUpdates ul {margin-left:1.5em !important;}
+#recentUpdates li {list-style: circle outside !important; line-height: 1.2 !important; padding-bottom: .8em !important;}
+#recentUpdates li a {/*color: blue;*/ display: inline; padding:0;}
+#recentUpdates p a {color: #606060;}
+#recentUpdates p {margin-left: 1em; margin-bottom: 1em;}
+.alphabet a {padding-right: .5em; text-decoration: none;}
+td.stepNum {width: 4em !important;}
+.printOnly{ display: none; }
+#siteType{ color: #900; font-size: 18px; }
+
+#homeNotice {
+background-color: #D57500; 
+border: 2px solid #ddd; 
+color: #fff; 
+padding: 1em; 
+margin: 0 0 1em 0; 
+font-size: 1.1em; 
+font-weight: bold;}
+
+/* Added by Michael Howard 9-17-08 */
+#flowChartImage {
+    display: none;
+}
